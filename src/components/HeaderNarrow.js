@@ -6,6 +6,10 @@ import { faGithub, faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-i
 export default function HeaderMobile({ dark, toggleDark }) {
   return (
     <header className="p-6 flex flex-col items-center text-center gap-4 bg-teal-500 dark:bg-[#17313c]">
+        {/* Sticky Dark Mode Button */}
+      <button onClick={toggleDark} className="absolute top-12 right-5 text-white z-10" aria-label="Toggle Dark Mode">
+        {dark ? <Sun /> : <Moon color="#17313c" />}
+      </button>
       <img src="/img/profile.jpg" alt="Profile" className="w-20 h-20 rounded-full border-2 border-white dark:border-black" />
       <h1 className="text-2xl font-bold">Sina Sasanpour</h1>
       <p className="text-sm">Istanbul | Junior Developer</p>
@@ -24,9 +28,13 @@ export default function HeaderMobile({ dark, toggleDark }) {
         <a href="/docs/CV_EN_dark.pdf" download className="px-4 py-2 text-white font-semibold rounded-full bg-[#17313c] dark:bg-teal-500 hover:bg-black hover:dark:bg-teal-600">
             Download CV (PDF)
         </a>
+
+        {/* Sticky Dark Mode Button 
         <button onClick={toggleDark} className="text-white">
             {dark ? <Sun /> : <Moon color="#17313c" />}
         </button>
+        */}
+        
       </div>
     </header>
   );
