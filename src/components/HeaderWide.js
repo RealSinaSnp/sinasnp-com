@@ -9,7 +9,7 @@ export default function HeaderDesktop({ dark, toggleDark }) {
       <div className="flex items-center gap-4">
         <img src="/img/profile.jpg" alt="Profile" className="w-16 h-16 rounded-full border-2 border-white dark:border-black" />
         <div>
-          <h1 className="text-2xl font-bold">Sina Sasanpour</h1>
+          <h1 className="text-2xl font-bold">Sina Sasanpour CI/CD test</h1>
           <p className="text-sm">Istanbul | Junior Developer</p>
           <div className="flex gap-3 mt-1">
             <a href="https://github.com/RealSinaSnp" target="_blank" rel="noopener noreferrer">
