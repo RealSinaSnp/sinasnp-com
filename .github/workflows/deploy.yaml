@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: sinasnp/cv-site
   VPS_USER: kali
   VPS_HOST: 147.93.127.162
-  CONTAINER_NAME: cv-site-container
+  CONTAINER_NAME: cv-site-cont
   PROJECT_PORT: 3000
 
 jobs:
@@ -43,5 +43,9 @@ jobs:
             docker pull $IMAGE_NAME:latest
             docker stop $CONTAINER_NAME || true
             docker rm $CONTAINER_NAME || true
-            docker run -d --name $CONTAINER_NAME -p $PROJECT_PORT:3000 $IMAGE_NAME:latest
+            docker run -d \
+              -p 80:80 -p 443:443 \
+              -v /etc/ssl/cloudflare/certificate.pem:/etc/ssl/cloudflare/certificate.pem:ro \
+              -v /etc/ssl/cloudflare/private.key:/etc/ssl/cloudflare/private.key:ro \
+              --name cv-site-cont ${DOCKERHUB_USER}/${REPO_NAME}:$IMAGE_TAG
           EOF
