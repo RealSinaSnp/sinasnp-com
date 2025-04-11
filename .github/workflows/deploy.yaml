@@ -38,18 +38,29 @@ jobs:
 
       - name: 🚀 Deploy on VPS
         run: |
-          ssh $VPS_USER@$VPS_HOST << 'EOF'
-            echo $IMAGE_NAME
-            docker pull $IMAGE_NAME:latest
+          ssh $VPS_USER@$VPS_HOST << EOF
+            IMAGE_NAME="${IMAGE_NAME}"
+            CONTAINER_NAME="${CONTAINER_NAME}"
+
+            echo "Pulling image: \$IMAGE_NAME"
+            docker pull \$IMAGE_NAME:latest
+
             echo "--- pull complete ---"
-            echo $CONTAINER_NAME
-            sudo docker stop $CONTAINER_NAME || true
+
+            echo "Stopping container: \$CONTAINER_NAME"
+            sudo docker stop \$CONTAINER_NAME || true
+
             echo "--- stop done ---"
-            sudo docker rm $CONTAINER_NAME || true
+
+            echo "Removing container: \$CONTAINER_NAME"
+            sudo docker rm \$CONTAINER_NAME || true
+
             echo "--- rtm done ---"
-            docker run -d \
+
+            echo "Running container: \$CONTAINER_NAME"
+            sudo docker run -d \
               -p 80:80 -p 443:443 \
               -v /etc/ssl/cloudflare/certificate.pem:/etc/ssl/cloudflare/certificate.pem:ro \
               -v /etc/ssl/cloudflare/private.key:/etc/ssl/cloudflare/private.key:ro \
-              --name cv-site-cont ${DOCKERHUB_USER}/${REPO_NAME}:$IMAGE_TAG
+              --name \$CONTAINER_NAME \$IMAGE_NAME:latest
           EOF
