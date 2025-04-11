@@ -29,12 +29,12 @@ export default function HeaderMobile({ dark, toggleDark }) {
             Download CV (PDF)
         </a>
 
-        {/* Sticky Dark Mode Button 
+        {/* Old Dark Mode Button 
         <button onClick={toggleDark} className="text-white">
             {dark ? <Sun /> : <Moon color="#17313c" />}
         </button>
         */}
-        
+
       </div>
     </header>
   );
