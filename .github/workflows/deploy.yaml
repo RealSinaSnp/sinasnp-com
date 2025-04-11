@@ -27,6 +27,7 @@ jobs:
       - name: 🔧 Build and Push Docker Image
         run: |
           docker build -t $IMAGE_NAME:latest .
+          echo "image built"
           docker push $IMAGE_NAME:latest
 
       - name: 🔐 Setup SSH for VPS Access
