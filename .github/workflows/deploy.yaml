@@ -41,8 +41,11 @@ jobs:
         run: |
           ssh $VPS_USER@$VPS_HOST << 'EOF'
             docker pull $IMAGE_NAME:latest
+            echo "--- pull complete ---"
             sudo docker stop $CONTAINER_NAME || true
+            echo "--- stop done ---"
             sudo docker rm $CONTAINER_NAME || true
+            echo "--- rtm done ---"
             docker run -d \
               -p 80:80 -p 443:443 \
               -v /etc/ssl/cloudflare/certificate.pem:/etc/ssl/cloudflare/certificate.pem:ro \
