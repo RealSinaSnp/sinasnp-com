@@ -11,7 +11,6 @@ env:
   VPS_USER: kali
   VPS_HOST: 147.93.127.162
   CONTAINER_NAME: cv-site-cont
-  PROJECT_PORT: 3000
 
 jobs:
   build-and-deploy:
@@ -40,8 +39,10 @@ jobs:
       - name: 🚀 Deploy on VPS
         run: |
           ssh $VPS_USER@$VPS_HOST << 'EOF'
+            echo $IMAGE_NAME
             docker pull $IMAGE_NAME:latest
             echo "--- pull complete ---"
+            echo $CONTAINER_NAME
             sudo docker stop $CONTAINER_NAME || true
             echo "--- stop done ---"
             sudo docker rm $CONTAINER_NAME || true
