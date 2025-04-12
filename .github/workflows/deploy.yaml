@@ -17,47 +17,51 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: ▶️ Checkout code
         uses: actions/checkout@v4
 
-      - name: 🐳 Log in to Docker Hub
+      - name: ▶️ Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: 🔧 Build and Push Docker Image
+      - name: ▶️ Build and Push Docker Image
         run: |
+          TAG=$(date +'%Y%m%d%H%M%S')
+          echo "--- DATETIME_TAG created: $TAG ---"
           docker build -t $IMAGE_NAME:latest .
+          docker build -t $IMAGE_NAME:$TAG .
           echo "image built"
           docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:$TAG
+          echo "Pushed to Dockerhub"
 
-      - name: 🔐 Setup SSH for VPS Access
+      - name: ▶️ Setup SSH for VPS Access
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.CI_CD_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan ${{ env.VPS_HOST }} >> ~/.ssh/known_hosts
 
-      - name: 🚀 Deploy on VPS
+      - name: ▶️ Deploy on VPS
         run: |
           ssh $VPS_USER@$VPS_HOST << EOF
             IMAGE_NAME="${IMAGE_NAME}"
             CONTAINER_NAME="${CONTAINER_NAME}"
 
-            echo "Pulling image: \$IMAGE_NAME"
+            echo "🔄️ Pulling image: \$IMAGE_NAME"
             docker pull \$IMAGE_NAME:latest
-
             echo "--- pull complete ---"
 
-            echo "Stopping container: \$CONTAINER_NAME"
+            echo "🔄️Stopping container: \$CONTAINER_NAME"
             sudo docker stop \$CONTAINER_NAME || true
 
             echo "--- stop done ---"
 
-            echo "Removing container: \$CONTAINER_NAME"
+            echo "🔄️Removing container: \$CONTAINER_NAME"
             sudo docker rm \$CONTAINER_NAME || true
 
             echo "--- rtm done ---"
 
-            echo "Running container: \$CONTAINER_NAME"
+            echo "🔄️Running container: \$CONTAINER_NAME"
             sudo docker run -d \
               -p 80:80 -p 443:443 \
               -v /etc/ssl/cloudflare/certificate.pem:/etc/ssl/cloudflare/certificate.pem:ro \
