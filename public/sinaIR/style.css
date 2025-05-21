@@ -1,0 +1,330 @@
+@import url('fonts.googleapis/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* Variables */
+:root {
+    --base: #FFFAFA; /* r_side bckground + l_side text */
+    --primary: #324531; /* l_side bckground + r_side text */
+    --background: #adc0b1; /* background and skills background */
+    --secondary: #8BBF88; /* highlits */
+}
+
+/* General Settings */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;    
+}
+
+/*Layout*/
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    min-height: 600px;
+    background: var(--base);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 5px 10px 25px #333;
+    margin: 1.5rem;
+}
+
+.container .left_side{
+    background: var(--primary);
+    padding: 1.5rem;
+}
+.container .right_side{
+    background: var(--base);
+    padding: 1.5rem;
+}
+
+/* LEFT SIDE SETTINGS */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    color: var(--base);
+    border-bottom: 1px solid var(--base);
+}
+.profile .img_setting{
+    position: relative;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile .img_setting img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile h4{
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    font-weight:300;
+}
+.profile h5{
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    font-weight:300;
+    line-height: 1rem;
+}
+.profile .btn{
+    margin-top: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.profile .btn:hover{
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+.other_lang .t_language{
+	display: inline-block;
+    width: 20px;
+    margin-top: -2px;
+}
+
+.left_items{
+    margin-top: 1.5rem;
+    color: var(--base);
+}
+
+.left_items .title{
+    padding-bottom: 0.5rem;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.left_items ul li{
+    list-style:none;
+    margin-bottom: 0.2rem;
+}
+.left_items ul li .icons{
+    display: inline-block;
+    width: 1.2rem;
+    font-size:1.2rem;
+    color: var(--secondary);
+}
+.left_items ul li .text{
+    font-weight: 300;
+}
+
+.left_items ul li .dates{
+    color: var(--secondary);
+    font-weight:400;
+}
+.languages{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.languages li{
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+.languages .language_icon{
+    width: 20px;
+    margin-top: -2px;
+}
+.languages .percent{
+    width: 100%;
+    height: 0.4 rem;
+    background: #000;
+    display: block;
+    margin-top: 0.4rem;
+}
+.languages .percent div{
+    width: 100%;
+    height: 0.4rem;
+    background: var(--secondary);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.languages .percent .master{
+    background-color: rgb(53, 181, 53);
+}
+.languages .percent .moderate{
+    background-color: rgb(217, 212, 56);
+}
+.languages .percent .low{
+    background-color: rgb(73, 136, 184);
+}
+
+
+/* RIGHT SIDE ITEMS */
+.right_items{
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+.right_items .title{
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    color: #04310f;
+}
+.experience{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+}
+.experience .time_line{
+    margin-top: 1px;
+}
+.experience .time_line .time_point{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    background: var(--secondary);
+    border-radius: 50%;
+    margin-left: -6px;
+}
+.experience .time_line .time_road{
+    width: 0.2rem;
+    height: 100%;
+    display: block;
+    background: var(--secondary);
+    transform: translate(0.5rem, 0);
+    margin-left: -6px;
+}
+.experience .content{
+    display: grid;
+    grid-template-columns: 10rem auto;
+}
+.experience .content .interval{
+    color: var(--primary);
+    min-width: 10rem;
+    margin-left: 0.5rem;
+    
+    font-weight: 400;
+}
+.experience .content .description h4{
+    
+    margin-left: -11px;
+    color: #04310f;
+}
+.experience .content .description p{
+    margin-left: -11px;
+}
+.skills{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    margin: 1rem 0;
+}
+.skills .percent{
+    width: 100%;
+    background: var(--background);
+    border: none;
+    border-radius: 7px;
+}
+.skills .percent div{
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 3px;
+    width: 100%;
+    height: 1rem;
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.skills .percent .icon{
+    margin-top: 3px;
+    margin-right: 7px;
+    width: 1rem;
+    height: 1rem;
+    border: none;    
+}
+.skills .schedule{
+    background: repeating-linear-gradient(45deg, var(--primary), var(--primary) 10px, var(--secondary) 10px, var(--secondary) 20px);
+    height: 1.2rem;
+}
+.skills .schedule div{
+    opacity: 0;
+}
+.skills .schedule .icon{
+    margin-top: 1px;
+    border-radius: 2px;
+}
+
+.hobby{
+    flex-direction: row;
+    grid-template-columns: repear(3, 1fr);
+}
+.hobby li{
+    display: inline-block;
+    list-style: outside none none;
+    width: 25%;
+    font-size:1.2rem;
+	color: #000;
+}
+.hobby li .bx{
+    color: #04310f;
+    font-size: 1.2rem;
+}
+
+
+/* Others */
+.text_links{
+    text-decoration: none;
+    color: #CCFEC8;
+}
+.text_links:hover{
+    color: var(--background);
+	background: #212B20;
+	border-radius: 0.2rem;
+	padding-left:0.2rem;
+	padding-right: 0.2rem;
+	padding-bottom: 0.2rem;
+	margin-left: -0.2rem;
+}
+.text_links_r{
+    text-decoration: none;
+    color: #4E664B;
+}
+.text_links_r:hover{
+    
+	background: #CCECCA;
+	border-radius: 0.2rem;
+	padding-left:0.2rem;
+	padding-right: 0.2rem;
+	padding-bottom: 0.2rem;
+	margin-left: -0.2rem;
+}
+
+
+/* responsive sttings */
+@media(max-width: 800px){
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 500px){
+    .experience .content{
+        grid-template-columns: 1fr;
+        margin: 0 3rem;
+    }
+    .hobby{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hobby li{
+        margin-bottom: 1rem;
+
+    }
+}
