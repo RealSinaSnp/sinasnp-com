@@ -48,8 +48,9 @@ text.txt
 docker-compose.yml
 Dockerfile
 nginx.conf
-certs
+/certs
 
 
-.git
-.gitignore
+
+.next/cache
+/.vscode/
