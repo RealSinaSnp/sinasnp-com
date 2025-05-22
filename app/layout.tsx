@@ -5,6 +5,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
+import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import PortfolioHeader from "@/components/HeaderPortfolio";
 import BlogHeader from "@/components/HeaderBlog";
@@ -39,7 +40,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {isMainPage && <PortfolioHeader />}
+          <SessionProvider>
           {isBlogRoute && <BlogHeader />}
+          </SessionProvider>
           <main className="flex-grow">{children}</main>
           {isBlogRoute && <Footer />}
         </ThemeProvider>

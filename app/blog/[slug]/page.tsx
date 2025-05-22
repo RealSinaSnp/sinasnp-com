@@ -5,6 +5,7 @@ import MarkdownViewer from "./MarkdownViewer";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { Post as PostType } from "@/lib/types";
+import LogoutButton from "@/components/LogoutButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,6 +43,7 @@ export default async function PostPage({ params }: Props) {
             >
               ✏️ Edit Post
             </a>
+            <LogoutButton />
           </div>
         )}
       </div>

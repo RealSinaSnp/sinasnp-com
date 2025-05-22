@@ -38,7 +38,7 @@ export default function PortfolioHeader() {
           } transition`}
         />
         <h1 className="text-4xl md:text-5xl font-bold">Sina Sasanpour</h1>
-        <p className="text-lg">Istanbul | Junior Developer</p>
+        <p className="text-lg">Istanbul | React Developer</p>
 
         <div className="flex gap-4 mt-2">
           <a href="/blog" target="_blank" rel="noopener noreferrer" 
