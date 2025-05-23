@@ -41,6 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # custom text files
+*.txt
 tree.txt
 text.txt
 
@@ -49,8 +50,9 @@ docker-compose.yml
 Dockerfile
 nginx.conf
 /certs
+pre-deployment-build.log
+build.log
 
-
-
+.dockerignore
 .next/cache
 /.vscode/

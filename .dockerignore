@@ -1,8 +1,25 @@
 # .dockerignore
 .node_modules
 .next
-.env
+.env*
 .git
 .gitignore
 docker-compose.yml
 Dockerfile
+
+# custom text files
+*.txt
+tree.txt
+text.txt
+
+# docker
+docker-compose.yml
+Dockerfile
+nginx.conf
+/certs
+pre-deployment-build.log
+build.log
+
+
+.next/cache
+/.vscode/
