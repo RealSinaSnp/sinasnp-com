@@ -86,7 +86,7 @@ export default function PortfolioHeader() {
             href="/docs/CV_EN_dark.pdf"
             download
             className={`px-5 py-2 text-white font-semibold rounded-full ${
-              isDark ? "bg-teal-500 hover:bg-teal-400" : "bg-[#17313c] hover:bg-black"
+              isDark ? "bg-teal-500 hover:bg-teal-400" : "bg-[#002F19] hover:bg-[#071D0E]"
             } transition`}
           >
             Download CV (PDF)

@@ -163,7 +163,7 @@ export default function ProjectsPage() {
             <p className="mt-4 text-secondary">
               I designed a blog page as extention for this page 
               where I can write about what I&apos;ve learnt or what I&apos;ve been doing. 
-              The website uses MongoDB as database to store the posts in (that&apos;s why it&apos;s slow when openning first time).
+              The website uses MongoDB as database and uses Markdown for text-structure.
             </p>
           </div>
 
