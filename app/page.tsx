@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes"; 
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
+//import GridSection from "@/components/BalatroCard";
+//import { InfiniteScroller } from '@/components/InfiniteScroll';
 
 
 export default function CVPage() {
@@ -51,6 +53,27 @@ export default function CVPage() {
     { label: "UI/UX design exploration", level: 75 },
     { label: "Following tech news and trends", level: 75 },
   ];
+  const webLogos: string[] = [
+    
+    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png", //JS
+    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png", //TS
+    "https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000", //Docker
+    "https://img.icons8.com/?size=100&id=NfbyHexzVEDk&format=png&color=000000", //React 
+    "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000", //Tailwind CSS
+    "https://cdn.brandfetch.io/id2alue-rx/theme/dark/idqNI71Hra.svg?c=1dxbfHSJFAPEGdCLU4o5B", //Next.js
+    "https://cdn.brandfetch.io/ideyyfT0Lp/theme/light/idGfqn8y6C.svg?c=1dxbfHSJFAPEGdCLU4o5B", //MongoDB
+    "https://cdn.brandfetch.io/idQx9ZiJAu/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B", //Ubuntu
+  ];
+  const dataLogos: string[] = [
+    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png", // Python
+    "https://cdn.brandfetch.io/id9sYMA_Im/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Tableau
+    "https://cdn.brandfetch.io/idBdG8DdKe/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // MySQL
+    "https://cdn.brandfetch.io/idQx9ZiJAu/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Ubuntu
+    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/cpp/cpp.png", // C++
+                                                                      "/img/regex.webp", // regex
+    "https://img.icons8.com/?size=100&id=13654&format=png&color=000000", // MS Excel
+    "https://cdn.brandfetch.io/idSA6yVd-w/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Virtual Box
+  ];
   
 
   return (
@@ -76,21 +99,31 @@ export default function CVPage() {
       </section>
 
 
-      <section className="p-6 flex flex-col lg:flex-row gap-6" id="skills-tools">
+      <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[1]">
-          <InfoCard title="Programming Languages" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} />
+          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
+            Web developer with 3 years background in web \design. Proficient in developing \
+            scalable interfaces and RESTful APIs. Experienced in collaborative development \
+            environments using Git and CI/CD workflows. Eager to grow within innovative \
+            teams and deliver impactful digital solutions across web and mobile platforms. \
+            '}/>
         </div>
         <div className="flex-[1]">
-          <InfoCard title="Knowledge" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={knowledges}  />
+          <InfoCard title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={knowledges} isTrans={true} logos={dataLogos} description={' \
+            Python developer with 3 years background in writing scripts. Demonstrating a \
+            passion for practical problem-solving and emerging technologies. Experienced in \
+            collaborative development environments using Git, Docker and CI/CD workflows.  \
+            '}/>
+
         </div>
       </section>
 
       <section className="p-6 flex flex-col lg:flex-row gap-6" id="skills-tools">
         <div className="flex-[3]">
-          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills}  />
+          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} />
         </div>
         <div className="flex-[1]">
-          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks />
+          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} logos={dataLogos} />
         </div>
         
       </section>
@@ -104,6 +137,17 @@ export default function CVPage() {
           © {year} Sina. All rights reserved.
         </footer>
       )} 
+      {/* 
+      <InfoCard 
+  title="hi" 
+  color="text-red-500" 
+  items={[
+    { label: 'hi', level: 70 },
+    { label: 'there', level: 90 }
+  ]}
+/>
+*/}
+      
     </div>
     </div>
     
