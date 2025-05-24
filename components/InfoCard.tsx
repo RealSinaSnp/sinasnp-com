@@ -53,7 +53,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, color, items, showCheckmarks
   const highlightX = mousePos ? dimensions.width - mousePos.x : dimensions.width / 2;
   const highlightY = mousePos ? dimensions.height - mousePos.y : dimensions.height / 2;
   const glassHighlight = mousePos
-    ? `radial-gradient(circle 1200px at ${highlightX}px ${highlightY}px, ${theme === 'dark' ? 'rgba(71, 71, 71, 0.3)': 'rgba(39, 39, 39, 0.15)'}, transparent)`
+    ? `radial-gradient(circle 900px at ${highlightX}px ${highlightY}px, ${theme === 'dark' ? 'rgba(71, 71, 71, 0.3)': 'rgba(39, 39, 39, 0.15)'}, transparent)`
     : 'none';
 
   // Theme-aware styles for text and progress bars

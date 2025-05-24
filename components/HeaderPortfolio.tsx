@@ -27,7 +27,7 @@ export default function PortfolioHeader() {
     <>
       <header
         className={`h-screen w-full flex flex-col justify-center items-center text-center gap-6 px-6 ${
-          isDark ? "bg-animated-gradient-dark" : "bg-animated-gradient"
+          isDark ? "bg-animated-gradient-dark text-white" : "bg-animated-gradient text-black"
         }`}
       >
         <img
@@ -47,7 +47,7 @@ export default function PortfolioHeader() {
                 ? "border-teal-300 text-teal-100 hover:text-white hover:bg-teal-800"
                 : "border-[#17313c] text-[#17313c] hover:text-black hover:bg-teal-200"
                 } 
-                rounded-full transition`}
+                transition`}
           >
             <Newspaper className="w-5 h-5" />
             <span className="font-medium">Blog</span>
@@ -85,8 +85,8 @@ export default function PortfolioHeader() {
           <a
             href="/docs/CV_EN_dark.pdf"
             download
-            className={`px-5 py-2 text-white font-semibold rounded-full ${
-              isDark ? "bg-teal-500 hover:bg-teal-400" : "bg-[#002F19] hover:bg-[#071D0E]"
+            className={`px-5 py-2 text-white font-semibold  ${
+              isDark ? "bg-teal-500 hover:bg-teal-600" : "bg-[#002F19] hover:bg-[#0e634b]"
             } transition`}
           >
             Download CV (PDF)
@@ -97,8 +97,7 @@ export default function PortfolioHeader() {
         </div>
         <p className="max-w-2xl text-center text-lg leading-relaxed transition">
           I focus on clean code
-          {theme !== "light" && ", and dark mode (because I respect your eyes)"}
-          {theme !== "dark" && ", fast loading and adaptability"}.
+          {theme == "dark" ? ", and dark mode (because I respect your eyes)" : "fast loading and responsiveness"}.
         </p>
         <div className="absolute bottom-6 animate-bounce">
           <a className="text-white hover:text-teal-200 transition">
