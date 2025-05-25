@@ -43,6 +43,8 @@ body {
   animation: gradient 5s ease infinite;
 }
 
+
+/* Animated gradient background with fade effect */
 .bg-animated-gradient-fade {
   background: linear-gradient(-45deg, #22E4AC, #1BD7BB, #14C9CB, #0FBED8);
   background-size: 400% 400%;
@@ -68,6 +70,30 @@ body {
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+}
+
+
+/* Animated gradient text */
+.txt-animated-gradient {
+  background: linear-gradient(-45deg, #093a2c, #084038, #063d3e, #05363e);
+  background-size: 400% 400%; /* Makes the gradient larger for smooth animation */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent so the gradient shows */
+  animation: gradient 3s ease infinite; /* Animation for the gradient */
+}
+.txt-animated-gradient-dark {
+  background: linear-gradient(-45deg, #22E4AC, #1BD7BB, #14C9CB, #0FBED8);
+  background-size: 400% 400%; /* Makes the gradient larger for smooth animation */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent so the gradient shows */
+  animation: gradient 3s ease infinite; /* Animation for the gradient */
+}
+.txt-animated-gradient-stylish {
+  background: linear-gradient(-45deg, #a022e4, #d71bbe, #cb148e, #d80f16, #e40f0f, #e4a022, #e4d71b, #e4cb14);
+  background-size: 400% 400%; /* Makes the gradient larger for smooth animation */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent so the gradient shows */
+  animation: gradient 3s ease infinite; /* Animation for the gradient */
 }
 
 
