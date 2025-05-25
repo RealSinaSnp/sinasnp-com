@@ -126,7 +126,9 @@ const InfoCard: React.FC<InfoCardProps> = ({
         {!isOpen && isTrans && (
           <div className="w-full -mb-20 items-center justify-between overflow-hidden">
             <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
-            <LogoBox logos={logos} />
+            <div className="w-full overflow-hidden max-w-full">
+              <LogoBox logos={logos} />
+            </div>
           </div>
         )}
         <div className="space-y-4">

@@ -95,7 +95,7 @@ details {
 }
 
 .scroller[data-animated='true'] .scroller__inner {
-  width: max-content; /*causes card to overflow*/
+  width: max-content; /* bigger logos */
   flex-wrap: nowrap;
   animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }

@@ -100,7 +100,7 @@ export default function CVPage() {
 
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
-        <div className="flex-[1]">
+        <div className="flex-[1] min-w-0 overflow-hidden">
           <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design. Proficient in developing \
             scalable interfaces and RESTful APIs. Experienced in collaborative development \
