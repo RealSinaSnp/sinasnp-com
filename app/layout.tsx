@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import PortfolioHeader from "@/components/HeaderPortfolio";
+import HeaderTest from "@/components/TestHeaderPortfolio";
 import BlogHeader from "@/components/HeaderBlog";
 import Footer from "@/components/Footer";
 
@@ -39,7 +40,6 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {isMainPage && <PortfolioHeader />}
           <SessionProvider>
           {isBlogRoute && <BlogHeader />}
           </SessionProvider>

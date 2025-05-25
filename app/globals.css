@@ -43,6 +43,34 @@ body {
   animation: gradient 5s ease infinite;
 }
 
+.bg-animated-gradient-fade {
+  background: linear-gradient(-45deg, #22E4AC, #1BD7BB, #14C9CB, #0FBED8);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  /* bottom fade effect */
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.bg-animated-gradient--fade-dark {
+  background: linear-gradient(-45deg, #093a2c, #084038, #063d3e, #05363e);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+
+    /* bottom fade effect */
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+
 /* TailwindCSS custom styling for inline code */
 .prose code {
   background-color: #090909; /* dark blackish background */

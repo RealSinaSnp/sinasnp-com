@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes"; 
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
+import HeaderTest from "@/components/TestHeaderPortfolio";
+import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
 
@@ -73,12 +75,14 @@ export default function CVPage() {
                                                                       "/img/regex.webp", // regex
     "https://img.icons8.com/?size=100&id=13654&format=png&color=000000", // MS Excel
     "https://cdn.brandfetch.io/idSA6yVd-w/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Virtual Box
+    "/img/Jupyter_loogo.webp", // Virtual Box
   ];
   
 
   return (
     <div className={`${isDark ? "dark bg-[#0c0c0c] text-white" : "bg-white text-black"}`}>
-      
+      <WIPModal />
+      <HeaderTest />
       
 
       <div className="pt-20 max-w-7xl mx-auto">
@@ -102,17 +106,20 @@ export default function CVPage() {
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[1] min-w-0 overflow-hidden">
           <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
-            Web developer with 3 years background in web \design. Proficient in developing \
-            scalable interfaces and RESTful APIs. Experienced in collaborative development \
-            environments using Git and CI/CD workflows. Eager to grow within innovative \
-            teams and deliver impactful digital solutions across web and mobile platforms. \
+            Web developer with 3 years background in web \design and familiar with backend technologies. \
+            Proficient in developing scalable interfaces and RESTful APIs. \
+            Experienced in collaborative development environments using Git and CI/CD workflows. \
+            I am passionate about creating user-friendly and responsive web applications that \
+            provide a seamless user experience. \
             '}/>
         </div>
         <div className="flex-[1]">
           <InfoCard title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={knowledges} isTrans={true} logos={dataLogos} description={' \
-            Python developer with 3 years background in writing scripts. Demonstrating a \
-            passion for practical problem-solving and emerging technologies. Experienced in \
-            collaborative development environments using Git, Docker and CI/CD workflows.  \
+            Python developer with 2 years background in writing scripts for web  \
+            scraping and data analysis. Proficient in using Python libraries such as \
+            Pandas, NumPy, and Matplotlib for data manipulation and visualization. \
+            Familiar with SQL databases and have experience in data extraction and transformation. \
+            I am passionate about leveraging data to drive insights and improve decision-making. \
             '}/>
 
         </div>
@@ -150,6 +157,7 @@ export default function CVPage() {
       
     </div>
     </div>
+    
     
   );
 }

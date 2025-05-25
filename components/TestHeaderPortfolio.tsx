@@ -8,7 +8,9 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import HeaderSticky from "./HeaderSticky";
 
-export default function PortfolioHeader() {
+export default function HeaderTest() {
+
+
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
   const [showSticky, setShowSticky] = useState(false);
@@ -24,25 +26,31 @@ export default function PortfolioHeader() {
   }, []);
 
   return (
-    <>
-      <header
-        className={`h-screen w-full flex flex-col justify-center items-center text-center gap-6 px-6 ${isDark ? "bg-animated-gradient-dark text-white" : "bg-animated-gradient text-black"}`}>
-          
-        <img src="/img/profile.jpg" alt="Profile"
-          className={`w-32 h-32 md:w-40 md:h-40 rounded-full border-4 ${isDark ? "border-white" : "border-black"} transition`}/>
+<>
 
-        <h1 className="text-4xl md:text-5xl font-bold">Sina Sasanpour</h1>
-        <p className="text-lg">Istanbul | React Developer</p>
 
-        <div className="flex gap-4 mt-2">
+<header
+  className={`min-h-[85vh] w-full grid grid-cols-1 md:grid-cols-2 items-center px-8 py-12 bg-no-repeat bg-[length:400%_400%] bg-[position:0%_50%] 
+    ${ isDark ? "bg-animated-gradient--fade-dark text-white" : "bg-animated-gradient-fade  text-black" } 
+    animate-gradient-x  transition`}>
+
+    <div className="flex flex-col gap-6">
+  <h1 className={`text-5xl font-extrabold tracking-tight text-gray-900 ${ isDark ? "text-white" : "text-black " } `}>
+    Hey, I’m <span className={`${ isDark ? "text-teal-300" : "text-black " } `}>Sina Sasanpour</span>
+  </h1>
+  <p className={`text-xl ${ isDark ? "text-white" : "text-black " } `}>
+    A React Developer crafting <span className="font-medium text-indigo-500">clean code</span> and {isDark ? "in Dark Mode " : "building snappy UIs "}
+     in <strong>Istanbul</strong>.
+  </p>
+  
+  <div className="flex gap-4 mt-4 text-xl">
+    <button onClick={() => setTheme(isDark ? "light" : "dark")} className="text-white">
+            {isDark ? <Sun /> : <Moon color="#000" />}
+          </button>
           <a href="/blog" target="_blank" rel="noopener noreferrer" 
             className={`flex items-center mt-[-6] gap-2 px-2 py-1 border-2 
-                ${isDark
-                ? "border-teal-300 text-teal-100 hover:text-white hover:bg-teal-800"
-                : "border-[#17313c] text-[#17313c] hover:text-black hover:bg-teal-200"
-                } 
-                transition`}
-          >
+                ${isDark ? "border-teal-300 text-teal-100 hover:text-white hover:bg-teal-800" : "border-[#17313c] text-[#17313c] hover:text-black hover:bg-teal-200" } 
+                transition`}>
             <Newspaper className="w-5 h-5" />
             <span className="font-medium">Blog</span>
           </a>
@@ -73,9 +81,17 @@ export default function PortfolioHeader() {
               } transition`}
             />
           </a>
-        </div>
+          
+        
+  </div>
+  
+</div>
 
-        <div className="flex items-center gap-4 mt-4">
+
+<div className="flex flex-col items-center justify-center">
+  <img src="/img/profile.jpg" className="w-44 h-44 rounded-full shadow-lg border-4 border-teal-500" />
+  
+  <div className="flex items-center gap-4 mt-4">
           <a
             href="/docs/CV_EN_dark.pdf"
             download
@@ -85,30 +101,14 @@ export default function PortfolioHeader() {
           >
             Download CV (PDF)
           </a>
-          <button onClick={() => setTheme(isDark ? "light" : "dark")} className="text-white">
-            {isDark ? <Sun /> : <Moon color="#000" />}
-          </button>
+          
         </div>
-        <p className="max-w-2xl text-center text-lg leading-relaxed transition">
-          I focus on clean code
-          {theme == "dark" ? ", and dark mode (because I respect your eyes)" : "fast loading and responsiveness"}.
-        </p>
-        <div className="absolute bottom-6 animate-bounce">
-          <a className="text-white hover:text-teal-200 transition">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mx-auto"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-        </div>
-      </header>
-      {showSticky && <HeaderSticky />}
-    </>
-  );
+</div>
+
+
+</header>
+{showSticky && <HeaderSticky />}
+</>
+
+);
 }
