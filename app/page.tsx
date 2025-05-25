@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes"; 
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
-import HeaderTest from "@/components/TestHeaderPortfolio";
+import PortfolioHeader from "@/components/HeaderPortfolio";
 import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
@@ -14,11 +14,6 @@ import WIPModal from '@/components/WIPModal';
 
 export default function CVPage() {
 
-
-  const [year, setYear] = useState<number | null>(null);
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
 
   // keep dark/light mode on tooggle
   const { theme } = useTheme();
@@ -82,7 +77,7 @@ export default function CVPage() {
   return (
     <div className={`${isDark ? "dark bg-[#0c0c0c] text-white" : "bg-white text-black"}`}>
       <WIPModal />
-      <HeaderTest />
+      <PortfolioHeader />
       
 
       <div className="pt-20 max-w-7xl mx-auto">
@@ -139,21 +134,11 @@ export default function CVPage() {
 
 
 
-      {year && (
+      
         <footer className="pt-5 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
-          © {year} Sina. All rights reserved.
+          © 2025 Sina. All rights reserved.
         </footer>
-      )} 
-      {/* 
-      <InfoCard 
-  title="hi" 
-  color="text-red-500" 
-  items={[
-    { label: 'hi', level: 70 },
-    { label: 'there', level: 90 }
-  ]}
-/>
-*/}
+      
       
     </div>
     </div>

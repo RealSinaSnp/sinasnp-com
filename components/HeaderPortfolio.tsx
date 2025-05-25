@@ -16,7 +16,7 @@ export default function PortfolioHeader() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const triggerHeight = window.innerHeight * 0.95;
+      const triggerHeight = window.innerHeight * 0.70;
       setShowSticky(offset > triggerHeight);
     };
     window.addEventListener("scroll", handleScroll);
@@ -24,91 +24,139 @@ export default function PortfolioHeader() {
   }, []);
 
   return (
-    <>
-      <header
-        className={`h-screen w-full flex flex-col justify-center items-center text-center gap-6 px-6 ${isDark ? "bg-animated-gradient-dark text-white" : "bg-animated-gradient text-black"}`}>
-          
-        <img src="/img/profile.jpg" alt="Profile"
-          className={`w-32 h-32 md:w-40 md:h-40 rounded-full border-4 ${isDark ? "border-white" : "border-black"} transition`}/>
-
-        <h1 className="text-4xl md:text-5xl font-bold">Sina Sasanpour</h1>
-        <p className="text-lg">Istanbul | React Developer</p>
-
-        <div className="flex gap-4 mt-2">
-          <a href="/blog" target="_blank" rel="noopener noreferrer" 
-            className={`flex items-center mt-[-6] gap-2 px-2 py-1 border-2 
-                ${isDark
-                ? "border-teal-300 text-teal-100 hover:text-white hover:bg-teal-800"
-                : "border-[#17313c] text-[#17313c] hover:text-black hover:bg-teal-200"
-                } 
-                transition`}
-          >
-            <Newspaper className="w-5 h-5" />
-            <span className="font-medium">Blog</span>
-          </a>
-          <a href="https://github.com/RealSinaSnp" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon
-              icon={faGithub}
-              size="lg"
-              className={`${
-                isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"
-              } transition`}
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/realsinasnp/" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              size="lg"
-              className={`${
-                isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"
-              } transition`}
-            />
-          </a>
-          <a href="https://x.com/RealSinaSNP" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon
-              icon={faXTwitter}
-              size="lg"
-              className={`${
-                isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"
-              } transition`}
-            />
-          </a>
-        </div>
-
-        <div className="flex items-center gap-4 mt-4">
-          <a
-            href="/docs/CV_EN_dark.pdf"
-            download
-            className={`px-5 py-2 text-white font-semibold  ${
-              isDark ? "bg-teal-500 hover:bg-teal-600" : "bg-[#002F19] hover:bg-[#0e634b]"
-            } transition`}
-          >
-            Download CV (PDF)
-          </a>
-          <button onClick={() => setTheme(isDark ? "light" : "dark")} className="text-white">
-            {isDark ? <Sun /> : <Moon color="#000" />}
-          </button>
-        </div>
-        <p className="max-w-2xl text-center text-lg leading-relaxed transition">
-          I focus on clean code
-          {theme == "dark" ? ", and dark mode (because I respect your eyes)" : "fast loading and responsiveness"}.
-        </p>
-        <div className="absolute bottom-6 animate-bounce">
-          <a className="text-white hover:text-teal-200 transition">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mx-auto"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-        </div>
-      </header>
-      {showSticky && <HeaderSticky />}
-    </>
-  );
-}
+      <>
+        <header
+          className={`min-h-[85vh] w-full bg-no-repeat bg-[length:400%_400%] bg-[position:0%_50%] 
+          ${isDark ? "bg-animated-gradient--fade-dark text-white" : "bg-animated-gradient-fade text-black" }
+          animate-gradient-x  transition`}  >
+          <div className={` md:pt-30 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-8 py-12 `} >
+            <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left order-2 md:order-1">
+              <h1 className={`text-5xl font-extrabold tracking-tight text-gray-900 
+                ${ isDark ? "text-white" : "text-black " } `} >
+                Hey, I’m{" "}
+                <span className={`${
+                    isDark
+                      ? "txt-animated-gradient-dark"
+                      : "txt-animated-gradient"
+                  } transition`}
+                >
+                  Sina
+                  <span className="hidden md:inline"> Sasanpour</span>
+                </span>
+              </h1>
+              <div className="flex flex-row gap-2">
+              <button
+                  onClick={() => setTheme(isDark ? "light" : "dark")}
+                  className="text-white transition"
+                >
+                  {isDark ? <Sun /> : <Moon color="#000" />}
+                </button>
+              <p className={`text-xl ${isDark ? "text-white" : "text-black "} `}>
+                Coding with{" {"}
+                <span className="font-medium txt-animated-gradient-stylish font-extrabold">style</span>{"} "}
+                <span className="hidden md:inline">
+                  {isDark ? "in Dark Mode." : "and building snappy UIs."}
+                </span>
+              </p>
+  
+              </div>
+  
+              
+            </div>
+  
+  
+  
+            <div className="flex flex-col items-center lg:items-end md:items-end justify-center order-1 pb-5 md:pb-10 order-1 md:order-2">
+              <img
+                src="/img/profile_slfy.png"
+                className="w-52 h-50"
+              />
+  
+  
+  
+              <div className="flex gap-4 mt-4 text-xl">
+                
+                <a
+                  href="/blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center mt-[-6] gap-2 px-2 py-1 border-2 rounded-full font-semibold
+                  ${
+                    isDark
+                      ? "border-teal-300 text-teal-200 hover:text-white hover:bg-teal-800"
+                      : "border-[#17313c] text-[#17313c] hover:text-black hover:bg-teal-200"
+                  } 
+                  transition`}
+                >
+                  <Newspaper className="w-5 h-5" />
+                  <span className="font-medium">Blog</span>
+                </a>
+                <a
+                  href="https://github.com/RealSinaSnp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    size="lg"
+                    className={`${
+                      isDark
+                        ? "text-teal-100 hover:text-white"
+                        : "text-[#17313c] hover:text-black"
+                    } transition`}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/realsinasnp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    size="lg"
+                    className={`${
+                      isDark
+                        ? "text-teal-100 hover:text-white"
+                        : "text-[#17313c] hover:text-black"
+                    } transition`}
+                  />
+                </a>
+                <a
+                  href="https://x.com/RealSinaSNP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faXTwitter}
+                    size="lg"
+                    className={`${
+                      isDark
+                        ? "text-teal-100 hover:text-white"
+                        : "text-[#17313c] hover:text-black"
+                    } transition`}
+                  />
+                </a>
+              </div>
+              {/*
+              <div className="flex items-center gap-4 mt-4">
+                <a
+                  href="/docs/CV_EN_dark.pdf"
+                  download
+                  className={`px-5 py-2 text-white font-semibold  ${
+                    isDark
+                      ? "bg-teal-500 hover:bg-teal-600"
+                      : "bg-[#002F19] hover:bg-[#0e634b]"
+                  } transition`}
+                >
+                  Download CV (PDF)
+                </a>
+              </div>
+              */}
+            </div>
+          </div>
+        </header>
+        {showSticky && <HeaderSticky />}
+      </>
+    );
+  }
+  
