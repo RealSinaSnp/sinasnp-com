@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import { useTheme } from "next-themes"; 
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
