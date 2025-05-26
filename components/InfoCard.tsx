@@ -20,6 +20,7 @@ interface InfoCardProps {
 
   fullScreenContent?: React.ReactNode;
   logos?: string[];
+  customTilt?: number;
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({
@@ -30,6 +31,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   showCheckmarks = false,
   isTrans = true,
   logos = [],
+  customTilt,
 }) => {
   const { theme } = useTheme();
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
@@ -67,7 +69,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
     setMousePos(null);
   };
 
-  const maxTilt = 5;
+  const maxTilt = customTilt || 4; // Default tilt value if customTilt is not provided
   const tiltX = mousePos
     ? ((mousePos.y - dimensions.height / 2) / (dimensions.height / 2)) *
       -maxTilt

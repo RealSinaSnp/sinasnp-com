@@ -118,10 +118,10 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6" id="skills-tools">
         <div className="flex-[3]">
-          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} />
+          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={2}/>
         </div>
         <div className="flex-[1]">
-          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} logos={dataLogos} />
+          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} logos={dataLogos} customTilt={5} />
         </div>
         
       </section>
