@@ -80,17 +80,20 @@ export default function PortfolioHeader() {
                   href="/blog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center mt-[-6] gap-2 px-2 py-1 border-2 rounded-full font-semibold
+                  className={`flex items-center mt-[-6] px-2 inset-x-[30px] top-[30px] gap-2 border-2 border-transparent rounded-full font-semibold
                   ${
                     isDark
-                      ? "border-teal-300 text-teal-200 hover:text-white hover:bg-teal-800"
-                      : "border-[#17313c] text-[#17313c] hover:text-black hover:bg-teal-200"
+                      ? "text-teal-200 hover:text-white hover:bg-teal-800"
+                      : "text-[#17313c] hover:text-black hover:bg-teal-200"
                   } 
                   transition`}
                 >
                   <Newspaper className="w-5 h-5" />
                   <span className="font-medium">Blog</span>
                 </a>
+
+                <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
+
                 <a
                   href="https://github.com/RealSinaSnp"
                   target="_blank"
