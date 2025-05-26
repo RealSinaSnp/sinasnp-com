@@ -100,21 +100,17 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[1] min-w-0">
-          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
-            Web developer with 3 years background in web \design and familiar with backend technologies. \
-            Proficient in developing scalable interfaces and RESTful APIs. \
-            Experienced in collaborative development environments using Git and CI/CD workflows. \
-            I am passionate about creating user-friendly and responsive web applications that \
-            provide a seamless user experience. \
+          <InfoCard title="Web Development (3 Years)" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
+            Web developer with 3 years background in web \design and familiar with backend technologies.  \
+ I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
+ I’m comfortable setting up servers, managing deployment pipelines with Docker. \
             '}/>
         </div>
         <div className="flex-[1]">
           <InfoCard title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={knowledges} isTrans={true} logos={dataLogos} description={' \
-            Python developer with 2 years background in writing scripts for web  \
-            scraping and data analysis. Proficient in using Python libraries such as \
-            Pandas, NumPy, and Matplotlib for data manipulation and visualization. \
-            Familiar with SQL databases and have experience in data extraction and transformation. \
-            I am passionate about leveraging data to drive insights and improve decision-making. \
+            Python developer with 2 years background in writing scripts data manipulation, exploration, and visualization. \
+            Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing meaningful insights \
+            while emphasizing clarity, validity. \
             '}/>
 
         </div>

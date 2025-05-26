@@ -11,7 +11,7 @@ export default function HeaderSticky() {
   const toggleDark = () => setTheme(isDark ? "light" : "dark");
 
   return (
-    <div className={`fixed top-0 w-full z-50 bg-teal-500  ${ isDark ? "bg-animated-gradient-dark" : "bg-animated-gradient"} shadow-md transition-all animate-slideDown`}>
+    <div className={`h-14 fixed top-0 w-full z-50 bg-teal-500  ${ isDark ? "bg-animated-gradient-fade-dark" : "bg-animated-gradient-fade"} shadow-md transition-all animate-slideDown`}>
     
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-3">
@@ -20,6 +20,10 @@ export default function HeaderSticky() {
         </div>
 
         <div className="flex items-center gap-3">
+          <a href="/blog" target="_blank" rel="noopener noreferrer" className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}>
+            <Newspaper className="w-6 h-6" />
+          </a>
+          <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
           <a href="https://github.com/RealSinaSnp" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}/>
           </a>
@@ -29,10 +33,7 @@ export default function HeaderSticky() {
           <a href="https://x.com/RealSinaSNP" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faXTwitter} className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}/>
           </a>
-
-          <a href="/blog" target="_blank" rel="noopener noreferrer" className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}>
-            <Newspaper className="w-6 h-6" />
-          </a>
+          <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
 
           <button onClick={toggleDark} className="text-white">
             {isDark ? <Sun /> : <Moon className="text-black"/>}
