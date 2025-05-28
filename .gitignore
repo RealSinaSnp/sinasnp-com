@@ -47,7 +47,7 @@ text.txt
 
 # docker
 docker-compose.yml
-Dockerfile
+# Dockerfile
 nginx.conf
 /certs
 pre-deployment-build.log

@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
 import PortfolioHeader from "@/components/HeaderPortfolio";
-import WIPModal from '@/components/WIPModal';
+//import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
 
@@ -76,11 +76,11 @@ export default function CVPage() {
 
   return (
     <div className={`${isDark ? "dark bg-[#0c0c0c] text-white" : "bg-white text-black"}`}>
-      <WIPModal />
+      
       <PortfolioHeader />
       
 
-      <div className="pt-20 max-w-7xl mx-auto">
+      <div className="pt-15 md:pt-20 max-w-7xl mx-auto">
 
       <section className="p-6" id="about">
         <div className="flex flex-col pb-7 gap-6 lg:flex-row lg:items-start lg:justify-between max-w-xl space-y-12">
@@ -100,7 +100,7 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[1] min-w-0">
-          <InfoCard title="Web Development (3 Years)" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
+          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design and familiar with backend technologies.  \
  I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
  I’m comfortable setting up servers, managing deployment pipelines with Docker. \

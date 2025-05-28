@@ -11,6 +11,7 @@ import "./globals.css";
 // import HeaderTest from "@/components/TestHeaderPortfolio";
 import BlogHeader from "@/components/HeaderBlog";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <GoogleAnalytics gaId="G-BFJVGKE0T0" />
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>

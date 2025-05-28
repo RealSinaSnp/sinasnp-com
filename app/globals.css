@@ -48,7 +48,7 @@ body {
 .bg-animated-gradient-fade {
   background: linear-gradient(-45deg, #22E4AC, #1BD7BB, #14C9CB, #0FBED8);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 5s ease infinite;
 
   /* bottom fade effect */
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
