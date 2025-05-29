@@ -106,7 +106,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
       <CardWrapper
         layoutId={isTrans ? `card-${title}` : undefined}
         ref={cardRef}
-        className={`group flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none
+        className={`${isTrans ? "" : "hover:cursor-default"} group flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none
           hover:ring-[1px] ${
             theme === "dark"
               ? "hover:ring-neutral-800"
