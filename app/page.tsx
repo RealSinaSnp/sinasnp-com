@@ -7,6 +7,8 @@ import { useTheme } from "next-themes";
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
 import PortfolioHeader from "@/components/HeaderPortfolio";
+//import InfoCard2 from "@/components/InfoCard2";
+//import InfoCard1 from "@/components/InfoCard1";
 //import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
@@ -36,14 +38,23 @@ export default function CVPage() {
   ];
 
   const skills = [
-    { label: "Docker", level: 75 },
-    { label: "React", level: 55 },
+    { label: "Unit Testing", level: 75 },
+    { label: "Git", level: 55 },
     { label: "SHELL/LINUX", level: 75 },
     { label: "SQL", level: 85 },
   ];
 
   
   const interests = [
+    { label: "Team Player", level: 75},
+    { label: "Problem Solving", level: 75 },
+    { label: "Creativity", level: 75 },
+    { label: "Attention to details", level: 75 },
+    { label: "Analytical", level: 75 },
+  ];
+
+
+  const characteristics = [
     { label: "Building side projects", level: 75},
     { label: "Automating boring tasks", level: 75 },
     { label: "Tech blogging", level: 75 },
@@ -117,11 +128,14 @@ export default function CVPage() {
       </section>
 
       <section className="p-6 flex flex-col lg:flex-row gap-6" id="skills-tools">
-        <div className="flex-[3]">
-          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={2}/>
+        <div className="flex-[2]">
+          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
         </div>
         <div className="flex-[1]">
-          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} logos={dataLogos} customTilt={5} />
+          <InfoCard title="Characteristics" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
+        </div>
+        <div className="flex-[1]">
+          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         
       </section>
@@ -130,7 +144,49 @@ export default function CVPage() {
 
 
 
+
+
+
+
+
+      <section className="p-6 flex flex-col lg:flex-row gap-6" id="skills-tools">
+        <div className="flex-[2]">
+          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
+        </div>
+        <div className="flex-[1]">
+          <InfoCard title="Characteristics" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
+        </div>
+        <div className="flex-[1]">
+          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
+        </div>
+        
+      </section>
+
       
+{/*
+      <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
+        <div className="flex-[1] min-w-0">
+          <InfoCard1 title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
+            Web developer with 3 years background in web \design and familiar with backend technologies.  \
+ I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
+ I’m comfortable setting up servers, managing deployment pipelines with Docker. \
+            '}/>
+        </div>
+        <div className="flex-[1]">
+          <InfoCard1 title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={knowledges} isTrans={true} logos={dataLogos} description={' \
+            Python developer with 2 years background in writing scripts data manipulation, exploration, and visualization. \
+            Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing meaningful insights \
+            while emphasizing clarity, validity. \
+            '}/>
+
+        </div>
+      </section>
+*/}
+
+      
+
+
+
         <footer className="pt-5 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
           © 2025 Sina. All rights reserved.
         </footer>

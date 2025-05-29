@@ -1,8 +1,10 @@
+{/*
+
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, Maximize2   } from "lucide-react";
+import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import LogoBox from "@/components/LogoScroll";
@@ -23,18 +25,14 @@ interface InfoCardProps {
   customTilt?: number;
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({
+const InfoCard2: React.FC<InfoCardProps> = ({
   title,
-  description,
   color,
   items,
   showCheckmarks = false,
-  isTrans = true,
-  logos = [],
   customTilt,
 }) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark"; 
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
     null
   );
@@ -42,7 +40,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
     width: number;
     height: number;
   }>({ width: 0, height: 0 });
-  const [isOpen, setIsOpen] = useState(false);
+  
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -96,7 +94,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   const bgBar = theme === "dark" ? "bg-gray-700" : "bg-gray-200";
   const progressBar = theme === "dark" ? "bg-green-700" : "bg-indigo-500";
 
-  const CardWrapper = isTrans ? motion.div : "div";
+  const CardWrapper =  "div";
 
 
   
@@ -104,16 +102,16 @@ const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <>
       <CardWrapper
-        layoutId={isTrans ? `card-${title}` : undefined}
+        
         ref={cardRef}
-        className={`group flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none
+        className={`flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none
           hover:ring-[1px] ${
             theme === "dark"
               ? "hover:ring-neutral-800"
               : "hover:ring-neutral-200"
           }
         hover:scale-100 transform-gpu transition-all duration-300 ease-in-out ${textColor}`}
-        onClick={() => isTrans && setIsOpen(true)}
+        
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
@@ -130,25 +128,11 @@ const InfoCard: React.FC<InfoCardProps> = ({
         }}
       >
         <h2 className={`text-xl font-semibold mb-4 ${color} font-sans transition`} > {title} </h2>
-        {!isOpen && isTrans && (
-          <div className="w-full -mb-20 items-center justify-between overflow-hidden">
-            <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
-            <div className="w-full overflow-hidden max-w-full">
-              <LogoBox logos={logos} />
-            </div>
-            {/* expand icon */}
-            <div className="absolute top-3 right-3"> 
-              <div className={`w-11 h-11 rounded-full ${isDark ? "bg-black group-hover:bg-transparent" : "bg-white"} flex items-center justify-center group-hover:bg-transparent `}>
-                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out ${isDark ? "text-white" : "text-black"} md:animate-none md:group-hover:scale-170`} />
-              </div>
-            </div>
-          </div>
-          
-        )}
+        
         <div className="space-y-4">
           {items.map((item) => (
             <div key={item.label}>
-              {!isTrans && (
+              
                 <div className="flex items-center justify-between">
                   <p
                     className={`text-sm font-medium font-sans ${textColor} transition`}
@@ -156,62 +140,34 @@ const InfoCard: React.FC<InfoCardProps> = ({
                     {item.label}
                   </p>
                   {showCheckmarks && (
-                    <CheckCircle className={`w-4 h-4 ${ theme === "dark" ? "text-green-400" : "text-green-600" } transition`} />
+                    <CheckCircle
+                      className={`w-4 h-4 ${
+                        theme === "dark" ? "text-green-400" : "text-green-600"
+                      } transition`}
+                    />
                   )}
                 </div>
-              )}
-              {!showCheckmarks && !isTrans && (
+              
+              
                 <div className={`mt-1 w-full h-2 ${bgBar} rounded-full`}>
                   <div
                     className={`h-full ${progressBar} rounded-r-full transition`}
                     style={{ width: `${item.level}%` }}
                   ></div>
                 </div>
-              )}
+              
             </div>
           ))}
         </div>
       </CardWrapper>
 
-      <AnimatePresence>
-        {isOpen && isTrans && (
-          <motion.div
-            layoutId={`card-${title}`}
-            className={`fixed inset-0 z-50 ${
-              theme === "dark" ? "bg-black/60" : "bg-white/60"
-            } backdrop-blur-lg p-10 flex justify-center items-center`}
-            onClick={() => setIsOpen(false)}
-          >
-            <motion.div className="max-w-2xl w-full bg-white dark:bg-neutral-900 text-black dark:text-white p-6 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">{title}</h2>
-              <p>More content soon...</p>
-              <div className="space-y-4">
-                {items.map((item) => (
-                  <div key={item.label}>
-                    <div className="flex items-center justify-between">
-                      <p
-                        className={`text-sm font-medium font-sans ${textColor} transition`}
-                      >
-                        {item.label}
-                      </p>
-                    </div>
-                    {!showCheckmarks && (
-                      <div className={`mt-1 w-full h-2 ${bgBar} rounded-full`}>
-                        <div
-                          className={`h-full ${progressBar} rounded-r-full transition`}
-                          style={{ width: `${item.level}%` }}
-                        ></div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      
     </>
   );
 };
 
-export default InfoCard;
+export default InfoCard2;
+
+
+
+*/}
