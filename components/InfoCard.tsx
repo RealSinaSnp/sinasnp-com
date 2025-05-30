@@ -189,7 +189,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
       } backdrop-blur-lg p-10 flex justify-center items-center`}
       onClick={() => setIsOpen(false)}
     >
-      <motion.div className="max-w-4xl w-full bg-white dark:bg-neutral-900 text-black dark:text-white p-6 rounded-lg">
+      <motion.div className={` max-w-4xl border-1 w-full ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"}  p-10   rounded-lg`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
   {Object.entries(groupedItems).map(([category, group]) => (
     <div key={category}>

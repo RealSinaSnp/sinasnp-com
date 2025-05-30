@@ -23,38 +23,39 @@ export default function CVPage() {
 
   // for InfoCard
   const webSkills = [
-    { label: "Tailwind CSS", level: 90, category: "Frontend" },
-    { label: "JS", level: 80, category: "Frontend" },
+    { label: "Javascript", level: 80, category: "Frontend" },
     { label: "Typescript", level: 70, category: "Frontend" },
-    { label: "React.js", level: 90, category: "Backend" },
+    { label: "React", level: 90, category: "Frontend" },
+    { label: "Tailwind CSS", level: 90, category: "Frontend" },
     { label: "Next.js", level: 80, category: "Backend" },
     { label: "PHP", level: 60, category: "Backend" },
     { label: "MySQL", level: 95, category: "Database" },
     { label: "MongoDB", level: 75, category: "Database" },
-    { label: "Linux", level: 85, category: "Server" },
-    { label: "Docker", level: 75, category: "Server" },
-    { label: "Nginx", level: 65, category: "Server" },
+    { label: "Linux", level: 85, category: "Infrastructure" },
+    { label: "Docker", level: 75, category: "Infrastructure" },
+    { label: "Nginx", level: 65, category: "Infrastructure" },
   ];
 
   const dataSkills = [
     { label: "Python", level: 90, category: "Data" },
     { label: "Tableau", level: 80, category: "Data" },
+    { label: "Regex", level: 75, category: "Data" },
+    { label: "LaTeX", level: 65, category: "Data" },
     { label: "C++", level: 70, category: "Application" },
     { label: "Visual Basic (for MS Office)", level: 90, category: "Application" },
     { label: "MySQL", level: 80, category: "Database" },
     { label: "MSSQL", level: 60, category: "Database" },
-    { label: "MySQL", level: 95, category: "Database" },
-    { label: "Shell / Linux", level: 75, category: "Server" },
-    { label: "Virtual Box", level: 85, category: "Server" },
-    { label: "Regex", level: 75, category: "Data" },
-    { label: "LaTeX", level: 65, category: "Data" },
+    { label: "MongoDB", level: 95, category: "Database" },
+    { label: "Shell / Linux", level: 75, category: "System" },
+    { label: "Virtual Box", level: 85, category: "System" },
   ];
 
   const skills = [
     { label: "Unit Testing", level: 75, category: "Data" },
-    { label: "Git", level: 55, category: "Data" },
-    { label: "SHELL/LINUX", level: 75, category: "Data" },
-    { label: "SQL", level: 85, category: "Data" },
+    { label: "Agile", level: 80, category: "Data" },
+    { label: "Version Control", level: 75, category: "Data" },
+    { label: "Documentation", level: 85, category: "Data" },
+    { label: "Security Solutions", level: 50, category: "Data" },
   ];
 
   
@@ -142,26 +143,25 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6" id="skills-tools">
         <div className="flex-[3]">
-          <InfoCard title="Computer Skills" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
+          <InfoCard title="Development Practices" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
         </div>
-        <div className="flex-[1]">
+        <div className="flex-[1.5]">
           <InfoCard title="Characteristics" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
         </div>
-        <div className="flex-[1]">
+        <div className="flex-[1.4]">
           <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         
       </section>
 
       <Projects />
-
-
-        <footer className="pt-5 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
-          © 2025 Sina. All rights reserved.
-        </footer>
       
+      </div>
+
       
-    </div>
+      <footer className="border-t-1 border-neutral-500 pt-5 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
+        © 2025 Sina
+      </footer>
     </div>
     
     

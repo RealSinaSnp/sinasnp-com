@@ -16,7 +16,7 @@ export default function PortfolioHeader() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const triggerHeight = window.innerHeight * 0.70;
+      const triggerHeight = window.innerHeight * 0.75;
       setShowSticky(offset > triggerHeight);
     };
     window.addEventListener("scroll", handleScroll);
@@ -26,20 +26,15 @@ export default function PortfolioHeader() {
   return (
       <>
         <header
-          className={`min-h-[85vh] w-full bg-no-repeat bg-[length:400%_400%] bg-[position:0%_50%] 
-          ${isDark ? "bg-animated-gradient-fade-dark text-white" : "bg-animated-gradient-fade text-black" }
-          animate-gradient-x  transition`}  >
-          <div className={` md:pt-30 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-8 py-12 `} >
+          className={`min-h-[85vh] w-full bg-no-repeat  
+                      ${isDark ? "bg-animated-gradient-fade-dark text-white" : "bg-animated-gradient-fade text-black" }`}  
+        >
+          <div className={` md:pt-30 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-8 py-12 md:py-0`} >
             <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left order-2 md:order-1">
               <h1 className={`text-5xl font-extrabold tracking-tight text-gray-900 
                 ${ isDark ? "text-white" : "text-black " } `} >
                 Hey, I’m{" "}
-                <span className={`${
-                    isDark
-                      ? "txt-animated-gradient-dark"
-                      : "txt-animated-gradient"
-                  } transition`}
-                >
+                <span className={`${isDark ? "txt-animated-gradient-dark" : "txt-animated-gradient" } transition`}>
                   Sina
                   <span className="hidden md:inline"> Sasanpour</span>
                 </span>
@@ -53,7 +48,7 @@ export default function PortfolioHeader() {
                 </button>
               <p className={`text-xl ${isDark ? "text-white" : "text-black "} `}>
                 Coding with{" {"}
-                <span className="font-medium txt-animated-gradient-stylish font-extrabold">style</span>{"} "}
+                <span className="font-medium txt-animated-gradient-stylish">style</span>{"} "}
                 <span className="hidden md:inline">
                   {isDark ? "in Dark Mode." : "and building snappy UIs."}
                 </span>
@@ -66,7 +61,7 @@ export default function PortfolioHeader() {
   
   
   
-            <div className="flex flex-col items-center lg:items-end md:items-end justify-center order-1 pb-5 md:pb-10 order-1 md:order-2">
+            <div className="flex flex-col items-center lg:items-end md:items-end justify-center order-1 pb-5 md:pb-10 md:order-2">
               <img
                 src="/img/profile_slfy.png"
                 className="w-52 h-50"
