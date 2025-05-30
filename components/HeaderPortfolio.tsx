@@ -47,7 +47,7 @@ export default function PortfolioHeader() {
               <div className="flex flex-row gap-2">
               <button
                   onClick={() => setTheme(isDark ? "light" : "dark")}
-                  className="text-white transition"
+                  className="text-white hover:cursor-pointer transition"
                 >
                   {isDark ? <Sun /> : <Moon color="#000" />}
                 </button>

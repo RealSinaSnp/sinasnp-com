@@ -22,44 +22,57 @@ export default function CVPage() {
   const isDark = theme === "dark"; 
 
   // for InfoCard
-  const langs = [
-    { label: "C#", level: 80 },
-    { label: "Python", level: 90 },
-    { label: "JS", level: 80 },
-    { label: "PHP", level: 65 },
+  const webSkills = [
+    { label: "Tailwind CSS", level: 90, category: "Frontend" },
+    { label: "JS", level: 80, category: "Frontend" },
+    { label: "Typescript", level: 70, category: "Frontend" },
+    { label: "React.js", level: 90, category: "Backend" },
+    { label: "Next.js", level: 80, category: "Backend" },
+    { label: "PHP", level: 60, category: "Backend" },
+    { label: "MySQL", level: 95, category: "Database" },
+    { label: "MongoDB", level: 75, category: "Database" },
+    { label: "Linux", level: 85, category: "Server" },
+    { label: "Docker", level: 75, category: "Server" },
+    { label: "Nginx", level: 65, category: "Server" },
   ];
 
-  const knowledges = [
-    { label: "Unit Testing", level: 75 },
-    { label: "Version Control (Git)", level: 55 },
-    { label: "Networking Basics (HTTP, DNS, Ports)", level: 80 },
-    { label: "CI/CD Fundamentals", level: 65 },
-    { label: "Secure Coding Practices", level: 65 },
+  const dataSkills = [
+    { label: "Python", level: 90, category: "Data" },
+    { label: "Tableau", level: 80, category: "Data" },
+    { label: "C++", level: 70, category: "Application" },
+    { label: "Visual Basic (for MS Office)", level: 90, category: "Application" },
+    { label: "MySQL", level: 80, category: "Database" },
+    { label: "MSSQL", level: 60, category: "Database" },
+    { label: "MySQL", level: 95, category: "Database" },
+    { label: "Shell / Linux", level: 75, category: "Server" },
+    { label: "Virtual Box", level: 85, category: "Server" },
+    { label: "Regex", level: 75, category: "Data" },
+    { label: "LaTeX", level: 65, category: "Data" },
   ];
 
   const skills = [
-    { label: "Unit Testing", level: 75 },
-    { label: "Git", level: 55 },
-    { label: "SHELL/LINUX", level: 75 },
-    { label: "SQL", level: 85 },
+    { label: "Unit Testing", level: 75, category: "Data" },
+    { label: "Git", level: 55, category: "Data" },
+    { label: "SHELL/LINUX", level: 75, category: "Data" },
+    { label: "SQL", level: 85, category: "Data" },
   ];
 
   
   const interests = [
-    { label: "Team Player", level: 75},
-    { label: "Problem Solving", level: 75 },
-    { label: "Creativity", level: 75 },
-    { label: "Attention to details", level: 75 },
-    { label: "Analytical", level: 75 },
+    { label: "Team Player", level: 75, category: "Data" },
+    { label: "Problem Solving", level: 75, category: "Data" },
+    { label: "Creativity", level: 75, category: "Data" },
+    { label: "Attention to details", level: 75, category: "Data" },
+    { label: "Analytical", level: 75, category: "Data" },
   ];
 
 
   const characteristics = [
-    { label: "Building side projects", level: 75},
-    { label: "Automating boring tasks", level: 75 },
-    { label: "Tech blogging", level: 75 },
-    { label: "UI/UX design exploration", level: 75 },
-    { label: "Following tech news and trends", level: 75 },
+    { label: "Building side projects", level: 75, category: "Data" },
+    { label: "Automating boring tasks", level: 75 , category: "Data" },
+    { label: "Tech blogging", level: 75 , category: "Data" },
+    { label: "UI/UX design exploration", level: 75, category: "Data" },
+    { label: "Following tech news and trends", level: 75, category: "Data" },
   ];
   const webLogos: string[] = [
     
@@ -111,14 +124,14 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[1] min-w-0">
-          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={langs} isTrans={true} logos={webLogos} description={' \
+          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design and familiar with backend technologies.  \
  I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
  I’m comfortable setting up servers, managing deployment pipelines with Docker. \
             '}/>
         </div>
         <div className="flex-[1]">
-          <InfoCard title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={knowledges} isTrans={true} logos={dataLogos} description={' \
+          <InfoCard title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
             Python developer with 2 years background in writing scripts data manipulation, exploration, and visualization. \
             Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing meaningful insights \
             while emphasizing clarity, validity. \

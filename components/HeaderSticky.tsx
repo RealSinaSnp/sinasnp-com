@@ -37,7 +37,7 @@ export default function HeaderSticky() {
           </a>
           <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
 
-          <button onClick={toggleDark} className="text-white">
+          <button onClick={toggleDark} className="text-white hover:cursor-pointer">
             {isDark ? <Sun /> : <Moon className="text-black"/>}
           </button>
         </div>

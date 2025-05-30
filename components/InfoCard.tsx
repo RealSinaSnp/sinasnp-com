@@ -14,6 +14,7 @@ interface InfoCardProps {
   items: {
     label: string;
     level: number;
+    category: string;
   }[];
   showCheckmarks?: boolean;
   isTrans?: boolean;
@@ -44,6 +45,12 @@ const InfoCard: React.FC<InfoCardProps> = ({
   }>({ width: 0, height: 0 });
   const [isOpen, setIsOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const groupedItems = items.reduce((acc, item) => {
+  if (!acc[item.category]) acc[item.category] = [];
+  acc[item.category].push(item);
+  return acc;
+}, {} as Record<string, typeof items>);
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -174,42 +181,45 @@ const InfoCard: React.FC<InfoCardProps> = ({
       </CardWrapper>
 
       <AnimatePresence>
-        {isOpen && isTrans && (
-          <motion.div
-            layoutId={`card-${title}`}
-            className={`fixed inset-0 z-50 ${
-              theme === "dark" ? "bg-black/60" : "bg-white/60"
-            } backdrop-blur-lg p-10 flex justify-center items-center`}
-            onClick={() => setIsOpen(false)}
-          >
-            <motion.div className="max-w-2xl w-full bg-white dark:bg-neutral-900 text-black dark:text-white p-6 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">{title}</h2>
-              <p>More content soon...</p>
-              <div className="space-y-4">
-                {items.map((item) => (
-                  <div key={item.label}>
-                    <div className="flex items-center justify-between">
-                      <p
-                        className={`text-sm font-medium font-sans ${textColor} transition`}
-                      >
-                        {item.label}
-                      </p>
-                    </div>
-                    {!showCheckmarks && (
-                      <div className={`mt-1 w-full h-2 ${bgBar} rounded-full`}>
-                        <div
-                          className={`h-full ${progressBar} rounded-r-full transition`}
-                          style={{ width: `${item.level}%` }}
-                        ></div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+  {isOpen && isTrans && (
+    <motion.div
+      layoutId={`card-${title}`}
+      className={`fixed inset-0 z-50 ${
+        theme === "dark" ? "bg-black/60" : "bg-white/60"
+      } backdrop-blur-lg p-10 flex justify-center items-center`}
+      onClick={() => setIsOpen(false)}
+    >
+      <motion.div className="max-w-4xl w-full bg-white dark:bg-neutral-900 text-black dark:text-white p-6 rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  {Object.entries(groupedItems).map(([category, group]) => (
+    <div key={category}>
+      <h3 className="text-lg font-semibold capitalize mb-2">{category}</h3>
+      <div className="space-y-4">
+        {group.map((item) => (
+          <div key={item.label}>
+            <div className="flex items-center justify-between">
+              <p className={`text-sm font-medium font-sans ${textColor} transition`}>
+                {item.label}
+              </p>
+            </div>
+            {!showCheckmarks && (
+              <div className={`mt-1 w-full h-2 ${bgBar} rounded-full`}>
+                <div
+                  className={`h-full ${progressBar} rounded-r-full transition`}
+                  style={{ width: `${item.level}%` }}
+                ></div>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </>
   );
 };
