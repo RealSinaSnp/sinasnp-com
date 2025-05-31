@@ -1,7 +1,7 @@
 // components/LogoBox.tsx
 'use client';
 import React, { useEffect, useRef } from 'react';
-// import Image from 'next/image';
+import Image from 'next/image';
 // import { InfiniteScroller } from '@/components/InfiniteScroll';
 
 interface LogoBoxProps {
@@ -48,7 +48,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
       <div className="scroller__inner">
         {logos.map((item, i) => (
           <div key={i} className="scroller__item">
-            <img src={item}
+            <Image src={item}
               alt={`Logo-${i}`}
               className="inline-block w-16 h-16 mx-2 my-2 object-contain"
             />

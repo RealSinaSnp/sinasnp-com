@@ -3,6 +3,7 @@ import { Moon, Sun, Newspaper } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export default function HeaderSticky() {
   const { theme, setTheme } = useTheme();
@@ -15,7 +16,7 @@ export default function HeaderSticky() {
     
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/img/profile.jpg" alt="Profile" className={`w-8 h-8 rounded-full border-1 ${ isDark ? "border-white" : "border-black" } transition`} />
+          <Image src="/img/profile.jpg" alt="Profile" className={`w-8 h-8 rounded-full border-1 ${ isDark ? "border-white" : "border-black" } transition`} />
           <span className={`font-semibold text-lg ${isDark ? "text-white" : "text-[#000]"} transition`}>
             Sina </span>
             <span className={` ml-[-7] hidden md:inline font-semibold text-lg ${isDark ? "text-white" : "text-[#000]"} transition`}>Sasanpour</span>

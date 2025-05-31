@@ -7,6 +7,7 @@ import { faGithub, faXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-i
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import HeaderSticky from "./HeaderSticky";
+import Image from "next/image";
 
 export default function PortfolioHeader() {
   const { theme, setTheme } = useTheme();
@@ -62,8 +63,9 @@ export default function PortfolioHeader() {
   
   
             <div className="flex flex-col items-center lg:items-end md:items-end justify-center order-1 pb-5 md:pb-10 md:order-2">
-              <img
+              <Image
                 src="/img/profile_slfy.png"
+                alt="Profile_selfie"
                 className="w-52 h-50"
               />
   
