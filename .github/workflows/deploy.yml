@@ -2,12 +2,13 @@ name: Deploy to VPS
 
 on:
   push:
-    branches:
-      - master
+    branches:[master]
 
 jobs:
   deploy:
+    if: startsWith(github.event.head_commit.message, '[deploy]')
     runs-on: ubuntu-latest
+    timeout-minutes: 60
 
     steps:
     - name: Checkout repo
