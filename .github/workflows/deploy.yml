@@ -36,7 +36,7 @@ jobs:
           docker pull sinasnp/com:latest
           docker run -d -p 3000:3000 \
             --name sinasnp-cont \
-            --env-file /etc/ssl/cloudflare/.env.production \
             -v /etc/ssl/cloudflare/certificate.pem:/certificate.pem \
             -v /etc/ssl/cloudflare/private.key:/private.key \
+            --env-file /etc/ssl/cloudflare/.env.production \
             sinasnp/com:latest
