@@ -117,7 +117,7 @@ export default function CVPage() {
       </div>
         <p className="text-base">
         Seeing how automations designed by engineers have simplified human life inspires me to tackle
-        complex problems and create innovative solutions. Container test5
+        complex problems and create innovative solutions.
         </p>
       </section>
 
