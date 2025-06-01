@@ -3,7 +3,7 @@ name: Deploy to VPS
 on:
   push:
     branches:
-      - main  # Or your branch name
+      - main  origin
 
 jobs:
   deploy:
