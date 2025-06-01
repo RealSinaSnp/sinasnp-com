@@ -117,8 +117,7 @@ export default function CVPage() {
       </div>
         <p className="text-base">
         Seeing how automations designed by engineers have simplified human life inspires me to tackle
-        complex problems and create innovative solutions. I am eager to further develop my technical skills to
-        contribute to meaningful projects alongside other ambitious developers.
+        complex problems and create innovative solutions.
         </p>
       </section>
 
