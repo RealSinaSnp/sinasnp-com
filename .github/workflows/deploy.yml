@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    
+
 
     - name: Deploy to VPS over SSH
       uses: appleboy/ssh-action@v1.0.0
@@ -34,4 +34,9 @@ jobs:
           docker rm sinasnp-cont || true
           docker rmi sinasnp/com:latest || true
           docker pull sinasnp/com:latest
-          /var/www/deploy-docker-run.sh
+          sudo docker run -d -p 3000:3000 \
+            --name sinasnp-cont \
+            --env-file /etc/ssl/cloudflare/.env.production \
+            -v /etc/ssl/cloudflare/certificate.pem:/certificate.pem \
+            -v /etc/ssl/cloudflare/private.key:/private.key \
+            sinasnp/com:latest
