@@ -1,0 +1,43 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main  origin/main # Or your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Log in to DockerHub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push Docker image
+      run: |
+        docker build -t sinasnp/com:latest .
+        docker push sinasnp/com:latest
+
+    - name: Deploy to VPS over SSH
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.VPS_PRIVATE_KEY }}
+        script: |
+          docker stop sinasnp-cont || true
+          docker rm sinasnp-cont || true
+          docker rmi sinasnp/com:latest || true
+          docker pull sinasnp/com:latest
+          docker run -d -p 3000:3000 \
+            --name sinasnp-cont \
+            --env-file /etc/ssl/cloudflare/.env.production \
+            -v /etc/ssl/cloudflare/certificate.pem:/certificate.pem \
+            -v /etc/ssl/cloudflare/private.key:/private.key \
+            sinasnp/com:latest
