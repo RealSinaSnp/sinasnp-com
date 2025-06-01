@@ -21,10 +21,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push Docker image
-      run: |
-        docker build -t sinasnp/com:latest .
-        docker push sinasnp/com:latest
+    
 
     - name: Deploy to VPS over SSH
       uses: appleboy/ssh-action@v1.0.0
@@ -37,4 +34,4 @@ jobs:
           docker rm sinasnp-cont || true
           docker rmi sinasnp/com:latest || true
           docker pull sinasnp/com:latest
-          /home/kali/deploy.sh
+          /var/www/deploy-docker-run.sh
