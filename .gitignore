@@ -56,5 +56,3 @@ build.log
 .dockerignore
 .next/cache
 /.vscode/
-
-/.github
