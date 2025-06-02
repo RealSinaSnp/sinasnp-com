@@ -16,7 +16,7 @@ export default function HeaderSticky() {
     
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Image src="/img/profile.jpg" alt="Profile" className={`w-8 h-8 rounded-full border-1 ${ isDark ? "border-white" : "border-black" } transition`} />
+          <Image src="/img/profile.jpg" width={300} height={300} alt="Profile" className={`w-8 h-8 rounded-full border-1 ${ isDark ? "border-white" : "border-black" } transition`} />
           <span className={`font-semibold text-lg ${isDark ? "text-white" : "text-[#000]"} transition`}>
             Sina </span>
             <span className={` ml-[-7] hidden md:inline font-semibold text-lg ${isDark ? "text-white" : "text-[#000]"} transition`}>Sasanpour</span>

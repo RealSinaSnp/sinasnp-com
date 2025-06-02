@@ -124,7 +124,7 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[1] min-w-0">
-          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
+          <InfoCard title="Web Development" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design and familiar with backend technologies.  \
  I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
  I’m comfortable setting up servers, managing deployment pipelines with Docker. \

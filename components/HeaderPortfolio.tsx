@@ -66,7 +66,9 @@ export default function PortfolioHeader() {
               <Image
                 src="/img/profile_slfy.png"
                 alt="Profile_selfie"
-                className="w-52 h-50"
+                className="w-53 h-53"
+                width={300}
+                height={300}
               />
   
   

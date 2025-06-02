@@ -51,6 +51,8 @@ const LogoBox: React.FC<LogoBoxProps> = ({
             <Image src={item}
               alt={`Logo-${i}`}
               className="inline-block w-16 h-16 mx-2 my-2 object-contain"
+              width={300}
+              height={300}
             />
           </div>
         ))}
