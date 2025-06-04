@@ -23,17 +23,17 @@ export default function HeaderSticky() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="/blog" target="_blank" rel="noopener noreferrer" className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}>
+          <a href="/blog" target="_blank" rel="noopener noreferrer" aria-label="Blog" className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}>
             <Newspaper className="w-6 h-6" />
           </a>
           <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
-          <a href="https://github.com/RealSinaSnp" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/RealSinaSnp" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
             <FontAwesomeIcon icon={faGithub} className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}/>
           </a>
-          <a href="https://www.linkedin.com/in/realsinasnp/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/realsinasnp/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
             <FontAwesomeIcon icon={faLinkedin} className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}/>
           </a>
-          <a href="https://x.com/RealSinaSNP" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/RealSinaSNP" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter Profile">
             <FontAwesomeIcon icon={faXTwitter} className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}/>
           </a>
           <div className="h-6 w-[1px] bg-gray-400 opacity-50" />

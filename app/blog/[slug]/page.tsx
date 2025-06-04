@@ -39,6 +39,7 @@ export default async function PostPage({ params }: Props) {
           <div className="mt-4">
             <a
               href={`/blog/admin/${post.slug}`}
+              aria-label="Edit Post"
               className="inline-block bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
             >
               ✏️ Edit Post

@@ -95,7 +95,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
   const glassHighlight = mousePos
     ? `radial-gradient(circle 900px at ${highlightX}px ${highlightY}px, ${
-        theme === "dark" ? "rgba(71, 71, 71, 0.3)" : "rgba(39, 39, 39, 0.15)"
+        theme === "dark" ? "rgba(71, 71, 71, 0.2)" : "rgba(39, 39, 39, 0.15)"
       }, transparent)`
     : "none";
 

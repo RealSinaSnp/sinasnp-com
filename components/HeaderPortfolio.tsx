@@ -78,6 +78,7 @@ export default function PortfolioHeader() {
                 <a
                   href="/blog"
                   target="_blank"
+                  aria-label="Blog"
                   rel="noopener noreferrer"
                   className={`flex items-center mt-[-6] px-2 inset-x-[30px] top-[30px] gap-2 border-2 border-transparent rounded-full font-semibold
                   ${
@@ -96,6 +97,7 @@ export default function PortfolioHeader() {
                 <a
                   href="https://github.com/RealSinaSnp"
                   target="_blank"
+                  aria-label="GitHub Profile"
                   rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
@@ -111,6 +113,7 @@ export default function PortfolioHeader() {
                 <a
                   href="https://www.linkedin.com/in/realsinasnp/"
                   target="_blank"
+                  aria-label="LinkedIn Profile"
                   rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
@@ -126,6 +129,7 @@ export default function PortfolioHeader() {
                 <a
                   href="https://x.com/RealSinaSNP"
                   target="_blank"
+                  aria-label="X/Twitter Profile"
                   rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
