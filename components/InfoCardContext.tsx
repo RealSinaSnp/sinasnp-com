@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { BadgeCheck, BadgeMinus  } from "lucide-react";
+import { BadgeCheck, } from "lucide-react";
 import { useTheme } from "next-themes";
 
 interface InfoCardContextProps {
@@ -30,7 +30,6 @@ export const InfoCardContext: React.FC<InfoCardContextProps> = ({ groupedItems, 
                     : `border-2 ${isDark ? "text-neutral-100 bg-yellow-400/30 border-yellow-500" : "text-neutral-800 bg-yellow-300/30 border-yellow-500"}`}`}
               >
                 {mastered == true && (<BadgeCheck className="w-4 h-4" />)}
-                {mastered == false && (<BadgeMinus className="w-4 h-4" />)}
                 {label}
               </span>
             ))}

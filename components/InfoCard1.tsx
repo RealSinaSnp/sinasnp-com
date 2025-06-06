@@ -149,7 +149,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
         <h2 className={`text-xl font-semibold mb-4 ${color} font-sans transition`} > {title} </h2>
         {!isOpen && isTrans && (
           
-          <div className="w-full border-2 border-red-600 items-center justify-between overflow-hidden ">
+          <div className="w-full  items-center justify-between overflow-hidden ">
             <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
             <div className="w-full overflow-hidden max-w-full">
               <LogoBox logos={logos} />
@@ -167,14 +167,15 @@ const InfoCard1: React.FC<InfoCardProps> = ({
       <AnimatePresence>
         {isOpen && isTrans && (
           <motion.div layoutId={`card-${title}`}
+            onClick={() => setIsOpen(false)}
             className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-lg p-10 flex justify-center items-center`}
           >
-
-
-            <motion.div className={`relative max-w-7xl max-h-[107%] border-1 w-full  ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"} p-10 rounded-lg`}>
+            <motion.div 
+              onClick={(e) => e.stopPropagation()} //prevent clicking inside the box from closing the modal
+              className={`relative max-w-7xl max-h-[107%] border-1 w-full  ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"} p-10 rounded-lg`}>
               {/* Close Button */}
               <button onClick={() => setIsOpen(false)}
-                className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors"
+                className="absolute top-6 right-6 cursor-pointer transition-colors hover:bg-neutral-500/10"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
