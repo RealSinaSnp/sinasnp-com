@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
+// import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import LogoBox from "@/components/LogoScroll";
+// import LogoBox from "@/components/LogoScroll";
 
 interface InfoCardProps {
   title: string;
@@ -102,7 +102,7 @@ const InfoCard2: React.FC<InfoCardProps> = ({
       <CardWrapper
         
         ref={cardRef}
-        className={`flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none
+        className={`flex-1 p-6 w-full min-h-[320px] hover:cursor-default bg-white bg-opacity-10 backdrop-blur-md rounded-none
           hover:ring-[1px] ${
             theme === "dark"
               ? "hover:ring-neutral-800"

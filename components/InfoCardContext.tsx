@@ -16,20 +16,20 @@ interface InfoCardContextProps {
 }
 
 
-function groupSkillsByCategory(skills: typeof webSkills) {
-  const grouped: Record<string, { label: string; mastered: boolean }[]> = {};
+// function groupSkillsByCategory(skills: typeof webSkills) {
+//   const grouped: Record<string, { label: string; mastered: boolean }[]> = {};
 
-  skills.forEach(({ label, category, mastered }) => {
-    if (!grouped[category]) grouped[category] = [];
-    grouped[category].push({ label, mastered });
-  });
+//   skills.forEach(({ label, category, mastered }) => {
+//     if (!grouped[category]) grouped[category] = [];
+//     grouped[category].push({ label, mastered });
+//   });
 
-  return Object.entries(grouped).map(([title, items]) => ({ title, items }));
-}
+//   return Object.entries(grouped).map(([title, items]) => ({ title, items }));
+// }
 
 
 export const InfoCardContext: React.FC<InfoCardContextProps> = ({
-  title,
+  // title,
   groupedItems,
 }) => {
   const { theme } = useTheme();

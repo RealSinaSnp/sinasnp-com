@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Maximize2 } from "lucide-react";
 import { useTheme } from "next-themes";
 import InfoCardContext from "@/components/InfoCardContext";
@@ -30,7 +30,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
   description,
   color,
   items,
-  showCheckmarks = false,
+  // showCheckmarks = false,
   isTrans = true,
   logos = [],
   customTilt,
@@ -102,8 +102,8 @@ const InfoCard1: React.FC<InfoCardProps> = ({
     : "none";
 
   const textColor = theme === "dark" ? "text-white" : "text-gray-800";
-  const bgBar = theme === "dark" ? "bg-gray-700" : "bg-gray-200";
-  const progressBar = theme === "dark" ? "bg-green-700" : "bg-indigo-500";
+  // const bgBar = theme === "dark" ? "bg-gray-700" : "bg-gray-200";
+  // const progressBar = theme === "dark" ? "bg-green-700" : "bg-indigo-500";
 
   const CardWrapper = isTrans ? motion.div : "div";
 

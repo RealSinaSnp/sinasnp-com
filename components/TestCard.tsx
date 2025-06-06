@@ -16,7 +16,7 @@ const TiltCardWrapper: React.FC<TiltCardWrapperProps> = ({
   children,
   className = "",
   customTilt,
-  isTrans = false,
+  // isTrans = false,
   onClick,
 }) => {
   const { theme } = useTheme();

@@ -4,10 +4,10 @@
 
 //import { useEffect, useState } from "react";
 import { useTheme } from "next-themes"; 
-import InfoCard from "@/components/InfoCard";
+// import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
 import PortfolioHeader from "@/components/HeaderPortfolio";
-import TiltCardWrapper from "@/components/TestCard";
+// import TiltCardWrapper from "@/components/TestCard";
 //import SmokeEffect from "@/components/testSmoke";
 import InfoCard2 from "@/components/InfoCard2";
 import InfoCard1 from "@/components/InfoCard1";
