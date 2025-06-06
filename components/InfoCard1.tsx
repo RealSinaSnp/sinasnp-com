@@ -1,12 +1,10 @@
-{/*
-
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion";
-// import { CheckCircle } from "lucide-react";
+import { Maximize2 } from "lucide-react";
 import { useTheme } from "next-themes";
-
+import InfoCardContext from "@/components/InfoCardContext";
 import LogoBox from "@/components/LogoScroll";
 
 interface InfoCardProps {
@@ -14,9 +12,11 @@ interface InfoCardProps {
   description?: string;
   color: string;
   items: {
-    label: string;
-    level: number;
-  }[];
+  label: string;
+  level: number;
+  category: string;
+  mastered?: boolean; // Optional to avoid breaking old usage
+}[];
   showCheckmarks?: boolean;
   isTrans?: boolean;
 
@@ -36,6 +36,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
   customTilt,
 }) => {
   const { theme } = useTheme();
+  const isDark = theme === "dark"; 
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
     null
   );
@@ -45,6 +46,13 @@ const InfoCard1: React.FC<InfoCardProps> = ({
   }>({ width: 0, height: 0 });
   const [isOpen, setIsOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const groupedItems = items.reduce((acc, item) => {
+    if (!acc[item.category]) acc[item.category] = [];
+    acc[item.category].push(item);
+    return acc;
+  }, {} as Record<string, typeof items>);
+  
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -140,10 +148,17 @@ const InfoCard1: React.FC<InfoCardProps> = ({
 
         <h2 className={`text-xl font-semibold mb-4 ${color} font-sans transition`} > {title} </h2>
         {!isOpen && isTrans && (
-          <div className="w-full -mb-20 items-center justify-between overflow-hidden">
+          
+          <div className="w-full -mb-20 items-center justify-between overflow-hidden group">
             <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
             <div className="w-full overflow-hidden max-w-full">
               <LogoBox logos={logos} />
+            </div>
+            {/* expand icon */}
+            <div className="absolute top-3 right-3"> 
+              <div className={`w-11 h-11 rounded-full ${isDark ? "bg-black" : "bg-white"} flex items-center justify-center group-hover:bg-transparent `}>
+                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out ${isDark ? "text-white" : "text-black"} md:animate-none md:group-hover:scale-170`} />
+              </div>
             </div>
           </div>
         )}
@@ -151,16 +166,30 @@ const InfoCard1: React.FC<InfoCardProps> = ({
 
       <AnimatePresence>
         {isOpen && isTrans && (
-          <motion.div
-            layoutId={`card-${title}`}
-            className={`fixed inset-0 z-50 ${
-              theme === "dark" ? "bg-black/60" : "bg-white/60"
-            } backdrop-blur-lg p-10 flex justify-center items-center`}
-            onClick={() => setIsOpen(false)}
+          <motion.div layoutId={`card-${title}`}
+            className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-lg p-10 flex justify-center items-center`}
           >
-            <motion.div className="max-w-2xl w-full bg-white dark:bg-neutral-900 text-black dark:text-white p-6 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4">{title}</h2>
-              <p>More content soon...</p>
+
+
+            <motion.div className={`relative max-w-7xl max-h-[107%] border-1 w-full  ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"} p-10 rounded-lg`}>
+              {/* Close Button */}
+              <button onClick={() => setIsOpen(false)}
+                className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 text-neutral-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <InfoCardContext
+                title= {title}
+                groupedItems={groupedItems}
+              />
             </motion.div>
           </motion.div>
         )}
@@ -171,6 +200,3 @@ const InfoCard1: React.FC<InfoCardProps> = ({
 
 export default InfoCard1;
 
-
-
-*/}

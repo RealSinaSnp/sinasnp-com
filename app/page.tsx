@@ -7,8 +7,10 @@ import { useTheme } from "next-themes";
 import InfoCard from "@/components/InfoCard";
 import Projects from "@/components/Projects";
 import PortfolioHeader from "@/components/HeaderPortfolio";
-//import InfoCard2 from "@/components/InfoCard2";
-//import InfoCard1 from "@/components/InfoCard1";
+import TiltCardWrapper from "@/components/TestCard";
+//import SmokeEffect from "@/components/testSmoke";
+import InfoCard2 from "@/components/InfoCard2";
+import InfoCard1 from "@/components/InfoCard1";
 //import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
@@ -23,18 +25,26 @@ export default function CVPage() {
 
   // for InfoCard
   const webSkills = [
-    { label: "Javascript", level: 80, category: "Frontend" },
-    { label: "Typescript", level: 70, category: "Frontend" },
-    { label: "React", level: 90, category: "Frontend" },
-    { label: "Tailwind CSS", level: 90, category: "Frontend" },
-    { label: "Next.js", level: 80, category: "Backend" },
-    { label: "PHP", level: 60, category: "Backend" },
-    { label: "MySQL", level: 95, category: "Database" },
-    { label: "MongoDB", level: 75, category: "Database" },
-    { label: "Linux", level: 85, category: "Infrastructure" },
-    { label: "Docker", level: 75, category: "Infrastructure" },
-    { label: "Nginx", level: 65, category: "Infrastructure" },
-  ];
+  { label: "Javascript",   level: 80, category: "Frontend", mastered: true },
+  { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
+  { label: "React",        level: 90, category: "Frontend", mastered: true },
+  { label: "Tailwind CSS", level: 90, category: "Frontend", mastered: true },
+  { label: "Next.js",      level: 80, category: "Backend", mastered: true },
+  { label: "PHP",          level: 60, category: "Backend", mastered: false },
+  { label: "MySQL",        level: 95, category: "Database", mastered: true },
+  { label: "MongoDB",      level: 75, category: "Database", mastered: false },
+  { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
+  { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
+  { label: "Nginx",        level: 65, category: "Infrastructure", mastered: false },
+
+  { label: "Chart.js",     level: 65, category: "Tools", mastered: false },
+  { label: "GraphQL",      level: 65, category: "Tools", mastered: false },
+  { label: "Google Lighthouse", level: 65, category: "Tools", mastered: false },
+
+  { label: "SSR/CSR",      level: 65, category: "Tools", mastered: true },
+  { label: "Caching",      level: 65, category: "Tools", mastered: false },
+];
+
 
   const dataSkills = [
     { label: "Python", level: 90, category: "Data" },
@@ -123,65 +133,45 @@ export default function CVPage() {
 
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
-        {/* <div className="flex-[1] min-w-0">
-          <InfoCard title="Web Development" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
+        <div className="flex-[3.5] min-w-0">
+          <InfoCard1 title="Web Development" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design and familiar with backend technologies.  \
- I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
- I’m comfortable setting up servers, managing deployment pipelines with Docker. \
+            I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
+            I’m comfortable setting up servers, managing deployment pipelines with Docker. \
             '}/>
-        </div> */}
+        </div>
         <div className="flex-[3.5]">
-          <InfoCard title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
+          <InfoCard1 title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
             Python developer with 2 years background in writing scripts data manipulation, exploration, and visualization. \
             Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing meaningful insights \
             while emphasizing clarity, validity. \
             '}/>
 
         </div>
-        <div className="flex-[1.5]">
-          <InfoCard title="Characteristics" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
-        </div>
-        <div className="flex-[1.4]">
-          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
-        </div>
-        <div className="flex-[1.4]">
-          <InfoCard title="Interests" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
-        </div>
       </section>
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
-        {/* <div className="flex-[3]">
-          <InfoCard title="Development Practices" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
-        </div> */}
-        <div className="flex-[3.5] min-w-0">
-          <InfoCard title="Web Development" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
-            Web developer with 3 years background in web \design and familiar with backend technologies.  \
- I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
- I’m comfortable setting up servers, managing deployment pipelines with Docker. \
-            '}/>
+        <div className="flex-[3]">
+          <InfoCard2 title="Development Practices" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
         </div>
+        
         <div className="flex-[1.5]">
-          <InfoCard title="Characteristics" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
+          <InfoCard2 title="Characteristics" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         <div className="flex-[1.4]">
-          <InfoCard title="Interests" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
-        </div>
-        <div className="flex-[1.4]">
-          <InfoCard title="Interests" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
+          <InfoCard2 title="Interests" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         
       </section>
 
       <Projects />
       
-      </div>
 
-      
+      </div>
       <footer className="border-t-1 border-neutral-500 pt-5 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
         © 2025 Sina
       </footer>
     </div>
-    
     
   );
 }

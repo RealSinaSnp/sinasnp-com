@@ -1,5 +1,3 @@
-{/*
-
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -140,21 +138,19 @@ const InfoCard2: React.FC<InfoCardProps> = ({
                     {item.label}
                   </p>
                   {showCheckmarks && (
-                    <CheckCircle
-                      className={`w-4 h-4 ${
-                        theme === "dark" ? "text-green-400" : "text-green-600"
-                      } transition`}
-                    />
+                    <CheckCircle className={`w-4 h-4 ${ theme === "dark" ? "text-green-400" : "text-green-600" } transition`} />
                   )}
                 </div>
-              
-              
+                {!showCheckmarks && (
                 <div className={`mt-1 w-full h-2 ${bgBar} rounded-full`}>
                   <div
                     className={`h-full ${progressBar} rounded-r-full transition`}
                     style={{ width: `${item.level}%` }}
                   ></div>
                 </div>
+                )}
+              
+              
               
             </div>
           ))}
@@ -168,6 +164,3 @@ const InfoCard2: React.FC<InfoCardProps> = ({
 
 export default InfoCard2;
 
-
-
-*/}
