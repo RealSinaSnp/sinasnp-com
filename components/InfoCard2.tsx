@@ -89,8 +89,8 @@ const InfoCard2: React.FC<InfoCardProps> = ({
     : "none";
 
   const textColor = theme === "dark" ? "text-white" : "text-gray-800";
-  const bgBar = theme === "dark" ? "bg-gray-700" : "bg-gray-200";
-  const progressBar = theme === "dark" ? "bg-green-700" : "bg-indigo-500";
+  const bgBar = theme === "dark" ? "bg-gray-800" : "bg-gray-200";
+  const progressBar = theme === "dark" ? "bg-sky-700" : "bg-sky-300";
 
   const CardWrapper =  "div";
 

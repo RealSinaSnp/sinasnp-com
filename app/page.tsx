@@ -134,14 +134,14 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[3.5] min-w-0">
-          <InfoCard1 title="Web Development" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
+          <InfoCard1 title="Web Development" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design and familiar with backend technologies.  \
             I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
             I’m comfortable setting up servers, managing deployment pipelines with Docker. \
             '}/>
         </div>
         <div className="flex-[3.5]">
-          <InfoCard1 title="Data Analysis" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
+          <InfoCard1 title="Data Analysis" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
             Python developer with 2 years background in writing scripts data manipulation, exploration, and visualization. \
             Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing meaningful insights \
             while emphasizing clarity, validity. \
@@ -152,14 +152,14 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[3]">
-          <InfoCard2 title="Development Practices" color={`${isDark ? "text-indigo-600" : "text-green-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
+          <InfoCard2 title="Development Practices" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
         </div>
         
         <div className="flex-[1.5]">
-          <InfoCard2 title="Characteristics" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
+          <InfoCard2 title="Characteristics" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         <div className="flex-[1.4]">
-          <InfoCard2 title="Interests" color={`${isDark ? "text-sky-600" : "text-green-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
+          <InfoCard2 title="Interests" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         
       </section>

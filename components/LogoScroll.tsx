@@ -36,7 +36,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
 
 
   return (
-    <div className="w-full py-5 overflow-hidden">
+    <div className="w-full py-0 overflow-hidden">
       <div className="max-w-7lg lg:max-w-lg mx-auto ">
         
           <div

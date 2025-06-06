@@ -121,7 +121,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
       <CardWrapper
         layoutId={isTrans ? `card-${title}` : undefined}
         ref={cardRef}
-        className={`flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none
+        className={`flex-1 p-6 w-full min-h-[320px] cursor-pointer bg-white bg-opacity-10 backdrop-blur-md rounded-none group
           hover:ring-[1px] ${
             theme === "dark"
               ? "hover:ring-neutral-800"
@@ -149,15 +149,15 @@ const InfoCard1: React.FC<InfoCardProps> = ({
         <h2 className={`text-xl font-semibold mb-4 ${color} font-sans transition`} > {title} </h2>
         {!isOpen && isTrans && (
           
-          <div className="w-full -mb-20 items-center justify-between overflow-hidden group">
+          <div className="w-full border-2 border-red-600 items-center justify-between overflow-hidden ">
             <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
             <div className="w-full overflow-hidden max-w-full">
               <LogoBox logos={logos} />
             </div>
             {/* expand icon */}
             <div className="absolute top-3 right-3"> 
-              <div className={`w-11 h-11 rounded-full ${isDark ? "bg-black" : "bg-white"} flex items-center justify-center group-hover:bg-transparent `}>
-                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out ${isDark ? "text-white" : "text-black"} md:animate-none md:group-hover:scale-170`} />
+              <div className={`w-11 h-11 rounded-full ${isDark ? "bg-black" : "bg-white"} flex items-center justify-center group-hover:bg-transparent hover:bg-transparent `}>
+                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out ${isDark ? "text-white" : "text-black"} md:animate-none md:group-hover:scale-170 md:hover:scale-170`} />
               </div>
             </div>
           </div>
@@ -186,10 +186,13 @@ const InfoCard1: React.FC<InfoCardProps> = ({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+              {/* Close Button End*/}
+              {/* Context Openning on click */}
               <InfoCardContext
                 title= {title}
                 groupedItems={groupedItems}
               />
+              {/* Context Openning on click END*/}
             </motion.div>
           </motion.div>
         )}
