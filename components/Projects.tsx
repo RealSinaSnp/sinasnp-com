@@ -1,5 +1,4 @@
 // app/(main)/projects/page.tsx
-"use client";
 
 import Link from "next/link";
 import { useTheme } from "next-themes"; 

@@ -12,8 +12,8 @@ export default function HeaderSticky() {
   const toggleDark = () => setTheme(isDark ? "light" : "dark");
 
   return (
-    <div className={`fixed top-2 left-0 w-full z-50 flex justify-center animate-slideDown`}>
-      <div className={`h-14 border-0 rounded-full px-4 py-2 flex items-center justify-between bg-teal-500 ${isDark ? "bg-animated-gradient-dark" : "bg-animated-gradient"} bg-opacity-25 transition-all max-w-xl w-full`}>
+    <div className={`fixed top-2 left-0 w-full pl-8 pr-8 z-50 flex justify-center animate-slideDown`}>
+      <div className={`h-14 border-0 rounded-full px-4 py-2 flex items-center justify-between ${isDark ? "bg-animated-gradient-dark" : "bg-animated-gradient"} bg-opacity-25 transition-all max-w-xl w-full`}>
 
         <div className="flex items-center gap-3">
           <Image src="/img/title_black.png" width={300} height={300} alt="Profile" className={`w-8 h-8 opacity-70 rounded-full transition`} />

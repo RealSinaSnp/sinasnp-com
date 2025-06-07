@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { BadgeCheck, } from "lucide-react";
 import { useTheme } from "next-themes";

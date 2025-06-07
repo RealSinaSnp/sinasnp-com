@@ -1,5 +1,4 @@
 // components/PortfolioHeader.tsx
-"use client";
 
 import { Moon, Sun, Newspaper } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

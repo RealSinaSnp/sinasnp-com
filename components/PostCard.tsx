@@ -29,33 +29,33 @@ export default function PostCard({ post }: { post: Post }) {
           <p className="text-xs text-muted-foreground font-mono">{formattedDate}</p>
         </div>
         <div className="flex-1 flex flex-col space-y-6">
-  <div className="space-y-4 flex-1">
-    <a href={`/blog/${post.slug}`} className="relative block group">
-      <div className="absolute inset-0" />
-      <h3 className="text-xl font-semibold leading-snug group-hover:underline">
-        {post.title}
-      </h3>
-    </a>
-    {post.excerpt && (
-      <p className="text-gray-400 text-sm leading-relaxed">
-        {post.excerpt}
-      </p>
-    )}
-  </div>
+          <div className="space-y-4 flex-1">
+            <a href={`/blog/${post.slug}`} className="relative block group">
+              <div className="absolute inset-0" />
+              <h3 className="text-xl font-semibold leading-snug group-hover:underline">
+                {post.title}
+              </h3>
+            </a>
+            {post.excerpt && (
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {post.excerpt}
+              </p>
+            )}
+          </div>
 
-  <div className="mt-auto ml-auto flex items-center justify-between gap-3">
-    {post.tag && (
-      <span className="px-2 py-1 bg-gray-800 text-xs font-mono rounded-full">
-        {post.tag}
-      </span>
-    )}
-    <a href={`/blog/${post.slug}`} className="relative block group" target="_blank" rel="noopener noreferrer">
-    <button className="relative inline-flex items-center px-4 py-1.5 border text-xs uppercase font-mono tracking-widest rounded-full bg-transparent text-teal-400 border-teal-500 hover: hover:shadow-[0_0_10px_rgba(20,184,166,0.7)] transition-all duration-300">
-    Read
-  </button>
-    </a>
-  </div>
-</div>
+          <div className="mt-auto ml-auto flex items-center justify-between gap-3">
+            {post.tag && (
+              <span className="px-2 py-1 bg-gray-800 text-xs font-mono rounded-full">
+                {post.tag}
+              </span>
+            )}
+            <a href={`/blog/${post.slug}`} className="relative block group" target="_blank" rel="noopener noreferrer">
+              <button className="relative inline-flex items-center px-4 py-1.5 border text-xs uppercase font-mono tracking-widest rounded-full bg-transparent text-teal-400 border-teal-500 hover: hover:shadow-[0_0_10px_rgba(20,184,166,0.7)] transition-all duration-300">
+                Read
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
       
 
@@ -67,6 +67,8 @@ export default function PostCard({ post }: { post: Post }) {
             onError={() => setImgError(true)}
             alt={post.title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            width={500}
+            height={300}
           />
         </div>
       </div>
