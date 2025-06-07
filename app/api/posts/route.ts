@@ -1,11 +1,8 @@
+// @/app/api/posts/route.ts
 import { connectToDB } from "@/lib/mongodb";
 import Post from "@/models/post.model";
 import { NextResponse } from "next/server";
 
-
-
-// TO DO: Add authentication middleware to protect these routes
-// TO DO: add tag and excerpt to GET and POST?
 export async function GET() {
   try {
     await connectToDB();
@@ -31,13 +28,18 @@ export async function POST(req: Request) {
     if (existingPost) {
       return NextResponse.json({ error: "Post with this slug already exists" }, { status: 409 });
     }
+
     console.log("Creating post with:", body);
+
     const newPost = await Post.create({
       title: body.title,
       content: body.content,
       slug: body.slug,
-      imageUrl: body.imageUrl || "",  // Explicitly save it
+      imageUrl: body.imageUrl || "",
+      excerpt: body.excerpt || "",
+      tags: Array.isArray(body.tags) ? body.tags : [],
     });
+
     return NextResponse.json(newPost, { status: 201 });
   } catch (error) {
     console.error("POST /api/posts failed:", error);

@@ -22,6 +22,17 @@ export default function NewPostForm() {
     else alert("Failed to create post.");
   };
 
+  const logPostData = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Don't trigger form submit
+    const slug = title.toLowerCase().replace(/\s+/g, "-");
+    console.log("🔍 Post Data:", {
+      title,
+      content,
+      imageUrl,
+      slug,
+    });
+  };
+
   return (
     <form onSubmit={createPost} className="max-w-2xl my-8 mx-auto p-6 bg-gray-900 rounded-xl shadow space-y-4">
       <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">Create New Post</h2>
@@ -49,12 +60,22 @@ export default function NewPostForm() {
         required
       />
 
-      <button
-        type="submit"
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition"
-      >
-        Publish Post
-      </button>
+      <div className="flex gap-4">
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition"
+        >
+          Publish Post
+        </button>
+
+        <button
+          type="button" // 👈 not submit
+          onClick={logPostData}
+          className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-lg transition"
+        >
+          Show Post Data
+        </button>
+      </div>
     </form>
   );
 }

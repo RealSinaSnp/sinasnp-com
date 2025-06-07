@@ -6,9 +6,8 @@ const PostSchema = new Schema(
     title: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
     content: { type: String, required: false },
-    image: { type: String, required: false },
-    excerpt: { type: String, required: false },
-    tag: { type: String, required: false },
+    imageUrl: { type: String, required: false },
+    tags: { type: [String], required: false },
     
   },
   { timestamps: true } // Adds createdAt and updatedAt automatically
