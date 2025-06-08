@@ -1,16 +1,18 @@
 // @/app/blog/page.tsx
+export const dynamic = 'force-dynamic';
+
 import PostCard from "@/components/PostCard";
 import Starfield from '@/components/Starfield';
 import { Post } from "@/lib/types";
 import Link from "next/link";
 
 interface Props {
-  searchParams?: { tag?: string };
+  searchParams: Promise<{ tag?: string }>;
 }
 
 const BlogPage = async ({searchParams}: Props) => {
   let posts: Post[] = [];
-  const tag = searchParams?.tag;
+  const { tag } = await searchParams;
   const url = `${process.env.NEXT_PUBLIC_SITE_URL}/api/posts${tag ? `?tag=${encodeURIComponent(tag)}` : ''}`;
 
 
