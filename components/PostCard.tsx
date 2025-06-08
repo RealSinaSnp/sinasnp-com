@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
 import Image from "next/image";
+import { Hash } from 'lucide-react';
 
 
 type Post = {
@@ -23,26 +24,25 @@ export default function PostCard({ post }: { post: Post }) {
   const imageSrc = !imgError && post.imageUrl ? post.imageUrl : "/img/placeholder1.png";
 
   return (
-    <div className="group relative flex flex-col md:flex-row gap-5 border-b-2 border-[rgba(255,255,255,0.1)] py-10 last-of-type:border-b-0 first-of-type:border-t-0">
-      <div className="flex flex-col gap-6 md:gap-3 xl:flex-row flex-1 order-2 md:order-1">
-        <div className="flex flex-col gap-2 border-2 border-green-500">
-          <p className="text-xs text-muted-foreground font-mono">{formattedDate}</p>
-              {post.tags && post.tags.length > 0 && (
-                <div className="flex-wrap bottom-1 lex-col mt-auto items-center justify-between border-2 border-sky-500 hidden md:inline">
-                  {post.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gray-800 text-xs font-mono rounded-full border border-yellow-500"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-          
+    <div className="group flex flex-col md:flex-row gap-5 border-b-2 border-[rgba(255,255,255,0.1)] py-10 last-of-type:border-b-0">
+      <div className="flex flex-col gap-6 md:gap-2 md:flex-row flex-1 order-2 md:order-1">
+        {/* Date and tags section */}
+        <div className="flex flex-col w-full md:w-26 shrink-0">
+          <p className="text-xs font-mono">{formattedDate}</p>
+          {post.tags && post.tags.length > 0 && (
+            <div className="mt-auto hidden md:flex md:flex-col gap-1 overflow-hidden">
+              {post.tags.map((tag, index) => (
+                <span key={index} className="inline-flex items-center text-left w-fit text-xs font-mono cursor-default hover:text-indigo-200 overflow-hidden text-ellipsis whitespace-nowrap">
+                  <Hash className="w-3 h-3 mr-1"/>
+                  <span>{tag}</span>
+                </span>
+              ))}
+            </div>
+          )}
         </div>
-        <a href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex flex-col space-y-6  border-2 border-green-500">
-          <div className="space-y-4 flex-1 border-2 border-red-500">
+        {/* Post title and content section */}
+        <a href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex flex-col space-y-6">
+          <div className="space-y-4 flex-1">
             <h3 className="text-xl font-semibold leading-snug group-hover:underline">
               {post.title}
             </h3>
