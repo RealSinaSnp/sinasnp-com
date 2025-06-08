@@ -1,12 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app --turbo`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 - Tailwind for styles
 - MongoDB for database
 - Hostinger as VPS
-- deployed on ubuntu
+- deployed on Ubuntu distro
 - proxied with Nginx thrugh CloudFlare
 - blog page in TS
-- CV (main) page mostly in JS changed to TS
+- CV (main) page mostly in TS
 
 
 Pagackages installed for this project:

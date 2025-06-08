@@ -1,3 +1,4 @@
+// @/components/NewPostForm.tsx
 'use client';
 
 import { useState } from "react";
@@ -8,33 +9,24 @@ export default function NewPostForm() {
   const [content, setContent] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
   const router = useRouter();
+  const [tags, setTags] = useState<string>("");
 
   const createPost = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const slug = title.toLowerCase().replace(/\s+/g, "-");
+    const tagArray = tags.split(",").map(tag => tag.trim()).filter(tag => tag);
 
     const res = await fetch("/api/posts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, content, slug, imageUrl }),
+      body: JSON.stringify({ title, content, slug, imageUrl, tags: tagArray }),
     });
     if (res.ok) router.push("/blog");
     else alert("Failed to create post.");
   };
 
-  const logPostData = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault(); // Don't trigger form submit
-    const slug = title.toLowerCase().replace(/\s+/g, "-");
-    console.log("🔍 Post Data:", {
-      title,
-      content,
-      imageUrl,
-      slug,
-    });
-  };
-
   return (
-    <form onSubmit={createPost} className="max-w-2xl my-8 mx-auto p-6 bg-gray-900 rounded-xl shadow space-y-4">
+    <form onSubmit={createPost} className="max-w-4xl my-8 mx-auto p-6 bg-gray-900 rounded-xl shadow space-y-4">
       <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">Create New Post</h2>
 
       <input
@@ -60,22 +52,19 @@ export default function NewPostForm() {
         required
       />
 
-      <div className="flex gap-4">
-        <button
-          type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition"
-        >
-          Publish Post
-        </button>
+      <input
+        value={tags}
+        onChange={(e) => setTags(e.target.value)}
+        placeholder="Tags (comma separated: tech, ai, blog)"
+        className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+      />
 
-        <button
-          type="button" // 👈 not submit
-          onClick={logPostData}
-          className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-lg transition"
-        >
-          Show Post Data
-        </button>
-      </div>
+      <button
+        type="submit"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition"
+      >
+        Publish Post
+      </button>
     </form>
   );
 }

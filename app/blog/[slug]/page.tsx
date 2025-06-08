@@ -20,7 +20,10 @@ export default async function PostPage({ params }: Props) {
   const session = await getServerSession(authOptions);
 
   if (!post) {
-    return <div className="p-4 text-red-500">Post not found</div>;
+    return (
+      <div className="p-4 text-red-500">
+        Post not found2
+      </div>);
   }
 
   return (
