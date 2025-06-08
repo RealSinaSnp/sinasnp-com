@@ -10,7 +10,7 @@ type Post = {
   createdAt: string | Date;
   imageUrl?: string;
   content?: string;
-  tags?: [string];
+  tags?: string[];
 };
 
 export default function PostCard({ post }: { post: Post }) {
@@ -31,11 +31,14 @@ export default function PostCard({ post }: { post: Post }) {
           <p className="text-xs font-mono">{formattedDate}</p>
           {post.tags && post.tags.length > 0 && (
             <div className="mt-auto hidden md:flex md:flex-col gap-1 overflow-hidden">
-              {post.tags.map((tag, index) => (
-                <span key={index} className="inline-flex items-center text-left w-fit text-xs font-mono cursor-default hover:text-indigo-200 overflow-hidden text-ellipsis whitespace-nowrap">
+              {post.tags.map((tags, index) => (
+                <a key={index}
+                  href={`/blog?tag=${encodeURIComponent(tags)}`} 
+                  className="inline-flex items-center text-left w-fit text-xs font-mono cursor-default hover:text-indigo-200 overflow-hidden text-ellipsis whitespace-nowrap"
+                >
                   <Hash className="w-3 h-3 mr-1"/>
-                  <span>{tag}</span>
-                </span>
+                  <span>{tags}</span>
+                </a>
               ))}
             </div>
           )}
@@ -48,7 +51,7 @@ export default function PostCard({ post }: { post: Post }) {
             </h3>
             {post.content && (
               <p className="text-gray-400 text-sm  leading-relaxed">
-                {post.content.slice(0, 150) + "..."}
+                {post.content.slice(0, 110) + "..."}
               </p>
             )}
           </div>

@@ -16,9 +16,17 @@ async function updatePostAction(formData: FormData, slug: string) {
   await connectToDB();
   const title = formData.get("title") as string;
   const content = formData.get("content") as string;
+  const imageUrl = formData.get("imageUrl") as string;
+  const rawTags = formData.get("tags") as string;
+  
+  const tags = rawTags
+      .split(",")
+      .map(tag => tag.trim())
+      .filter(tag => tag.length > 0);
+
 
   try {
-    const result = await Post.updateOne({ slug }, { title, content });
+    const result = await Post.updateOne({ slug }, { title, content, imageUrl, tags });
     if (result.matchedCount === 0) {
       return { success: false, error: "Post not found" };
     }
@@ -28,6 +36,7 @@ async function updatePostAction(formData: FormData, slug: string) {
     return { success: false, error: "Failed to update post" };
   }
 }
+
 
 export default async function AdminEditPage({ params }: Props) {
   const { slug } = await params; // Await the Promise to get the slug
@@ -68,6 +77,19 @@ export default async function AdminEditPage({ params }: Props) {
         name="content"
         defaultValue={post.content}
         className="block p-2.5 w-full text-sm bg-[#0f0f0f] rounded-sm border border-neutral-700 h-96"
+      />
+      <input
+        name="imageUrl"
+        defaultValue={post.imageUrl}
+        placeholder="Image URL"
+        className="input input-bordered p-2.5 bg-[#0f0f0f] border border-neutral-900 rounded-sm"
+      />
+
+      <input
+        name="tags"
+        defaultValue={post.tags?.join(", ")} // Comma-separated
+        placeholder="Comma-separated tags (e.g., tech, js, react)"
+        className="input input-bordered p-2.5 bg-[#0f0f0f] border border-neutral-900 rounded-sm"
       />
       <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded">
         Save Changes

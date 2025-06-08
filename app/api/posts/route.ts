@@ -3,10 +3,15 @@ import { connectToDB } from "@/lib/mongodb";
 import Post from "@/models/post.model";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
+    const { searchParams } = new URL(req.url);
+    const tag = searchParams.get("tag");
+
     await connectToDB();
-    const posts = await Post.find().sort({ createdAt: -1 });
+    const posts = tag
+      ? await Post.find({ tags: tag }).sort({ createdAt: -1 }) // Filter by tag
+      : await Post.find().sort({ createdAt: -1 });             // Return all
     return NextResponse.json(posts);
   } catch (error) {
     console.error("GET /api/posts failed:", error);

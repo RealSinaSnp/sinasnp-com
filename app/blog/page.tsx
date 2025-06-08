@@ -2,14 +2,20 @@
 import PostCard from "@/components/PostCard";
 import Starfield from '@/components/Starfield';
 import { Post } from "@/lib/types";
+import Link from "next/link";
 
+interface Props {
+  searchParams?: { tag?: string };
+}
 
-
-const BlogPage = async () => {
+const BlogPage = async ({searchParams}: Props) => {
   let posts: Post[] = [];
+  const tag = searchParams?.tag;
+  const url = `${process.env.NEXT_PUBLIC_SITE_URL}/api/posts${tag ? `?tag=${encodeURIComponent(tag)}` : ''}`;
+
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/posts`, { cache: "no-store" });
+    const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch posts");
     posts = await res.json();
   } catch (error) {
@@ -25,6 +31,12 @@ const BlogPage = async () => {
         speedFactor={0.03}
         backgroundColor="black"
       />
+      {tag && (
+        <div className="mb-6 text-sm font-mono text-teal-300">
+          Showing posts tagged with <strong>#{tag}</strong>
+          <Link href="/blog" className="ml-2 text-red-400 hover:underline">[clear]</Link>
+        </div>
+      )}
         {posts.length === 0 ? (
           <p className="text-gray-500">No blog posts provided.</p>
         ) : (

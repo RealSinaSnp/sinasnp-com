@@ -7,5 +7,5 @@ export interface Post {
     content?: string;
     createdAt: Date | string;
     updatedAt?: Date | string;
-    tag?: string;
+    tags?: string[];
   }
