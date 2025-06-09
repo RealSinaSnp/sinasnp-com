@@ -1,5 +1,6 @@
 /* Theme Variables */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
@@ -95,7 +96,7 @@ body {
 /* TailwindCSS custom styling for inline code */
 .prose code {
   background-color: #090909; /* dark blackish background */
-  color: #00ff40; /* bright color for code */
+  color: #38f36b; /* bright color for code */
   padding: 0.18rem 0.3rem;
   border-radius: 0.17rem;
   font-size: 0.9em;
@@ -104,15 +105,23 @@ body {
 
 details summary {
   cursor: pointer;
-  padding: 0.5rem;
-  background-color: #2c2c2c;
+  padding: 0.6rem 0.9rem;
+  background-color: #2d2d2d; /* slightly lighter for contrast */
   border-radius: 0.5rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #ddd;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+details summary:hover {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
 }
 
 details[open] summary {
-  background-color: #444444;
+  color: #fff;
+  margin-bottom: 1rem;
 }
 
 details {
@@ -121,7 +130,6 @@ details {
   border-radius: 0.5rem;
   margin-top: 1rem;
   background-color: #1a1a1a;
-  
 }
 
 /* globals.css */
@@ -168,6 +176,8 @@ details {
   }
 }
 
+
+/* dont know where used, maybe delete later */
 .tag {
   padding: 1rem;
   background: hsl(215, 25%, 27%);
