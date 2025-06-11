@@ -32,7 +32,7 @@ export default function CVPage() {
   { label: "Next.js",      level: 80, category: "Backend", mastered: true },
   { label: "PHP",          level: 60, category: "Backend", mastered: false },
   { label: "MySQL",        level: 95, category: "Database", mastered: true },
-  { label: "MongoDB",      level: 75, category: "Database", mastered: false },
+  { label: "MongoDB",      level: 75, category: "Database", mastered: true },
   { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
   { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
   { label: "Nginx",        level: 65, category: "Infrastructure", mastered: false },
@@ -47,17 +47,17 @@ export default function CVPage() {
 
 
   const dataSkills = [
-    { label: "Python", level: 90, category: "Data" },
-    { label: "Tableau", level: 80, category: "Data" },
-    { label: "Regex", level: 75, category: "Data" },
-    { label: "LaTeX", level: 65, category: "Data" },
-    { label: "C++", level: 70, category: "Application" },
-    { label: "Visual Basic (for MS Office)", level: 90, category: "Application" },
-    { label: "MySQL", level: 80, category: "Database" },
-    { label: "MSSQL", level: 60, category: "Database" },
-    { label: "MongoDB", level: 95, category: "Database" },
-    { label: "Shell / Linux", level: 75, category: "System" },
-    { label: "Virtual Box", level: 85, category: "System" },
+    { label: "Python", level: 90, category: "Data", mastered: true},
+    { label: "Tableau", level: 80, category: "Data", mastered: false},
+    { label: "Regex", level: 75, category: "Data", mastered: false},
+    { label: "LaTeX", level: 65, category: "Data", mastered: true},
+    { label: "C++", level: 70, category: "Application", mastered: true},
+    { label: "Visual Basic (for MS Office)", level: 90, category: "Application", mastered: true},
+    { label: "MySQL", level: 80, category: "Database", mastered: true},
+    { label: "MSSQL", level: 60, category: "Database", mastered: true},
+    { label: "MongoDB", level: 95, category: "Database", mastered: true},
+    { label: "Shell / Linux", level: 75, category: "System", mastered: true},
+    { label: "Virtual Box", level: 85, category: "System", mastered: false},
   ];
 
   const skills = [
