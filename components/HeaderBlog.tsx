@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-[6px] bg-white/30 dark:bg-black/30 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-teal-600 dark:text-teal-400 hover:opacity-80 transition">
+        <Link href="/blog" className="text-xl font-bold text-teal-600 dark:text-teal-400 hover:opacity-80 transition">
           SINA
         </Link>
         <h1 className="text-lg sm:text-xl font-semibold text-gray-700 dark:text-gray-200 text-center">

@@ -103,34 +103,7 @@ body {
   font-family: monospace;
 }
 
-details summary {
-  cursor: pointer;
-  padding: 0.6rem 0.9rem;
-  background-color: #2d2d2d; /* slightly lighter for contrast */
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #ddd;
-  position: relative;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-details summary:hover {
-  background-color: #3a3a3a;
-  color: #f0f0f0;
-}
 
-details[open] summary {
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
-details {
-  padding: 0.5rem;
-  border: 1px solid #333;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  background-color: #1a1a1a;
-}
 
 /* globals.css */
 .scroller {
@@ -183,4 +156,115 @@ details {
   background: hsl(215, 25%, 27%);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%);
+}
+
+
+
+
+/* Table styling for GFM tables */
+.markdown-content table {
+  @apply w-full border-collapse border-r rounded-lg border-gray-600 my-4;
+  border: 1px solid #4b5563;
+}
+
+
+.markdown-content th {
+  @apply border-r border-gray-600 px-4 py-2 bg-gray-800 font-semibold text-left;
+  border-bottom: 1px solid #4b5563;
+}
+
+
+.markdown-content td {
+  @apply border-r border-gray-600 px-4 py-2;
+  border-bottom: 1px solid #4b5563;
+}
+
+.markdown-content th:last-child {
+  @apply border-r-0;
+}
+
+.markdown-content tr:nth-child(even) {
+  @apply bg-gray-800/30;
+}
+
+
+
+/* Strikethrough support */
+.markdown-content del {
+  @apply line-through opacity-75;
+}
+
+/* Task list styling */
+.markdown-content input[type="checkbox"] {
+  @apply mr-2;
+}
+
+.markdown-content li {
+  @apply list-none ;
+}
+
+.markdown-content ul li:has(input[type="checkbox"]) {
+  @apply flex items-center ;
+}
+
+/* Code block improvements */
+.markdown-content pre {
+  @apply bg-black p-4 rounded-lg overflow-x-auto my-4 ;
+}
+
+.markdown-content code {
+  @apply bg-gray-800 px-1 py-0.5 rounded text-sm;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0;
+}
+
+
+
+
+
+/* Details/Summary (Dropdown) styling */
+.markdown-content details {
+  @apply bg-gray-800/50 rounded-lg border border-gray-600 my-4 overflow-hidden;
+}
+
+.markdown-content summary {
+  @apply px-5 py-4 cursor-pointer select-none font-medium text-gray-200 
+         hover:bg-gray-700/50 transition-colors duration-500 
+         flex items-center justify-between;
+}
+
+.markdown-content summary::-webkit-details-marker {
+  @apply hidden;
+}
+
+.markdown-content summary::after {
+  content: "▶";
+  @apply text-gray-400 transition-transform duration-500 text-sm;
+}
+
+.markdown-content details[open] summary::after {
+  @apply rotate-90;
+}
+
+.markdown-content details[open] summary {
+  @apply border-b border-gray-600 bg-gray-700/30;
+}
+
+.markdown-content details > *:not(summary) {
+  @apply mx-2 ;
+}
+
+/* Nested details styling */
+.markdown-content details details {
+  @apply mt-0 mb-2 bg-gray-900/50 border-gray-500;
+}
+
+.markdown-content details details summary {
+  @apply px-4 py-3 ;
+}
+
+.markdown-content details details > *:not(summary) {
+  @apply pl-1 py-0;
 }

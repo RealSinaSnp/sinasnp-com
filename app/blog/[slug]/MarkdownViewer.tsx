@@ -1,18 +1,27 @@
-// components/MarkdownViewer.tsx
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
-import rehypeHighlight from "rehype-highlight";
-//import typography from '@tailwindcss/typography';
-import "highlight.js/styles/github-dark.css";
+// app/blog/[slug]/MarkdownViewer.tsx
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github-dark.css'; // or any other theme you prefer
 
-export default function MarkdownViewer({ content }: { content: string }) {
-  return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeRaw, rehypeHighlight]}
-    >
-      {content}
-    </ReactMarkdown>
-  );
+interface MarkdownViewerProps {
+  content: string;
 }
+
+const MarkdownViewer = ({ content }: MarkdownViewerProps) => {
+  return (
+    <div className="markdown-content">
+      <MDXRemote
+        source={content}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [remarkGfm],
+            rehypePlugins: [rehypeHighlight],
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+export default MarkdownViewer;
