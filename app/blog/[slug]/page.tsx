@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { Post as PostType } from "@/lib/types";
 import LogoutButton from "@/components/LogoutButton";
+import Link from "next/link";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,13 +41,13 @@ export default async function PostPage({ params }: Props) {
 
         {session?.user && (
           <div className="mt-4">
-            <a
+            <Link
               href={`/blog/admin/${post.slug}`}
               aria-label="Edit Post"
               className="inline-block bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
             >
               ✏️ Edit Post
-            </a>
+            </Link>
             <LogoutButton />
           </div>
         )}

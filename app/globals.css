@@ -189,19 +189,65 @@ body {
 
 
 
+/* Global markdown text */
+.markdown-content {
+  @apply text-white;
+}
+
 /* Strikethrough support */
 .markdown-content del {
   @apply line-through opacity-75;
 }
+
+
+
+/* Link styling for markdown content */
+.markdown-content a {
+  @apply text-blue-400 hover:text-blue-300 transition-colors duration-200 
+         underline decoration-blue-400/50 underline-offset-3 
+         hover:decoration-blue-300 break-words;
+}
+
+.markdown-content a:visited {
+  @apply text-purple-400 decoration-purple-400/50;
+}
+
+.markdown-content a:hover {
+  @apply decoration-2; /* Makes underline thicker on hover */
+}
+
+
+/* Email links styling */
+.markdown-content a[href^="mailto:"] {
+  @apply text-green-400 hover:text-green-300 decoration-green-400/50;
+}
+.markdown-content a[href^="mailto:"]::before {
+  content: "✉ ";
+  @apply text-xs;
+}
+
+/* Code links (links inside code blocks) */
+.markdown-content code a {
+  @apply bg-transparent px-0 py-0;
+}
+
+/* Link in headings */
+.markdown-content h1 a,
+.markdown-content h2 a,
+.markdown-content h3 a,
+.markdown-content h4 a,
+.markdown-content h5 a,
+.markdown-content h6 a {
+  @apply no-underline hover:underline text-inherit;
+}
+
 
 /* Task list styling */
 .markdown-content input[type="checkbox"] {
   @apply mr-2;
 }
 
-.markdown-content li {
-  @apply list-none ;
-}
+
 
 .markdown-content ul li:has(input[type="checkbox"]) {
   @apply flex items-center ;
@@ -209,15 +255,15 @@ body {
 
 /* Code block improvements */
 .markdown-content pre {
-  @apply bg-black p-4 rounded-lg overflow-x-auto my-4 ;
+  @apply bg-black pl-0 pr-2 rounded-sm overflow-x-auto my-4 ;
 }
 
 .markdown-content code {
-  @apply bg-gray-800 px-1 py-0.5 rounded text-sm;
+  @apply bg-black px-1 py-0.5 rounded text-sm;
 }
 
 .markdown-content pre code {
-  @apply bg-transparent p-0;
+  @apply bg-transparent p-4;
 }
 
 
