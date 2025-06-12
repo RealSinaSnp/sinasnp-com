@@ -29,7 +29,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <main className="px-6 md:px-20 py-10 bg-[#222] min-h-screen">
-      <div className="prose prose-invert max-w-7xl mx-auto p-2 ">
+      <div className="prose prose-invert prose-sm max-w-7xl mx-auto p-2 ">
         <h1>{post.title}</h1>
         <p className="text-gray-400 text-sm">{new Date(post.createdAt).toLocaleString()}</p>
 

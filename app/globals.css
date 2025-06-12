@@ -151,12 +151,12 @@ body {
 
 
 /* dont know where used, maybe delete later */
-.tag {
+/* .tag {
   padding: 1rem;
   background: hsl(215, 25%, 27%);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem -0.25rem hsl(218, 33%, 9%);
-}
+} */
 
 
 
@@ -205,16 +205,14 @@ body {
 .markdown-content a {
   @apply text-blue-400 hover:text-blue-300 transition-colors duration-200 
          underline decoration-blue-400/50 underline-offset-3 
-         hover:decoration-blue-300 break-words;
+         hover:decoration-blue-300 hover:decoration-1 break-words;
 }
 
 .markdown-content a:visited {
   @apply text-purple-400 decoration-purple-400/50;
 }
 
-.markdown-content a:hover {
-  @apply decoration-1; /* Makes underline thicker on hover */
-}
+
 
 
 /* Email links styling */
@@ -312,7 +310,7 @@ body {
 }
 
 .markdown-content details details > *:not(summary) {
-  @apply pl-1 py-0;
+  @apply pl-5 py-0;
 }
 
 
