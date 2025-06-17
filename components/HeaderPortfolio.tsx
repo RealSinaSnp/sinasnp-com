@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import HeaderSticky from "./HeaderSticky";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PortfolioHeader() {
   const { theme, setTheme } = useTheme();
@@ -74,9 +75,8 @@ export default function PortfolioHeader() {
   
               <div className="flex gap-4 mt-4 text-xl">
                 
-                <a
+                <Link
                   href="/blog"
-                  target="_blank"
                   aria-label="Blog"
                   rel="noopener noreferrer"
                   className={`flex items-center mt-[-6] px-2 inset-x-[30px] top-[30px] gap-2 border-2 border-transparent rounded-full font-semibold
@@ -89,7 +89,7 @@ export default function PortfolioHeader() {
                 >
                   <Newspaper className="w-5 h-5" />
                   <span className="font-medium">Blog</span>
-                </a>
+                </Link>
 
                 <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
 

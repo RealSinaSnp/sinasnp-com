@@ -23,7 +23,7 @@ export default async function PostPage({ params }: Props) {
   if (!post) {
     return (
       <div className="p-4 text-red-500">
-        Post not found2
+        Post not found
       </div>);
   }
 
