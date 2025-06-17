@@ -31,6 +31,7 @@ export default function CVPage() {
   { label: "Tailwind CSS", level: 90, category: "Frontend", mastered: true },
   { label: "Next.js",      level: 80, category: "Backend", mastered: true },
   { label: "PHP",          level: 60, category: "Backend", mastered: false },
+  { label: ".NET Core",    level: 60, category: "Backend", mastered: false },
   { label: "MySQL",        level: 95, category: "Database", mastered: true },
   { label: "MongoDB",      level: 75, category: "Database", mastered: true },
   { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
