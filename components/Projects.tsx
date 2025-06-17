@@ -220,7 +220,7 @@ export default function ProjectsPage() {
               <div className="absolute inset-0" />
               <h3 className="text-xl">First Portfolio</h3>
             </Link>
-            <p className="mt-4 text-secondary">
+            <p className="mt-4 py-6 text-secondary">
               My first portfolio was built with plain HTML/CSS in 2019 on my custom domain . 
               <br/>
               *You can laugh at the design choices
