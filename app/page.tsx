@@ -61,11 +61,11 @@ export default function CVPage() {
   ];
 
   const skills = [
-    { label: "Unit Testing", level: 75, category: "Data" },
-    { label: "Agile", level: 80, category: "Data" },
-    { label: "Version Control", level: 75, category: "Data" },
-    { label: "Documentation", level: 85, category: "Data" },
-    { label: "Security Solutions", level: 50, category: "Data" },
+    { label: "JavaScript", level: 75, category: "Data" },
+    { label: "TypeScript", level: 60, category: "Data" },
+    { label: "C#", level: 80, category: "Data" },
+    { label: "Python", level: 75, category: "Data" },
+    { label: "SQL", level: 85, category: "Data" },
   ];
 
   
@@ -152,7 +152,7 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[3]">
-          <InfoCard2 title="Development Practices" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
+          <InfoCard2 title="Programming Languages" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
         </div>
         
         <div className="flex-[1.5]">
