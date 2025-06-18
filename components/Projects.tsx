@@ -200,8 +200,8 @@ export default function ProjectsPage() {
       {/* Project Cards Grid */}
       <div className="grid gap-0 lg:grid-cols-3 lg:-space-x-px">
 
-        {/* 2nd Card */}
-        <div className={`group relative px-0 py-13 h-full lg:p-8 flex flex-col from-secondary/10 via-transparent to-transparent lg:border-l-[0.5px] lg:border-t-0 border-t-[0.5px] border-r-0 md:flex-row lg:flex-col gap-10 overflow-hidden ${isDark ? "border-[rgba(255,255,255,0.1)]" : "border-[rgba(0,0,0,0.1)]"}`}>
+        {/* 3rc Card */}
+        <div className={`group relative px-0 py-13 h-full lg:p-8 flex flex-col from-secondary/10 via-transparent to-transparent lg:border-l-[0.5px] lg:border-r-[0.5px] lg:border-t-0 border-t-[0.5px] border-r-0 md:flex-row lg:flex-col gap-10 overflow-hidden ${isDark ? "border-[rgba(255,255,255,0.1)]" : "border-[rgba(0,0,0,0.1)]"}`}>
           {/* Border Hover Corners */}
           <div className="absolute inset-0 pointer-events-none hidden lg:block isolate z-10">
             {/* Border with low opacity on hover */}

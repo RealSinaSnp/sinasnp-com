@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeaderSticky() {
   const { theme, setTheme } = useTheme();
@@ -23,9 +24,9 @@ export default function HeaderSticky() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="/blog" target="_blank" rel="noopener noreferrer" aria-label="Blog" className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}>
+          <Link href="/blog" rel="noopener noreferrer" aria-label="Blog" className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}>
             <Newspaper className="w-6 h-6" />
-          </a>
+          </Link>
           <div className="h-6 w-[1px] bg-gray-400 opacity-50" />
           <a href="https://github.com/RealSinaSnp" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
             <FontAwesomeIcon icon={faGithub} className={`flex items-center ${isDark ? "text-teal-100 hover:text-white" : "text-[#17313c] hover:text-black"} transition`}/>
