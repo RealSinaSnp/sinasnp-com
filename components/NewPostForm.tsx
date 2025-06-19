@@ -27,13 +27,13 @@ export default function NewPostForm() {
 
   return (
     <form onSubmit={createPost} className="max-w-4xl my-8 mx-auto p-6 bg-gray-900 rounded-xl shadow space-y-4">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">Create New Post</h2>
+      <h2 className="text-2xl font-bold mb-4 text-gray-800 ">Create New Post</h2>
 
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Post Title"
-        className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
         required
       />
 
@@ -41,14 +41,14 @@ export default function NewPostForm() {
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
         placeholder="Image URL (optional)"
-        className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
       />
 
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Post Content"
-        className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg h-48 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+        className="w-full p-3 border border-gray-300 rounded-lg h-48 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
         required
       />
 
@@ -56,7 +56,7 @@ export default function NewPostForm() {
         value={tags}
         onChange={(e) => setTags(e.target.value)}
         placeholder="Tags (comma separated: tech, ai, blog)"
-        className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
       />
 
       <button

@@ -111,7 +111,7 @@ export default function CVPage() {
   
 
   return (
-    <div className={`${isDark ? "dark bg-[#0c0c0c] text-white" : "bg-white text-black"}`}>
+    <div className={isDark ? "bg-[#0c0c0c] bg-gradient-noise text-white" : "bg-white bg-gradient-noise text-black"}>
       
       <PortfolioHeader />
       
@@ -169,9 +169,11 @@ export default function CVPage() {
       
 
       </div>
-      <footer className="border-t-1 border-neutral-500 pt-5 p-4 text-center text-sm text-gray-500 dark:text-gray-400">
+      <footer className="border-t-1 border-neutral-500 pt-5 p-4 text-center text-sm text-gray-500 ">
         © 2025 Sina
       </footer>
+
+
     </div>
     
   );
