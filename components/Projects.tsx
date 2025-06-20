@@ -14,7 +14,7 @@ export default function ProjectsPage() {
     <div className="mx-auto w-full px-8 py-25 xl:max-w-7xl space-y-16 sm:space-y-15">
       {/* Header Section */}
       <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between max-w-xl space-y-12">
-          <h2 className="text-balance text-md tracking-tight">
+          <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl tracking-tight">
             <span>[</span>
             <span>Projects</span>
             <span>]</span>
