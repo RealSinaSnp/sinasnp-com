@@ -48,11 +48,11 @@ export default function PortfolioHeader() {
                   {isDark ? <Sun /> : <Moon color="#000" />}
                 </button>
               <p className={`text-xl ${isDark ? "text-white" : "text-black "} `}>
-                Coding with{" {"}
-                <span className="font-medium txt-animated-gradient-stylish">style</span>{"} "}
                 <span className="hidden md:inline">
-                  {isDark ? "in Dark Mode." : "and building snappy UIs."}
+                  {" {"}Fullstack{"} "} developer from 
                 </span>
+                
+                <span className="font-medium txt-animated-gradient-stylish"> Iran</span>
               </p>
   
               </div>

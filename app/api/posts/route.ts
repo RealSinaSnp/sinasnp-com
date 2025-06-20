@@ -7,11 +7,20 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const tag = searchParams.get("tag");
+    const limit = searchParams.get("limit");
 
     await connectToDB();
-    const posts = tag
-      ? await Post.find({ tags: tag }).sort({ createdAt: -1 }) // Filter by tag
-      : await Post.find().sort({ createdAt: -1 });             // Return all
+    
+    let query = tag
+      ? Post.find({ tags: tag }).sort({ createdAt: -1 })
+      : Post.find().sort({ createdAt: -1 });
+    
+    // Add limit if specified
+    if (limit) {
+      query = query.limit(parseInt(limit));
+    }
+    
+    const posts = await query;
     return NextResponse.json(posts);
   } catch (error) {
     console.error("GET /api/posts failed:", error);

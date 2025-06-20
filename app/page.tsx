@@ -11,6 +11,7 @@ import PortfolioHeader from "@/components/HeaderPortfolio";
 //import SmokeEffect from "@/components/testSmoke";
 import InfoCard2 from "@/components/InfoCard2";
 import InfoCard1 from "@/components/InfoCard1";
+import StackedCardsClient from "@/components/StackedCards";
 //import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
@@ -61,21 +62,21 @@ export default function CVPage() {
     { label: "Virtual Box", level: 85, category: "System", mastered: false},
   ];
 
-  const skills = [
+  // const skills = [
+  //   { label: "JavaScript", level: 75, category: "Data" },
+  //   { label: "TypeScript", level: 60, category: "Data" },
+  //   { label: "C#", level: 80, category: "Data" },
+  //   { label: "Python", level: 75, category: "Data" },
+  //   { label: "SQL", level: 85, category: "Data" },
+  // ];
+
+  
+  const interests = [
     { label: "JavaScript", level: 75, category: "Data" },
     { label: "TypeScript", level: 60, category: "Data" },
     { label: "C#", level: 80, category: "Data" },
     { label: "Python", level: 75, category: "Data" },
     { label: "SQL", level: 85, category: "Data" },
-  ];
-
-  
-  const interests = [
-    { label: "Team Player", level: 75, category: "Data" },
-    { label: "Problem Solving", level: 75, category: "Data" },
-    { label: "Creativity", level: 75, category: "Data" },
-    { label: "Attention to details", level: 75, category: "Data" },
-    { label: "Analytical", level: 75, category: "Data" },
   ];
 
 
@@ -153,11 +154,11 @@ export default function CVPage() {
 
       <section className="p-6 flex flex-col lg:flex-row gap-6 max-w-7xl w-full mx-auto" id="skills-tools">
         <div className="flex-[3]">
-          <InfoCard2 title="Programming Languages" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={skills} isTrans={false} logos={dataLogos} customTilt={4}/>
+          <StackedCardsClient/>
         </div>
         
         <div className="flex-[1.5]">
-          <InfoCard2 title="Characteristics" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
+          <InfoCard2 title="Programming Languages" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={interests} showCheckmarks isTrans={false} customTilt={5} />
         </div>
         <div className="flex-[1.4]">
           <InfoCard2 title="Interests" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={characteristics} showCheckmarks isTrans={false} customTilt={5} />
