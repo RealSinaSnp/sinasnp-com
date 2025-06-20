@@ -139,13 +139,13 @@ export default function CVPage() {
           <InfoCard1 title="Web Development" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={webSkills} isTrans={true} logos={webLogos} description={' \
             Web developer with 3 years background in web \design and familiar with backend technologies.  \
             I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. \
-            I’m comfortable setting up servers, managing deployment pipelines with Docker. \
+            I’m comfortable setting up servers and managing deployment pipelines with Docker. \
             '}/>
         </div>
         <div className="flex-[3.5]">
           <InfoCard1 title="Data Analysis" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
-            Python developer with 2 years background in writing scripts data manipulation, exploration, and visualization. \
-            Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing meaningful insights \
+            Python developer with 2 years background in writing scripts for data manipulation, exploration, and visualization. \
+            Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing visual insights \
             while emphasizing clarity, validity. \
             '}/>
 

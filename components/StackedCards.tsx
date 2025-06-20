@@ -122,7 +122,7 @@ export default function StackedCards() {
                   isDark
                     ? "bg-neutral-900 border-neutral-800 text-white"
                     : "bg-neutral-100 border-neutral-300 text-black"
-                } border border-[1px] cursor-pointer overflow-hidden`}
+                } border cursor-pointer overflow-hidden`}
                 style={getCardStyle(position)}
                 onClick={handleCardClick}
               >
