@@ -119,7 +119,7 @@ export default function StackedCardsContent({
           <div className="pt-3 mt-auto">
             <div className="flex justify-between items-center">
               <span className="text-xs font-mono text-teal-500">
-                Click to cycle through posts
+                Click to cycle
               </span>
               <button
                 className="px-2 py-1 border text-xs uppercase font-mono tracking-widest rounded-full bg-transparent text-teal-500 border-teal-600 hover:shadow-[0_0_10px_rgba(20,184,166,0.7)] transition-all duration-300"
