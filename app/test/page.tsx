@@ -1,3 +1,4 @@
+import Footer from "@/components/FooterMain";
 import React from "react";
 
 const HeroSection = () => {
@@ -8,6 +9,7 @@ const HeroSection = () => {
         <h1>Hero Section</h1>
         <p>Some Content</p>
       </div>
+        <Footer />
     </div>
   );
 };

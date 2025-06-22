@@ -58,14 +58,30 @@ export default function StackedCards() {
     fetchPosts();
   }, []);
 
-  const handleCardClick = () => {
-    setCardOrder((prev) => {
-      const newOrder = [...prev];
-      const frontCard = newOrder.shift();
-      newOrder.push(frontCard!);
-      return newOrder;
-    });
-  };
+
+
+  let audio: HTMLAudioElement | null = null;
+
+const handleCardClick = () => {
+  // Stop the previous sound if it's still playing
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  // Play the new sound
+  audio = new Audio("/light-switch.mp3");
+  audio.volume = 0.1;
+  audio.play();
+
+  // Update card order
+  setCardOrder((prev) => {
+    const newOrder = [...prev];
+    const frontCard = newOrder.shift();
+    newOrder.push(frontCard!);
+    return newOrder;
+  });
+};
 
   
 

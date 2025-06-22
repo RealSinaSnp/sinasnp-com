@@ -12,6 +12,7 @@ import PortfolioHeader from "@/components/HeaderPortfolio";
 import InfoCard2 from "@/components/InfoCard2";
 import InfoCard1 from "@/components/InfoCard1";
 import StackedCardsClient from "@/components/StackedCards";
+import Footer from "@/components/FooterMain";
 //import WIPModal from '@/components/WIPModal';
 //import GridSection from "@/components/BalatroCard";
 //import { InfiniteScroller } from '@/components/InfiniteScroll';
@@ -175,10 +176,8 @@ export default function CVPage() {
       
 
       </div>
-      <footer className="border-t-1 border-neutral-500 pt-5 p-4 text-center text-sm text-gray-500 ">
-        © 2025 Sina
-      </footer>
-
+      
+      <Footer />
 
     </div>
     
