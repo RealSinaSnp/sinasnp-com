@@ -77,6 +77,7 @@ export default function CVPage() {
     { label: "C#", level: 80, category: "Data" },
     { label: "Python", level: 75, category: "Data" },
     { label: "SQL", level: 85, category: "Data" },
+    { label: "Visual Basic", level: 85, category: "Data" },
   ];
 
 

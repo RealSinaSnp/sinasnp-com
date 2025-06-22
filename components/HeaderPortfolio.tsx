@@ -17,7 +17,7 @@ export default function PortfolioHeader() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const triggerHeight = window.innerHeight * 0.75;
+      const triggerHeight = window.innerHeight * 0.65;
       setShowSticky(offset > triggerHeight);
     };
     window.addEventListener("scroll", handleScroll);
@@ -82,7 +82,7 @@ export default function PortfolioHeader() {
                   className={`flex items-center mt-[-6] px-2 inset-x-[30px] top-[30px] gap-2 border-2 border-transparent rounded-full font-semibold
                   ${
                     isDark
-                      ? "text-teal-200 hover:text-white hover:bg-teal-800"
+                      ? "text-teal-100 hover:text-white hover:bg-teal-800"
                       : "text-[#17313c] hover:text-black hover:bg-teal-200"
                   } 
                   transition`}

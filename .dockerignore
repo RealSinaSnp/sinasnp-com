@@ -23,3 +23,4 @@ build.log
 
 .next/cache
 /.vscode/
+/app/test
