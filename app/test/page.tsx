@@ -1,17 +1,21 @@
-import Footer from "@/components/FooterMain";
 import React from "react";
 
-const HeroSection = () => {
+const FadingLines = () => {
   return (
-    <div className="flex h-[100vh] items-center justify-center overflow-hidden align-center">
-      <div className=" grid-lines"></div>
-      <div className="text-white">
-        <h1>Hero Section</h1>
-        <p>Some Content</p>
+    <div className="relative w-full h-16 flex items-center justify-center">
+      {/* Top Line */}
+      <div className="absolute w-xl h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
+
+      <div className="translate-y-4 z-12">
+        <h1>HI There</h1>
       </div>
-        <Footer />
+
+      {/* Glass Effect Container */}
+      <div className="absolute w-xl h-7  backdrop-blur-md rounded-md translate-y-4 z-11"></div>
+      {/* Bottom Line */}
+      <div className="absolute w-xl h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent translate-y-8"></div>
     </div>
   );
 };
 
-export default HeroSection;
+export default FadingLines;
