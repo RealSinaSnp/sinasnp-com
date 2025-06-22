@@ -112,9 +112,13 @@ export default function CVPage() {
   
 
   return (
-    <div className={isDark ? "bg-[#0c0c0c] bg-gradient-noise text-white" : "bg-white bg-gradient-noise text-black"}>
+    <div className={`z-10 ${isDark ? "bg-[#050505] text-white" : "bg-neutral-50 text-black"} bg-gradient-noise`}>
       
-      <PortfolioHeader />
+      <div className="relative">
+        <div className={`grid-lines ${isDark ? "" : "opacity-15"}`}></div>
+
+        <PortfolioHeader />
+      </div>
       
 
       <div className="pt-15 md:pt-20 max-w-7xl mx-auto">

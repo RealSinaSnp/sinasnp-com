@@ -28,7 +28,7 @@ export default function PortfolioHeader() {
       <>
         <header
           className={`min-h-[85vh] w-full bg-no-repeat  
-                      ${isDark ? "bg-animated-gradient-fade-dark text-white" : "bg-animated-gradient-fade text-black" }`}  
+                      ${isDark ? "text-white" : "text-black" }`}  
         >
           <div className={` md:pt-30 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-8 py-12 md:py-0`} >
             <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left order-2 md:order-1">
