@@ -9,7 +9,6 @@ interface StackedCardsContentProps {
   post: Post;
   positionStyle: React.CSSProperties;
   isDark: boolean;
-  handleImageError: () => void;
   handleCardClick: () => void;
 }
 
@@ -17,7 +16,6 @@ export default function StackedCardsContent({
   post,
   positionStyle,
   isDark,
-  handleImageError,
   handleCardClick,
 }: StackedCardsContentProps) {
   const formattedDate = new Date(post.createdAt).toLocaleDateString(undefined, {
@@ -88,7 +86,6 @@ export default function StackedCardsContent({
           >
             <Image
               src={imageSrc}
-              onError={handleImageError}
               alt={post.title}
               className="w-full h-full object-cover"
               width={300}

@@ -10,7 +10,6 @@ export default function StackedCards() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [cardOrder, setCardOrder] = useState([0, 1, 2, 3]);
-  const [imgErrors, setImgErrors] = useState<{ [key: number]: boolean }>({});
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
@@ -68,9 +67,7 @@ export default function StackedCards() {
     });
   };
 
-  const handleImageError = (index: number) => {
-    setImgErrors((prev) => ({ ...prev, [index]: true }));
-  };
+  
 
   const getCardStyle = (position: number) => {
     const transforms = [
@@ -109,7 +106,6 @@ export default function StackedCards() {
                 post={post}
                 positionStyle={positionStyle}
                 isDark={isDark}
-                handleImageError={() => handleImageError(postIndex)}
                 handleCardClick={handleCardClick}
               />
             );
