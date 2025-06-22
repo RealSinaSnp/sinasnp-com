@@ -14,7 +14,7 @@ export default function HeaderSticky() {
   return (
     <div className={`fixed top-2 left-0 w-full px-8 z-50 flex justify-center animate-slideDown`}>
       {/* Top Line */}
-      <div className="absolute w-xl h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent  z-12"></div>
+      <div className={`absolute w-sm md:w-xl h-[1px] bg-gradient-to-r from-transparent ${isDark ? "via-white" : "via-black"} to-transparent z-12`}></div>
       {/* Glass Effect Container */}
       <div className="absolute w-xl h-[55px] backdrop-blur-md md:backdrop-blur-xs mask-fade translate-y-[1px] z-11"></div>
 
@@ -22,9 +22,8 @@ export default function HeaderSticky() {
 
         
         <a href="/docs/CV_EN_dark.pdf" download className={`flex items-center gap-2`} >
-          <Download className={`${isDark ? "text-teal-100 group-hover:text-white" : "text-[#17313c] group-hover:text-black"} transition`}/>
-          <span
-            className={`font-semibold text-md ${isDark? "text-teal-100 group-hover:text-white": "text-[#17313c] group-hover:text-black"} transition`}>
+          <Download size={20} className={`w-5 h-5 md:w-7 md:h-7 ${isDark ? "text-teal-100 group-hover:text-white" : "text-[#17313c] group-hover:text-black"} transition`}/>
+          <span className={`font-semibold text-sm md:text-md ${isDark? "text-teal-100 group-hover:text-white": "text-[#17313c] group-hover:text-black"} transition`}>
             Download CV
           </span>
         </a>
@@ -52,7 +51,8 @@ export default function HeaderSticky() {
       </div>
 
       {/* Bottom Line */}
-      <div className="absolute w-xl h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent translate-y-14"></div>
+      <div className={`absolute w-sm md:w-xl h-[1px] bg-gradient-to-r z-12 translate-y-14
+        from-transparent ${isDark ? "via-white" : "via-black"} to-transparent`}></div>
     </div>
   );
 }

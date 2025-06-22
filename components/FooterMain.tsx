@@ -10,15 +10,15 @@ const Footer = () => {
 
   return (
     <footer className={`w-full ${isDark ? "bg-black text-gray-400" : "bg-white text-gray-600"}  border-t border-neutral-500 `}>
-      <div className="flex flex-col md:flex-row gap-5 py-10  max-w-7xl mx-auto items-start justify-between">
+      <div className="md:flex md:flex-row gap-5 py-10 px-5 max-w-7xl mx-auto items-start justify-between">
         {/* Left Column */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="md:flex-1 text-center md:text-left">
           <h2 className={`text-lg font-semibold ${isDark ? "text-white":"text-black"}`}>Sina Sasanpour</h2>
           <p className="mt-2 text-sm">© 2025 | All rights reserved.</p>
         </div>
 
         {/* Right Columns */}
-        <div className="md:grid  md:grid-cols-2 gap-8 text-center md:text-left ml-auto -right-5">
+        <div className="md:grid md:grid-cols-2 gap-8 text-center md:text-left ml-auto -right-5 hidden">
           {/* Skills */}
           <div>
             <h3 className={`text-lg font-semibold ${isDark ? "text-white":"text-black"}`}>My Websites</h3>
