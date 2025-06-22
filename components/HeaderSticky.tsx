@@ -3,7 +3,6 @@ import { Moon, Sun, Newspaper, Download } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HeaderSticky() {
@@ -17,7 +16,7 @@ export default function HeaderSticky() {
       {/* Top Line */}
       <div className="absolute w-xl h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent  z-12"></div>
       {/* Glass Effect Container */}
-      <div className="absolute w-xl h-[55px] backdrop-blur-md md:backdrop-blur-xs translate-y-[1px] z-11 mask-fade"></div>
+      <div className="absolute w-xl h-[55px] backdrop-blur-md md:backdrop-blur-xs mask-fade translate-y-[1px] z-11"></div>
 
       <div className={`h-14 border-0 rounded-xs px-4 py-2 flex items-center justify-between ${isDark ? "" : ""} bg-opacity-25 transition-all max-w-md w-full z-12`}>
 
