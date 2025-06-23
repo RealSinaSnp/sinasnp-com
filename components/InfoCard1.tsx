@@ -168,12 +168,12 @@ const InfoCard1: React.FC<InfoCardProps> = ({
         {isOpen && isTrans && (
           <motion.div layoutId={`card-${title}`}
             onClick={() => setIsOpen(false)}
-            className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-xs p-10 flex justify-center items-center`}
+            className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-md p-10 flex justify-center items-center`}
           >
             
             <motion.div 
               onClick={(e) => e.stopPropagation()} //prevent clicking inside the box from closing the modal
-              className={`relative max-w-7xl max-h-[107%] backdrop-blur-sm border-1 w-full  ${isDark ? "border-neutral-700" : "border-neutral-100"} p-10 `}
+              className={`relative max-w-7xl max-h-[107%]  backdrop-blur-md border-1 w-full  ${isDark ? "border-neutral-700" : "border-neutral-100"} p-10 `}
             >
               
               {/* Close Button */}
