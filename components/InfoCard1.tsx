@@ -168,33 +168,26 @@ const InfoCard1: React.FC<InfoCardProps> = ({
         {isOpen && isTrans && (
           <motion.div layoutId={`card-${title}`}
             onClick={() => setIsOpen(false)}
-            className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-lg p-10 flex justify-center items-center`}
+            className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-xs p-10 flex justify-center items-center`}
           >
+            
             <motion.div 
               onClick={(e) => e.stopPropagation()} //prevent clicking inside the box from closing the modal
-              className={`relative max-w-7xl max-h-[107%] border-1 w-full  ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"} p-10 rounded-lg`}
+              className={`relative max-w-7xl max-h-[107%] backdrop-blur-sm border-1 w-full  ${isDark ? "border-neutral-700" : "border-neutral-100"} p-10 `}
             >
+              
               {/* Close Button */}
               <button onClick={() => setIsOpen(false)}
                 className="absolute top-6 right-6 cursor-pointer transition-colors hover:bg-neutral-500/10"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-neutral-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
               {/* Close Button End*/}
+
               {/* Context Openning on click */}
-              <InfoCardContext
-                title= {title}
-                groupedItems={groupedItems}
-              />
-              {/* Context Openning on click END*/}
+              <InfoCardContext title= {title} groupedItems={groupedItems}/>
             </motion.div>
           </motion.div>
         )}

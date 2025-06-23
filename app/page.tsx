@@ -114,7 +114,7 @@ export default function CVPage() {
   
 
   return (
-    <div className={`z-10 ${isDark ? "bg-[#050505] text-white" : "bg-neutral-50 text-black"} bg-gradient-noise`}>
+    <div className={`z-10 ${isDark ? "bg-[#030504] text-white" : "bg-[#f8fffb] text-black"} bg-gradient-noise`}>
       
       <div className="relative">
         <div className={`grid-lines ${isDark ? "" : "opacity-15"}`}></div>

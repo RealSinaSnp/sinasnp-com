@@ -31,7 +31,7 @@ export default function StackedCardsContent({
       className={`absolute inset-0 ${
         isDark
           ? "bg-neutral-900 border-neutral-800 text-white"
-          : "bg-neutral-100 border-neutral-300 text-black"
+          : "bg-white border-neutral-300 text-black"
       } border cursor-pointer overflow-hidden`}
       style={positionStyle}
       onClick={handleCardClick}
