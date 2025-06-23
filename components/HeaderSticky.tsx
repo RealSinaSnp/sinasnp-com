@@ -12,7 +12,7 @@ export default function HeaderSticky() {
   const toggleDark = () => setTheme(isDark ? "light" : "dark");
 
   return (
-    <div className={`fixed top-2 left-0 w-full px-8 z-50 flex justify-center animate-slideDown`}>
+    <div className={`fixed top-5 left-0 w-full px-8 z-50 flex justify-center animate-slideDown `}>
       {/* Top Line */}
       <div className={`absolute w-sm md:w-xl h-[1px] bg-gradient-to-r from-transparent ${isDark ? "via-white" : "via-black"} to-transparent z-12`}></div>
       {/* Glass Effect Container */}
@@ -21,10 +21,10 @@ export default function HeaderSticky() {
       <div className={`h-14 border-0 rounded-xs px-4 py-2 flex items-center justify-between ${isDark ? "" : ""} bg-opacity-25 transition-all max-w-md w-full z-12`}>
 
         
-        <a href="/docs/CV_EN_dark.pdf" download className={`flex items-center gap-2`} >
+        <a href="/docs/CV_EN_dark.pdf" download className={`flex items-center ml-5 md:ml-0 gap-2`} >
           <Download size={20} className={`w-5 h-5 md:w-7 md:h-7 ${isDark ? "text-teal-100 group-hover:text-white" : "text-[#17313c] group-hover:text-black"} transition`}/>
           <span className={`font-semibold text-sm md:text-md ${isDark? "text-teal-100 group-hover:text-white": "text-[#17313c] group-hover:text-black"} transition`}>
-            Download CV
+            <span className="hidden md:inline">Download </span>CV
           </span>
         </a>
 
