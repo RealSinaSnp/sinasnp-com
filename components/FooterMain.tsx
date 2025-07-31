@@ -27,7 +27,7 @@ const Footer = () => {
                 <a href="https://sinasnp.com/blog" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">Weblog</a>
               </li>
               <li>
-                <a href="https://img.sinasnp.com/blog" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">IMGapp</a>
+                <a href="https://img.sinasnp.com/" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">IMGapp</a>
               </li>
               <li>
                 <a href="https://upload.sinasnp.com" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 transition-colors">FileUp</a>

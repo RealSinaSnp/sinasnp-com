@@ -173,7 +173,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
             
             <motion.div 
               onClick={(e) => e.stopPropagation()} //prevent clicking inside the box from closing the modal
-              className={`relative max-w-7xl max-h-[107%]  backdrop-blur-md border-1 w-full  ${isDark ? "border-neutral-700" : "border-neutral-100"} p-10 `}
+              className={`relative max-w-7xl max-h-[107%]  backdrop-blur-md border-1 w-full  ${isDark ? "border-neutral-900/5" : "border-neutral-100"} p-10 `}
             >
               
               {/* Close Button */}

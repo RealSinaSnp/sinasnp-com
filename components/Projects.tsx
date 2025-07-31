@@ -153,7 +153,7 @@ export default function ProjectsPage() {
 
           {/* Project Content */}
           <div className="max-w-sm">
-            <Link href="/img/ir.svg" target="_blank">
+            <Link href="https://upload.sinasnp.com/" target="_blank">
               <div className="absolute inset-0" />
               <h3 className="text-xl">Upload Page</h3>
             </Link>
