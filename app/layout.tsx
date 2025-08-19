@@ -1,7 +1,7 @@
 // app/layout.tsx
 "use client"; // Make layout a Client Component for usePathname
 
-//import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
@@ -23,13 +23,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+export const metadata: Metadata = {
+  title: "Sina | Portfo",
+  description: "My portfolio.",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: React.ReactNode;}>) {
   const pathname = usePathname();
   // const isMainPage = pathname === "/";
   const isBlogRoute = pathname.startsWith("/blog");

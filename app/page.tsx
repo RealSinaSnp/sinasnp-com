@@ -34,17 +34,19 @@ export default function CVPage() {
   { label: "Next.js",      level: 80, category: "Backend", mastered: true },
   { label: ".NET",         level: 60, category: "Backend", mastered: true },
   { label: "PHP",          level: 60, category: "Backend", mastered: false },
+
   { label: "MySQL",        level: 95, category: "Database", mastered: true },
   { label: "MongoDB",      level: 75, category: "Database", mastered: true },
+  { label: "Redis",      level: 75, category: "Database", mastered: false },
+
   { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
   { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
   { label: "Nginx",        level: 65, category: "Infrastructure", mastered: false },
 
+  { label: "SSR/CSR",      level: 65, category: "Tools", mastered: true },
   { label: "Chart.js",     level: 65, category: "Tools", mastered: false },
   { label: "GraphQL",      level: 65, category: "Tools", mastered: false },
   { label: "Google Lighthouse", level: 65, category: "Tools", mastered: false },
-
-  { label: "SSR/CSR",      level: 65, category: "Tools", mastered: true },
   { label: "Caching",      level: 65, category: "Tools", mastered: false },
 ];
 
