@@ -53,9 +53,9 @@ export default function CVPage() {
 
   const dataSkills = [
     { label: "Python", level: 90, category: "Data", mastered: true},
-    { label: "Tableau", level: 80, category: "Data", mastered: false},
-    { label: "Regex", level: 75, category: "Data", mastered: false},
+    { label: "Regex", level: 75, category: "Data", mastered: true},
     { label: "LaTeX", level: 65, category: "Data", mastered: true},
+    { label: "Tableau", level: 80, category: "Data", mastered: false},
     { label: "C++", level: 70, category: "Application", mastered: true},
     { label: "Visual Basic (for MS Office)", level: 90, category: "Application", mastered: true},
     { label: "MySQL", level: 80, category: "Database", mastered: true},
@@ -86,9 +86,9 @@ export default function CVPage() {
 
   const characteristics = [
     { label: "Building side projects", level: 75, category: "Data" },
-    { label: "Automating boring tasks", level: 75 , category: "Data" },
+    { label: "Automating tasks", level: 75 , category: "Data" },
     { label: "Tech blogging", level: 75 , category: "Data" },
-    { label: "UI/UX design exploration", level: 75, category: "Data" },
+    { label: "UI exploration", level: 75, category: "Data" },
     { label: "Following tech news and trends", level: 75, category: "Data" },
   ];
   const webLogos: string[] = [
@@ -108,7 +108,7 @@ export default function CVPage() {
     "https://cdn.brandfetch.io/idBdG8DdKe/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // MySQL
     "https://cdn.brandfetch.io/idQx9ZiJAu/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Ubuntu
     "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/cpp/cpp.png", // C++
-                                                                      "/img/regex.webp", // regex
+                                                                  "/img/regex.webp", // regex
     "https://img.icons8.com/?size=100&id=13654&format=png&color=000000", // MS Excel
     "https://cdn.brandfetch.io/idSA6yVd-w/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Virtual Box
     "/img/Jupyter_loogo.webp", // Virtual Box
@@ -136,8 +136,8 @@ export default function CVPage() {
           </h2>
       </div>
         <p className="text-base">
-        Seeing how automations designed by engineers have simplified human life inspires me to tackle
-        complex problems and create innovative solutions.
+        Web developer with a passion for creating user-friendly designs with experience in both frontend and backend development.
+        Graduated with a degree in Computer Programming, I have a solid foundation in programming and problem-solving skills.
         </p>
       </section>
 

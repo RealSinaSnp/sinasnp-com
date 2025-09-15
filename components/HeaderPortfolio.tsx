@@ -53,8 +53,8 @@ export default function PortfolioHeader() {
               <Image src="/img/profile_slfy.png" alt="Profile_selfie" className="w-53 h-53" width={300} height={300}/>
               <div className="flex gap-4 mt-4 text-xl">
                 <Link href="/blog" aria-label="Blog" rel="noopener noreferrer"
-                  className={`flex items-center mt-[-6] px-2 inset-x-[30px] top-[30px] gap-2 border-2 border-transparent rounded-sm font-semibold 
-                    ${ isDark ? "text-teal-100 hover:text-white hover:bg-teal-800" : "text-[#17313c] hover:text-black hover:bg-teal-200"} transition`}>
+                  className={`flex items-center mt-[-3] px-2 inset-x-[30px] top-[30px] gap-2 border-1 border-transparent rounded-sm font-semibold 
+                    ${ isDark ? "text-teal-100 hover:text-white hover:border-white" : "text-[#17313c] hover:text-black hover:border-black"} transition`}>
                   <Newspaper className="w-5 h-5" />
                   <span className="font-medium">Blog</span>
                 </Link>
