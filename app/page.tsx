@@ -86,10 +86,10 @@ export default function CVPage() {
 
   const characteristics = [
     { label: "Building side projects", level: 75, category: "Data" },
+    { label: "Following tech trends", level: 75, category: "Data" },
     { label: "Automating tasks", level: 75 , category: "Data" },
     { label: "Tech blogging", level: 75 , category: "Data" },
     { label: "UI exploration", level: 75, category: "Data" },
-    { label: "Following tech news and trends", level: 75, category: "Data" },
   ];
   const webLogos: string[] = [
     
