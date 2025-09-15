@@ -71,7 +71,7 @@ const handleCardClick = () => {
 
   // Play the new sound
   audio = new Audio("/light-switch.mp3");
-  audio.volume = 0.1;
+  audio.volume = 0.7;
   audio.play();
 
   // Update card order

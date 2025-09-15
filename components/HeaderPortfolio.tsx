@@ -42,8 +42,7 @@ export default function PortfolioHeader() {
                 </button>
                 <p className={`text-xl ${isDark ? "text-white" : "text-black "} `}>
                   <span className="">
-                    {" {"}Fullstack{"} "} developer from
-                    <span className="font-medium drop-shadow-[0_0.6px_0.6px_rgba(0,0,0,0.8)] txt-animated-gradient-stylish"> IRAN</span>
+                    {" {"}Fullstack{"} "} developer with 3 years of experience.
                   </span>
                 </p>
               </div>
