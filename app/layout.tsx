@@ -1,16 +1,7 @@
-// app/layout.tsx
-"use client"; // Make layout a Client Component for usePathname
-
-//import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { usePathname } from "next/navigation";
-import { SessionProvider } from "next-auth/react";
 import "./globals.css";
-// import PortfolioHeader from "@/components/HeaderPortfolio";
-// import HeaderTest from "@/components/TestHeaderPortfolio";
-import BlogHeader from "@/components/HeaderBlog";
-import Footer from "@/components/Footer";
+import LayoutClient from "@/components/LayoutClient"; // throw client side here
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = Geist({
@@ -23,19 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Sina | Portfo",
-//   description: "My portfolio.",
-// };
+export const metadata: Metadata = {
+  title: "Sina | Portfo",
+  description: "My portfolio.",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;}>) {
-  const pathname = usePathname();
-  // const isMainPage = pathname === "/";
-  const isBlogRoute = pathname.startsWith("/blog");
-
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <GoogleAnalytics gaId="G-BFJVGKE0T0" />
@@ -43,13 +29,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <SessionProvider>
-          {isBlogRoute && <BlogHeader />}
-          </SessionProvider>
-          <main className="flex-grow">{children}</main>
-          {isBlogRoute && <Footer />}
-        </ThemeProvider>
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );

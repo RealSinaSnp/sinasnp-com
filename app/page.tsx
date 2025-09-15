@@ -27,16 +27,16 @@ export default function CVPage() {
 
   // for InfoCard
   const webSkills = [
-  { label: "Javascript",   level: 80, category: "Frontend", mastered: true },
+  { label: "Next.js",      level: 80, category: "Frontend", mastered: true },
   { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
   { label: "React",        level: 90, category: "Frontend", mastered: true },
-  { label: "Tailwind CSS", level: 90, category: "Frontend", mastered: true },
-  { label: "Next.js",      level: 80, category: "Backend", mastered: true },
+  { label: "Tailwind", level: 90, category: "Frontend", mastered: true },
   { label: ".NET",         level: 60, category: "Backend", mastered: true },
   { label: "PHP",          level: 60, category: "Backend", mastered: false },
 
   { label: "MySQL",        level: 95, category: "Database", mastered: true },
   { label: "MongoDB",      level: 75, category: "Database", mastered: true },
+  { label: "SQLite", level: 60, category: "Database", mastered: true},
   { label: "Redis",      level: 75, category: "Database", mastered: false },
 
   { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
@@ -73,7 +73,7 @@ export default function CVPage() {
   //   { label: "SQL", level: 85, category: "Data" },
   // ];
 
-  
+
   const interests = [
     { label: "JavaScript", level: 75, category: "Data" },
     { label: "TypeScript", level: 60, category: "Data" },
@@ -111,7 +111,7 @@ export default function CVPage() {
                                                                   "/img/regex.webp", // regex
     "https://img.icons8.com/?size=100&id=13654&format=png&color=000000", // MS Excel
     "https://cdn.brandfetch.io/idSA6yVd-w/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Virtual Box
-    "/img/Jupyter_loogo.webp", // Virtual Box
+    "/img/Jupyter_loogo.webp", // Jupyter
   ];
   
 
