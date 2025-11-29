@@ -27,42 +27,51 @@ export default function CVPage() {
 
   // for InfoCard
   const webSkills = [
-  { label: "Next.js",      level: 80, category: "Frontend", mastered: true },
-  { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
-  { label: "React",        level: 90, category: "Frontend", mastered: true },
-  { label: "Tailwind", level: 90, category: "Frontend", mastered: true },
-  { label: ".NET",         level: 60, category: "Backend", mastered: true },
-  { label: "PHP",          level: 60, category: "Backend", mastered: false },
+    { label: "Next.js",      level: 80, category: "Frontend", mastered: true },
+    { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
+    { label: "React",        level: 90, category: "Frontend", mastered: true },
+    { label: "Tailwind", level: 90, category: "Frontend", mastered: true },
+    { label: ".NET",         level: 60, category: "Backend", mastered: true },
+    { label: "PHP",          level: 60, category: "Backend", mastered: false },
 
-  { label: "MySQL",        level: 95, category: "Database", mastered: true },
-  { label: "MongoDB",      level: 75, category: "Database", mastered: true },
-  { label: "SQLite", level: 60, category: "Database", mastered: true},
-  { label: "Redis",      level: 75, category: "Database", mastered: false },
+    { label: "MySQL",        level: 95, category: "Database", mastered: true },
+    { label: "MongoDB",      level: 75, category: "Database", mastered: true },
+    { label: "SQLite", level: 60, category: "Database", mastered: true},
+    { label: "Redis",      level: 75, category: "Database", mastered: false },
 
-  { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
-  { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
-  { label: "Nginx",        level: 65, category: "Infrastructure", mastered: false },
+    { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
+    { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
+    { label: "Nginx",        level: 65, category: "Infrastructure", mastered: false },
 
-  { label: "SSR/CSR",      level: 65, category: "Tools", mastered: true },
-  { label: "Chart.js",     level: 65, category: "Tools", mastered: false },
-  { label: "GraphQL",      level: 65, category: "Tools", mastered: false },
-  { label: "Google Lighthouse", level: 65, category: "Tools", mastered: false },
-  { label: "Caching",      level: 65, category: "Tools", mastered: false },
-];
-
+    { label: "SSR/CSR",      level: 65, category: "Tools", mastered: true },
+    { label: "Chart.js",     level: 65, category: "Tools", mastered: false },
+    { label: "GraphQL",      level: 65, category: "Tools", mastered: false },
+    { label: "Google Lighthouse", level: 65, category: "Tools", mastered: false },
+    { label: "Caching",      level: 65, category: "Tools", mastered: false },
+  ];
 
   const dataSkills = [
-    { label: "Python", level: 90, category: "Data", mastered: true},
-    { label: "Regex", level: 75, category: "Data", mastered: true},
-    { label: "LaTeX", level: 65, category: "Data", mastered: true},
-    { label: "Tableau", level: 80, category: "Data", mastered: false},
-    { label: "C++", level: 70, category: "Application", mastered: true},
-    { label: "Visual Basic (for MS Office)", level: 90, category: "Application", mastered: true},
-    { label: "MySQL", level: 80, category: "Database", mastered: true},
-    { label: "MSSQL", level: 60, category: "Database", mastered: true},
-    { label: "MongoDB", level: 95, category: "Database", mastered: true},
-    { label: "Shell / Linux", level: 75, category: "System", mastered: true},
-    { label: "Virtual Box", level: 85, category: "System", mastered: false},
+    { label: "IPv4",         level: 80, category: "Fundamentals", mastered: true },
+    { label: "OSI model",    level: 70, category: "Fundamentals", mastered: true },
+    { label: "VPN",          level: 90, category: "Fundamentals", mastered: true },
+    { label: "Subnetting",          level: 90, category: "Fundamentals", mastered: false },
+
+    { label: "Linux",         level: 60, category: "Server", mastered: true },
+    { label: "Shell",         level: 60, category: "Server", mastered: true },
+    { label: "Nginx",          level: 60, category: "Server", mastered: false },
+
+    { label: "MySQL",        level: 95, category: "Database", mastered: true },
+    { label: "MsSQL",        level: 95, category: "Database", mastered: true },
+    { label: "MongoDB",      level: 75, category: "Database", mastered: true },
+    { label: "Redis",      level: 75, category: "Database", mastered: true },
+    { label: "SQLite", level: 60, category: "Database", mastered: true},
+
+    { label: "Virtual Box",        level: 85, category: "Virtualization", mastered: true },
+    { label: "Docker",       level: 75, category: "Virtualization", mastered: true },
+
+    { label: "MSOffice",      level: 65, category: "Tools", mastered: true },
+    { label: "VBA Excel",     level: 65, category: "Tools", mastered: true },
+    { label: "Cisco Packet Tracer",      level: 65, category: "Tools", mastered: false },
   ];
 
   // const skills = [
@@ -94,23 +103,26 @@ export default function CVPage() {
   const webLogos: string[] = [
     
     "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png", //JS
-    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png", //TS
     "https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000", //Docker
     "https://img.icons8.com/?size=100&id=NfbyHexzVEDk&format=png&color=000000", //React 
-    "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000", //Tailwind CSS
     "https://cdn.brandfetch.io/id2alue-rx/theme/dark/idqNI71Hra.svg?c=1dxbfHSJFAPEGdCLU4o5B", //Next.js
-    "https://cdn.brandfetch.io/ideyyfT0Lp/theme/light/idGfqn8y6C.svg?c=1dxbfHSJFAPEGdCLU4o5B", //MongoDB
+    "https://cdn.brandfetch.io/idyOYdN423/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1760091815298", //DotNet
+    "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000", //Tailwind CSS
+    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png", //TS
+    "https://cdn.brandfetch.io/ideyyfT0Lp/w/800/h/1713/theme/dark/idolyTWJJO.png?c=1bxid64Mup7aczewSAYMX&t=1758984120037", //MongoDB
+    "https://cdn.brandfetch.io/idwlYcQpHB/w/800/h/688/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1668515608635", // Redis
     "https://cdn.brandfetch.io/idQx9ZiJAu/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B", //Ubuntu
   ];
   const dataLogos: string[] = [
     "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png", // Python
-    "https://cdn.brandfetch.io/id9sYMA_Im/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Tableau
+    "https://cdn.brandfetch.io/ida_xaMYlM/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1742365554659", // Cisco
     "https://cdn.brandfetch.io/idBdG8DdKe/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // MySQL
     "https://cdn.brandfetch.io/idQx9ZiJAu/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Ubuntu
-    "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/cpp/cpp.png", // C++
+    "https://cdn.brandfetch.io/ideyyfT0Lp/w/800/h/1713/theme/dark/idolyTWJJO.png?c=1bxid64Mup7aczewSAYMX&t=1758984120037", //MongoDB
                                                                   "/img/regex.webp", // regex
     "https://img.icons8.com/?size=100&id=13654&format=png&color=000000", // MS Excel
-    "https://cdn.brandfetch.io/idSA6yVd-w/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", // Virtual Box
+    "https://cdn.brandfetch.io/idwlYcQpHB/w/800/h/688/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1668515608635", // Redis
+    "https://cdn.brandfetch.io/idv0NPaYQr/w/1024/h/876/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1758858477084", // Virtual Box
     "/img/Jupyter_loogo.webp", // Jupyter
   ];
   
@@ -151,10 +163,10 @@ export default function CVPage() {
             '}/>
         </div>
         <div className="flex-[3.5]">
-          <InfoCard1 title="Data Analysis" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
-            Python developer with 2 years background in writing scripts for data manipulation, exploration, and visualization. \
-            Through academic projects and independent learning, I have gained experience in handling diverse datasets, identifying trends, and drawing visual insights \
-            while emphasizing clarity, validity. \
+          <InfoCard1 title="Network Engineering" color={`${isDark ? "text-sky-500" : "text-sky-700"}`} items={dataSkills} isTrans={true} logos={dataLogos} description={' \
+            I have a strong technical background in network management, system administration, \
+            and practical problem-solving, with an interest in network and web technologies. \
+            I’m experienced in managing computer networks and using them effectively in web applications. \
             '}/>
 
         </div>
