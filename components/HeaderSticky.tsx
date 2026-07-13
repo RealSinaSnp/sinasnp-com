@@ -20,7 +20,7 @@ export default function HeaderSticky() {
 
       <div className={`h-14 border-0 rounded-xs px-4 py-2 flex items-center justify-between ${isDark ? "" : ""} bg-opacity-25 transition-all max-w-md w-full z-12`}>
 
-        <a href="/docs/CV_EN_dark.pdf" download className={`flex items-center ml-5 md:ml-0 gap-2 group/download-hover`} >
+        <a href="/docs/CV_WEB_EN.pdf" download className={`flex items-center ml-5 md:ml-0 gap-2 group/download-hover`} >
           <Download size={20} className={`w-5 h-5 md:w-7 md:h-7 ${isDark ? "text-teal-100 group-hover/download-hover:text-white" : "text-teal-900 group-hover/download-hover:text-black"} transition`}/>
           <span className={`font-semibold text-sm md:text-md ${isDark? "text-teal-100 group-hover/download-hover:text-white": "text-teal-900 group-hover/download-hover:text-black"} transition`}>
             <span className="hidden md:inline">Download </span>CV
