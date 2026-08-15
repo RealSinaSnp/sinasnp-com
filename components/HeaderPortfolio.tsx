@@ -42,7 +42,7 @@ export default function PortfolioHeader() {
                 </button>
                 <p className={`text-xl ${isDark ? "text-white" : "text-black "} `}>
                   <span className="">
-                    {" {"}Fullstack{"} "} developer with 3 years of experience.
+                    {" {"}Fullstack{"} "} developer with 6+ years of experience.
                   </span>
                 </p>
               </div>

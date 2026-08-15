@@ -31,7 +31,9 @@ export default function CVPage() {
     { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
     { label: "React",        level: 90, category: "Frontend", mastered: true },
     { label: "Tailwind", level: 90, category: "Frontend", mastered: true },
+
     { label: ".NET",         level: 60, category: "Backend", mastered: true },
+    { label: "Node.js",          level: 60, category: "Backend", mastered: false },
     { label: "PHP",          level: 60, category: "Backend", mastered: false },
 
     { label: "MySQL",        level: 95, category: "Database", mastered: true },
@@ -41,13 +43,15 @@ export default function CVPage() {
 
     { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
     { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
-    { label: "Nginx",        level: 65, category: "Infrastructure", mastered: false },
+    { label: "Nginx",        level: 65, category: "Infrastructure", mastered: true },
+    { label: "Kubernetes",   level: 65, category: "Infrastructure", mastered: false },
 
     { label: "SSR/CSR",      level: 65, category: "Tools", mastered: true },
-    { label: "Chart.js",     level: 65, category: "Tools", mastered: false },
-    { label: "GraphQL",      level: 65, category: "Tools", mastered: false },
+    { label: "RESTfulAPIs",      level: 65, category: "Tools", mastered: true },
+    { label: "CI/CD",      level: 65, category: "Tools", mastered: false },
+    { label: "SignalR",     level: 65, category: "Tools", mastered: false },
     { label: "Google Lighthouse", level: 65, category: "Tools", mastered: false },
-    { label: "Caching",      level: 65, category: "Tools", mastered: false },
+    // { label: "Caching",      level: 65, category: "Tools", mastered: false },
   ];
 
   const dataSkills = [
