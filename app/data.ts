@@ -91,3 +91,45 @@ export const dataLogos: string[] = [
   "https://cdn.brandfetch.io/idv0NPaYQr/w/1024/h/876/theme/dark/symbol.png?c=1bxid64Mup7aczewSAYMX&t=1758858477084", // Virtual Box
   "/img/Jupyter_loogo.webp", // Jupyter
 ];
+export const projectsData = [
+  {
+    title: "Blog Page",
+    link: "https://sinasnp.com/blog",
+    description: "I designed a blog page as extension for this page <br /> where I can write about what I've learnt or what I've been doing. <br /> Stack: MongoDB, TS, MDX",
+    image: "/img/blogpage.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-35] group-hover:opacity-90",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  },
+  {
+    title: "IMGapp",
+    link: "https://img.sinasnp.com",
+    description: "Quick image editing website with useful image tools. <br/> Stack: .NET, NextJS, <br/> Still further developing",
+    image: "/img/ir.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  },
+  {
+    title: "Upload Page",
+    link: "https://upload.sinasnp.com/",
+    description: "I created this domain to save my images and files in the same server as my blog page, for more convenience and reliability. <br /> Stack: .NET Core, JS",
+    image: "https://upload.sinasnp.com/files/svg/6117f9010ab846ec947d848c34f2c66d.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-120px] md:group-hover:bottom-[-75] group-hover:opacity-90",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  },
+  {
+    title: "Golden Moonstone",
+    link: "https://gmsglobal.app",
+    description: "A website designed as a friend, for a friend. <br/> Stack: PHP, JS <br/> Hosted by infinityfree",
+    image: "/img/gms.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  },
+  {
+    title: "First Portfolio",
+    link: "/sinaIR/index.html",
+    description: "My first portfolio back in 2019. <br/> Stack: HTML/CSS<br/> *You can laugh at the design choices",
+    image: "/img/ir.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  }
+];
