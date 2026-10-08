@@ -95,7 +95,8 @@ export const projectsData = [
   {
     title: "Blog Page",
     link: "https://sinasnp.com/blog",
-    description: "I designed a blog page as extension for this page <br /> where I can write about what I've learnt or what I've been doing. <br /> Stack: MongoDB, TS, MDX",
+    description: "I designed a blog page as extension for this page <br /> where I can write about what I've learnt or what I've been doing.",
+    stack: ["MongoDB", "TypeScript", "MDX"],
     image: "/img/blogpage.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-35] group-hover:opacity-90",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
@@ -103,7 +104,8 @@ export const projectsData = [
   {
     title: "IMGapp",
     link: "https://img.sinasnp.com",
-    description: "Quick image editing website with useful image tools. <br/> Stack: .NET, NextJS, <br/> Still further developing",
+    description: "Quick image editing website with useful image tools. <br/> Still further developing.",
+    stack: [".NET", "NextJS"],
     image: "/img/ir.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
@@ -111,7 +113,8 @@ export const projectsData = [
   {
     title: "Upload Page",
     link: "https://upload.sinasnp.com/",
-    description: "I created this domain to save my images and files in the same server as my blog page, for more convenience and reliability. <br /> Stack: .NET Core, JS",
+    description: "I created this domain to save my images and files in the same server as my blog page, for more convenience and reliability.",
+    stack: [".NET Core", "JS"],
     image: "https://upload.sinasnp.com/files/svg/6117f9010ab846ec947d848c34f2c66d.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-120px] md:group-hover:bottom-[-75] group-hover:opacity-90",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
@@ -119,7 +122,8 @@ export const projectsData = [
   {
     title: "Golden Moonstone",
     link: "https://gmsglobal.app",
-    description: "A website designed as a friend, for a friend. <br/> Stack: PHP, JS <br/> Hosted by infinityfree",
+    description: "A website designed as a friend, for a friend. <br/> Hosted by infinityfree.",
+    stack: ["PHP", "JS"],
     image: "/img/gms.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
@@ -127,9 +131,11 @@ export const projectsData = [
   {
     title: "First Portfolio",
     link: "/sinaIR/index.html",
-    description: "My first portfolio back in 2019. <br/> Stack: HTML/CSS<br/> *You can laugh at the design choices",
+    description: "My first portfolio back in 2019. <br/> *You can laugh at the design choices.",
+    stack: ["HTML", "CSS"],
     image: "/img/ir.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   }
 ];
+
