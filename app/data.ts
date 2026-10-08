@@ -96,7 +96,7 @@ export const projectsData = [
     title: "Blog Page",
     link: "https://sinasnp.com/blog",
     description: "I designed a blog page as extension for this page <br /> where I can write about what I've learnt or what I've been doing.",
-    stack: ["MongoDB", "TypeScript", "MDX"],
+    stack: ["MongoDB", "TypeScript", "MDX", "TypeScript", "MDX", "TypeScript", "MDX", "TypeScript", "MDX", "TypeScript", "MDX"],
     image: "/img/blogpage.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-35] group-hover:opacity-90",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"

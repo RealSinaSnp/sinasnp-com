@@ -31,9 +31,9 @@ export default function ProjectsPage() {
             layout
             transition={{ type: "tween", ease: "easeInOut", duration: 0.35 }}
             key={index}
-            onClick={() => setExpandedIndex(isExpanded ? null : index)}
+            onClick={() => !isExpanded && setExpandedIndex(index)}
             className={`group relative cursor-pointer px-0 py-13 h-full lg:p-8 flex flex-col from-secondary/10 via-transparent to-transparent lg:border-l-[0.5px] border-t-[0.5px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] overflow-hidden border-r-0 lg:border-r-[0.5px] lg:border-t-0
-            ${isExpanded ? "lg:col-span-3 order-first z-20 shadow-2xl bg-white/5 dark:bg-black/40" : "lg:col-span-1 z-10"}
+            ${isExpanded ? "lg:col-span-3 order-first z-20 shadow-sm bg-white dark:bg-neutral-900" : "lg:col-span-1 z-10"}
             `}
           >
             {/* Border Hover Corners */}
@@ -50,10 +50,10 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-                className="flex flex-col lg:flex-row w-full h-full min-h-[350px] justify-between gap-12 items-center relative z-30 px-4 py-8"
+                className="flex flex-col lg:flex-row w-full h-full min-h-[350px] justify-between gap-12 items-stretch relative z-30 px-4 lg:p-0"
               >
                 {/* Left Side: Info & Link */}
-                <div className="flex-1 flex flex-col items-start gap-5">
+                <div className="flex-1 flex flex-col items-start justify-start gap-5">
                   <h3 className="text-3xl lg:text-4xl font-bold tracking-tight">{project.title}</h3>
                   <p
                     className="text-secondary text-lg max-w-xl"
@@ -64,8 +64,7 @@ export default function ProjectsPage() {
                   <Link
                     href={project.link}
                     target="_blank"
-                    onClick={(e) => e.stopPropagation()}
-                    className="mt-6 inline-flex items-center gap-2 px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-lg hover:scale-105 transition-transform shadow-lg"
+                    className="mt-6 inline-flex items-center gap-2 px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-xs hover:scale-105 transition-transform"
                   >
                     Visit Project
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -73,13 +72,13 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Right Side: Stack display */}
-                <div className="w-full lg:w-96 flex flex-col gap-4 bg-black/5 dark:bg-white/5 p-8 rounded-2xl border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-inner">
-                  <h4 className="text-xl font-semibold opacity-80 uppercase tracking-widest text-sm">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-2.5">
+                <div className="w-full lg:w-96 h-full flex flex-col justify-start items-start gap-4 bg-black/5 dark:bg-white/5 p-4 rounded-xs border border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] shadow-inner">
+                  <h4 className="text-xl font-semibold uppercase tracking-widest">Tech Stack</h4>
+                  <div className="flex flex-wrap justify-start gap-2.5">
                     {project.stack?.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-4 py-2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-md text-sm font-medium shadow-sm"
+                        className="px-4 py-2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-md text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -98,15 +97,10 @@ export default function ProjectsPage() {
                     className="mt-4 text-secondary"
                     dangerouslySetInnerHTML={{ __html: project.description }}
                   ></p>
-                  {project.stack && (
-                    <p className="mt-2 text-sm text-secondary/70">
-                      Stack: {project.stack.join(", ")}
-                    </p>
-                  )}
                 </motion.div>
 
                 {/* Invisible spacer to maintain exact card height using aspect ratio matching the illustration */}
-                <motion.div layout="position" className="flex-1 w-full -mt-4 aspect-[555/384]"></motion.div>
+                <motion.div layout="position" className="flex-1 w-full mt-20 aspect-[555/384]"></motion.div>
 
                 {/* Illustration Area (Hidden when expanded) */}
                 <motion.div layout="position" className="relative flex-1 pointer-events-none">
