@@ -134,7 +134,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
               ? "hover:ring-neutral-800"
               : "hover:ring-neutral-200"
           }
-        hover:scale-100 transform-gpu transition-all duration-300 ease-in-out ${textColor}`}
+        hover:scale-100 transform-gpu ${textColor}`}
         onClick={() => isTrans && setIsOpen(true)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -144,7 +144,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
           })`,
           transition: mousePos
             ? "transform 0.1s ease-out, background 0.3s ease-out"
-            : "transform 0.3s ease-in-out, background 0.3s ease-in-out",
+            : "transform ease-in-out, background ease-in-out",
           background:
             theme === "dark"
               ? `linear-gradient(to bottom right, rgba(72, 72, 72, 0.1), rgba(72, 72, 72, 0.1)), ${glassHighlight}`
