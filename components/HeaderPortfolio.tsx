@@ -1,4 +1,5 @@
 // components/PortfolioHeader.tsx
+"use client";
 
 import { Moon, Sun, Newspaper } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,7 +32,7 @@ export default function PortfolioHeader() {
 
             <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left order-2 md:order-1">
               <h1 className={`text-5xl font-extrabold tracking-tight text-gray-900 ${isDark ? "text-white" : "text-black"}`}>
-                Hey, I’m{" "}
+                Hi! I’m{" "}
                 <span className={`${isDark ? "txt-animated-gradient-dark" : "txt-animated-gradient" } transition`}>
                   Sina <span className="hidden md:inline"> Sasanpour</span>
                 </span>

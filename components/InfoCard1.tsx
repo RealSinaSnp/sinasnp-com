@@ -1,9 +1,11 @@
+// components/InfoCard1.tsx
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Maximize2 } from "lucide-react";
 import { useTheme } from "next-themes";
+
 import InfoCardContext from "@/components/InfoCardContext";
 import LogoBox from "@/components/LogoScroll";
 
@@ -26,6 +28,9 @@ interface InfoCardProps {
 }
 
 const InfoCard1: React.FC<InfoCardProps> = ({
+
+
+
   title,
   description,
   color,
@@ -36,7 +41,9 @@ const InfoCard1: React.FC<InfoCardProps> = ({
   customTilt,
 }) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark"; 
+  // const isDark = theme === "dark";
+  
+   
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
     null
   );
@@ -156,8 +163,8 @@ const InfoCard1: React.FC<InfoCardProps> = ({
             </div>
             {/* expand icon */}
             <div className="absolute top-3 right-3"> 
-              <div className={`w-11 h-11 rounded-full ${isDark ? "bg-black" : "bg-white"} flex items-center justify-center group-hover:bg-transparent hover:bg-transparent `}>
-                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out ${isDark ? "text-white" : "text-black"} md:animate-none md:group-hover:scale-170 md:hover:scale-170`} />
+              <div className={`w-11 h-11 rounded-full bg-white dark:bg-black flex items-center justify-center group-hover:bg-transparent hover:bg-transparent `}>
+                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out text-black dark:text-white md:animate-none md:group-hover:scale-170 md:hover:scale-170`} />
               </div>
             </div>
           </div>
@@ -173,7 +180,7 @@ const InfoCard1: React.FC<InfoCardProps> = ({
             
             <motion.div 
               onClick={(e) => e.stopPropagation()} //prevent clicking inside the box from closing the modal
-              className={`relative max-w-7xl max-h-[107%]  backdrop-blur-md border-1 w-full  ${isDark ? "border-neutral-900/5" : "border-neutral-100"} p-10 `}
+              className={`relative max-w-7xl max-h-[107%]  backdrop-blur-md border-1 w-full  border-neutral-100 dark:border-neutral-900/5 p-10 `}
             >
               
               {/* Close Button */}
