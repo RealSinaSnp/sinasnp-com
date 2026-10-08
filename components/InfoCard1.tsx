@@ -154,33 +154,36 @@ const InfoCard1: React.FC<InfoCardProps> = ({
 
 
         <h2 className={`text-xl font-semibold mb-4 ${color} font-sans transition`} > {title} </h2>
-        {!isOpen && isTrans && (
-          
-          <div className="w-full  items-center justify-between overflow-hidden ">
-            <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
-            <div className="w-full overflow-hidden max-w-full">
-              <LogoBox logos={logos} />
-            </div>
-            {/* expand icon */}
-            <div className="absolute top-3 right-3"> 
-              <div className={`w-11 h-11 rounded-full bg-white dark:bg-black flex items-center justify-center group-hover:bg-transparent hover:bg-transparent `}>
-                <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out text-black dark:text-white md:animate-none md:group-hover:scale-170 md:hover:scale-170`} />
-              </div>
+        
+        <div className="w-full  items-center justify-between overflow-hidden ">
+          <p className={`text-sm mb-0 font-medium font-sans ${textColor} transition`} > {description} </p>
+          <div className="w-full overflow-hidden max-w-full">
+            <LogoBox logos={logos} />
+          </div>
+          {/* expand icon */}
+          <div className="absolute top-3 right-3"> 
+            <div className={`w-11 h-11 rounded-full bg-white dark:bg-black flex items-center justify-center group-hover:bg-transparent hover:bg-transparent `}>
+              <Maximize2 size={25} className={`animate-pulse scale-130 transition-transform duration-200 ease-in-out text-black dark:text-white md:animate-none md:group-hover:scale-170 md:hover:scale-170`} />
             </div>
           </div>
-        )}
+        </div>
+
       </CardWrapper>
 
       <AnimatePresence>
         {isOpen && isTrans && (
-          <motion.div layoutId={`card-${title}`}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
             className={`fixed inset-0 z-50 ${ theme === "dark" ? "bg-black/60" : "bg-white/60"} backdrop-blur-md p-10 flex justify-center items-center`}
           >
             
             <motion.div 
+              layoutId={`card-${title}`}
               onClick={(e) => e.stopPropagation()} //prevent clicking inside the box from closing the modal
-              className={`relative max-w-7xl max-h-[107%]  backdrop-blur-md border-1 w-full  border-neutral-100 dark:border-neutral-900/5 p-10 `}
+              className={`relative max-w-7xl max-h-[107%] overflow-y-auto backdrop-blur-md border-1 w-full bg-white/5 dark:bg-black/40 border-neutral-100 dark:border-neutral-900/5 p-10 `}
             >
               
               {/* Close Button */}
