@@ -54,20 +54,8 @@ export default function ProjectsPage() {
               Stack: MongoDB, TS, MDX
             </p>
           </div>
-
-          {/* Dont remove this one */}
-          <div className="flex-1 flex flex-col">
-            <div className="opacity-75 flex-1 pointer-events-none">
-              <div className="duration-100 opacity-0 group-hover:opacity-70 group-hover:scale-110 origin-bottom">
-
-                <svg className="w-full scale-[115%] opacity-0 origin-top-right -mt-4" viewBox="0 0 555 384" >
-                  {/* Embed the image inside the SVG */}
-                  <image href="/img/blogpage.svg" width="555" height="384"/>
-                </svg>
-      
-              </div>
-            </div>
-          </div>
+          {/* Invisible spacer to maintain card height */}
+          <div className="flex-1 w-full aspect-[555/384] scale-[115%] -mt-4"></div>
 
 
           {/* Optional Illustration Area */}
@@ -108,20 +96,8 @@ export default function ProjectsPage() {
               Still further developing
             </p>
           </div>
-
-          {/* Dont remove this one */}
-          <div className="flex-1 flex flex-col">
-            <div className="opacity-75 flex-1 pointer-events-none">
-              <div className="duration-100 opacity-0 group-hover:opacity-70 group-hover:scale-110 origin-bottom">
-
-                <svg className="w-full scale-[115%] opacity-0 origin-top-right -mt-4" viewBox="0 0 555 384" >
-                  {/* Embed the image inside the SVG */}
-                  <image href="/img/gms.svg" width="555" height="384"/>
-                </svg>
-      
-              </div>
-            </div>
-          </div>
+          {/* Invisible spacer to maintain card height */}
+          <div className="flex-1 w-full aspect-[555/384] scale-[115%] -mt-4"></div>
 
 
           {/* Optional Illustration Area */}
@@ -163,20 +139,8 @@ export default function ProjectsPage() {
               Stack: .NET Core, JS
             </p>
           </div>
-
-          {/* Dont remove this one */}
-          <div className="flex-1 flex flex-col">
-            <div className="opacity-75 flex-1 pointer-events-none">
-              <div className="duration-100 opacity-0 group-hover:opacity-70 group-hover:scale-110 origin-bottom">
-
-                <svg className="w-full scale-[115%] opacity-0 origin-top-right -mt-4" viewBox="0 0 555 384" >
-                  {/* Embed the image inside the SVG */}
-                  <image href="/img/ir.svg" width="555" height="384"/>
-                </svg>
-      
-              </div>
-            </div>
-          </div>
+          {/* Invisible spacer to maintain card height */}
+          <div className="flex-1 w-full aspect-[555/384] scale-[115%] -mt-4"></div>
 
 
           {/* Optional Illustration Area */}
@@ -228,20 +192,8 @@ export default function ProjectsPage() {
               Hosted by infinityfree
             </p>
           </div>
-
-          {/* Dont remove this one */}
-          <div className="flex-1 flex flex-col">
-            <div className="opacity-75 flex-1 pointer-events-none">
-              <div className="duration-100 opacity-0 group-hover:opacity-70 group-hover:scale-110 origin-bottom">
-
-                <svg className="w-full scale-[115%] opacity-0 origin-top-right -mt-4" viewBox="0 0 555 384" >
-                  {/* Embed the image inside the SVG */}
-                  <image href="/img/gms.svg" width="555" height="384"/>
-                </svg>
-      
-              </div>
-            </div>
-          </div>
+          {/* Invisible spacer to maintain card height */}
+          <div className="flex-1 w-full aspect-[555/384] scale-[115%] -mt-4"></div>
 
 
           {/* Optional Illustration Area */}
@@ -283,20 +235,8 @@ export default function ProjectsPage() {
               *You can laugh at the design choices
             </p>
           </div>
-
-          {/* Dont remove this one */}
-          <div className="flex-1 flex flex-col">
-            <div className="opacity-75 flex-1 pointer-events-none">
-              <div className="duration-100 opacity-0 group-hover:opacity-70 group-hover:scale-110 origin-bottom">
-
-                <svg className="w-full scale-[115%] opacity-0 origin-top-right -mt-4" viewBox="0 0 555 384" >
-                  {/* Embed the image inside the SVG */}
-                  <image href="/img/ir.svg" width="555" height="384"/>
-                </svg>
-      
-              </div>
-            </div>
-          </div>
+          {/* Invisible spacer to maintain card height */}
+          <div className="flex-1 w-full aspect-[555/384] scale-[115%] -mt-4"></div>
 
 
           {/* Optional Illustration Area */}
@@ -316,3 +256,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
