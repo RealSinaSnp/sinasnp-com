@@ -44,7 +44,7 @@ export default function CVPage() {
             items={webSkills} 
             isTrans={true} 
             logos={webLogos} 
-            description={`Web developer with a 3-year background in web design and familiar with backend technologies. I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. I’m comfortable setting up servers and managing deployment pipelines with Docker.`}
+            description={`Web developer with 6+ years of experience in frontend development and familiar with backend technologies. I can structure responsive layouts, style them cleanly, and inject interactivity without overcomplicating things. I’m comfortable setting up servers and managing deployment pipelines with Docker.`}
           />
         </div>
         <div className="flex-[3.5]">

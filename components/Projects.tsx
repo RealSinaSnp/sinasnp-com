@@ -32,7 +32,7 @@ export default function ProjectsPage() {
             transition={{ type: "tween", ease: "easeInOut", duration: 0.35 }}
             key={index}
             onClick={() => !isExpanded && setExpandedIndex(index)}
-            className={`group relative cursor-pointer px-0 py-13 h-full lg:p-8 flex flex-col from-secondary/10 via-transparent to-transparent lg:border-l-[0.5px] border-t-[0.5px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] overflow-hidden border-r-0 lg:border-r-[0.5px] lg:border-t-0
+            className={`group relative px-0 py-13 h-full lg:p-8 flex flex-col from-secondary/10 via-transparent to-transparent lg:border-l-[0.5px] border-t-[0.5px] border-[rgba(0,0,0,0.1)] dark:border-[rgba(255,255,255,0.1)] overflow-hidden border-r-0 lg:border-r-[0.5px] lg:border-t-0
             ${isExpanded ? "lg:col-span-3 order-first z-20 shadow-sm bg-white dark:bg-neutral-900" : "lg:col-span-1 z-10"}
             `}
           >

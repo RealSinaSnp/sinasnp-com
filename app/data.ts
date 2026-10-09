@@ -95,45 +95,63 @@ export const projectsData = [
   {
     title: "Blog Page",
     link: "https://sinasnp.com/blog",
-    description: "I designed a blog page as extension for this page <br /> where I can write about what I've learnt or what I've been doing.",
-    stack: ["MongoDB", "TypeScript", "MDX", "TypeScript", "MDX", "TypeScript", "MDX", "TypeScript", "MDX", "TypeScript", "MDX"],
-    image: "/img/blogpage.svg",
+    description: "Designed a blog page as extension for this page where I can write about what I've learnt or what I've been doing.",
+    stack: ["Next.js", "MongoDB"],
+    image: "/img/document.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-35] group-hover:opacity-90",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   },
   {
     title: "IMGapp",
     link: "https://img.sinasnp.com",
-    description: "Quick image editing website with useful image tools. <br/> Still further developing.",
-    stack: [".NET", "NextJS"],
-    image: "/img/ir.svg",
+    description: "I had to use different websites when it came to edit my biometric photo for applying for documents, so I gathered the tools I needed in one place with a clean design and safe storage respecting my privacy.",
+    stack: [".NET", "NextJS", "Redis", "SQLite"],
+    image: "/img/photo.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   },
   {
     title: "Upload Page",
     link: "https://upload.sinasnp.com/",
-    description: "I created this domain to save my images and files in the same server as my blog page, for more convenience and reliability.",
+    description: "I created this 'drag-and-drop' page to save my files in the same server as my blog page, for more convenience and reliability.",
     stack: [".NET Core", "JS"],
-    image: "https://upload.sinasnp.com/files/svg/6117f9010ab846ec947d848c34f2c66d.svg",
+    image: "/img/upload.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-120px] md:group-hover:bottom-[-75] group-hover:opacity-90",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  },
+  {
+    title: "FaalAkademi",
+    link: "https://faalakademi.online/",
+    description: "Freelance project for a Turkish life-coaching academy. users can buy courses and get informed about courses and events. I also created a custom CMS for the admin to manage the content of the website.",
+    stack: ["NextJS", "Cloudflare Workers", "Supabase"],
+    image: "/img/calendar.svg",
+    imageWrapperClass: "bottom-[40px] md:bottom-[-120px] md:group-hover:bottom-[-75] group-hover:opacity-90",
+    svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
+  },
+  {
+    title: "Telegram Chatbot",
+    link: "https://telbot.sinasnp.com/",
+    description: "A Telegram bot that provides people to connect anonymously. It also provides games to break ice.",
+    stack: [".NET", "Redis", "Docker"],
+    image: "/img/thumbs-up.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-120px] md:group-hover:bottom-[-75] group-hover:opacity-90",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   },
   {
     title: "Golden Moonstone",
     link: "https://gmsglobal.app",
-    description: "A website designed as a friend, for a friend. <br/> Hosted by infinityfree.",
-    stack: ["PHP", "JS"],
-    image: "/img/gms.svg",
+    description: "A simple website to providing giveaways for viewers of a Youtube channel. Hosted by infinityfree. Website was built for a friend of mine running YT channel which has been abandoned later.",
+    stack: ["PHP", "JS", "MySQL", "CSS"],
+    image: "/img/rocket.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   },
   {
     title: "First Portfolio",
     link: "/sinaIR/index.html",
-    description: "My first portfolio back in 2019. <br/> *You can laugh at the design choices.",
+    description: "My first portfolio back in 2019. <br/> *You have the right to laugh at the design choices.",
     stack: ["HTML", "CSS"],
-    image: "/img/ir.svg",
+    image: "/img/document.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   }
