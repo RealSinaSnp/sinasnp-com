@@ -171,3 +171,31 @@ export const projectsData = [
 ];
 
 
+
+export const experienceData = [
+  {
+    id: 1,
+    role: "Senior Web Developer",
+    company: "Tech Solutions Inc.",
+    date: "2021 - Present",
+    description: "Lead the frontend team to build scalable web applications using React and Next.js. Integrated REST APIs and improved core web vitals by 40%.",
+    stack: ["React", "Next.js", "TypeScript", "Tailwind"],
+  },
+  {
+    id: 2,
+    role: "Web Developer / Network Admin",
+    company: "Digital Agency",
+    date: "2018 - 2021",
+    description: "Developed and maintained multiple client websites while managing the internal office network. Handled everything from UI development to full-stack integrations.",
+    stack: ["JavaScript", "PHP", "MySQL", "Linux"],
+  },
+  {
+    id: 3,
+    role: "Junior Developer",
+    company: "StartUp Co.",
+    date: "2016 - 2018",
+    description: "Assisted in building responsive landing pages and email templates. Worked closely with the design team to ensure pixel-perfect implementations.",
+    stack: ["HTML", "CSS", "jQuery", "Bootstrap"],
+  }
+];
+

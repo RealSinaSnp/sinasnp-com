@@ -1,6 +1,7 @@
 // @/app/page.tsx
 
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 import PortfolioHeader from "@/components/HeaderPortfolio";
 import InfoCard2 from "@/components/InfoCard2";
 import InfoCard1 from "@/components/InfoCard1";
@@ -73,6 +74,7 @@ export default function CVPage() {
         
       </section>
 
+      <Experience />
       <Projects />
       
 
