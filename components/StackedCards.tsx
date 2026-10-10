@@ -38,8 +38,10 @@ export default function StackedCards() {
         setPosts(paddedPosts.slice(0, 4));
       } catch (error) {
         console.error("Error loading posts:", error);
-        // Set placeholder posts on error
-        setPosts([
+        
+        // Pad the error with placeholders so we always have 4 cards
+        // to match the hardcoded cardOrder [0,1,2,3] and prevent crashes.
+        const errorPosts = [
           {
             _id: "error-1",
             title: "Unable to load posts",
@@ -48,8 +50,22 @@ export default function StackedCards() {
             content: "There was an error loading the blog posts.",
             createdAt: new Date(),
             tags: ["error"],
-          },
-        ]);
+          }
+        ];
+        
+        while (errorPosts.length < 4) {
+          errorPosts.push({
+            _id: `error-placeholder-${errorPosts.length}`,
+            title: "Coming Soon...",
+            slug: "#",
+            description: "More content coming soon",
+            content: "Stay tuned for more blog posts!",
+            createdAt: new Date(),
+            tags: ["coming-soon"],
+          });
+        }
+        
+        setPosts(errorPosts);
       } finally {
         setLoading(false);
       }
@@ -114,6 +130,8 @@ const handleCardClick = () => {
         <div className="relative w-140 min-h-[320px] md:left-6">
           {cardOrder.map((postIndex, position) => {
             const post = posts[postIndex];
+            if (!post) return null; // Bulletproof check to prevent crashes
+
             const positionStyle = getCardStyle(position);
 
             return (
