@@ -1,17 +1,17 @@
 export const webSkills = [
   { label: "Next.js",      level: 80, category: "Frontend", mastered: true },
-  { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
   { label: "React",        level: 90, category: "Frontend", mastered: true },
+  { label: "Typescript",   level: 70, category: "Frontend", mastered: true },
   { label: "Tailwind",     level: 90, category: "Frontend", mastered: true },
 
   { label: ".NET",         level: 60, category: "Backend", mastered: true },
-  { label: "Node.js",      level: 60, category: "Backend", mastered: false },
+  { label: "Node.js",      level: 60, category: "Backend", mastered: true },
   { label: "PHP",          level: 60, category: "Backend", mastered: false },
 
   { label: "MySQL",        level: 95, category: "Database", mastered: true },
   { label: "MongoDB",      level: 75, category: "Database", mastered: true },
-  { label: "SQLite",       level: 60, category: "Database", mastered: true},
-  { label: "Redis",        level: 75, category: "Database", mastered: false },
+  { label: "SQLite",       level: 60, category: "Database", mastered: true },
+  { label: "Redis",        level: 75, category: "Database", mastered: true },
 
   { label: "Linux",        level: 85, category: "Infrastructure", mastered: true },
   { label: "Docker",       level: 75, category: "Infrastructure", mastered: true },
@@ -22,7 +22,6 @@ export const webSkills = [
   { label: "RESTfulAPIs",      level: 65, category: "Tools", mastered: true },
   { label: "CI/CD",            level: 65, category: "Tools", mastered: false },
   { label: "SignalR",          level: 65, category: "Tools", mastered: false },
-  { label: "Google Lighthouse", level: 65, category: "Tools", mastered: false },
 ];
 
 export const dataSkills = [
@@ -98,7 +97,7 @@ export const projectsData = [
       status: "Active",
     link: "https://sinasnp.com/blog",
     description: "Designed a blog page as extension for this page where I can write about what I've learnt or what I've been doing.",
-    stack: ["Next.js", "MongoDB"],
+    stack: ["Next.js", "MongoDB", "Docker"],
     image: "/img/document.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-35] group-hover:opacity-90",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
@@ -109,14 +108,14 @@ export const projectsData = [
       status: "Active",
     link: "https://img.sinasnp.com",
     description: "I had to use different websites when it came to edit my biometric photo for applying for documents, so I gathered the tools I needed in one place with a clean design and safe storage respecting my privacy.",
-    stack: [".NET", "NextJS", "Redis", "SQLite"],
+    stack: [".NET", "NextJS", "Redis", "SQLite", "Kubernetes"],
     image: "/img/photo.svg",
     imageWrapperClass: "bottom-[40px] md:bottom-[-100px] md:group-hover:bottom-[-50] group-hover:opacity-70",
     svgClass: "w-[280px] md:w-[320px] lg:w-[380px]"
   },
   {
     title: "Upload Page",
-      date: "2023",
+      date: "2024",
       status: "Inactive (Temporarily)",
     link: "https://upload.sinasnp.com/",
     description: "I created this 'drag-and-drop' page to save my files in the same server as my blog page, for more convenience and reliability.",
@@ -127,7 +126,7 @@ export const projectsData = [
   },
   {
     title: "FaalAkademi",
-      date: "2023",
+      date: "2025",
       status: "Completed",
     link: "https://faalakademi.online/",
     description: "Freelance project for a Turkish life-coaching academy. users can buy courses and get informed about courses and events. I also created a custom CMS for the admin to manage the content of the website.",
@@ -138,7 +137,7 @@ export const projectsData = [
   },
   {
     title: "Telegram Chatbot",
-      date: "2023",
+      date: "2026",
       status: "In Development",
     link: "https://telbot.sinasnp.com/",
     description: "A Telegram bot that provides people to connect anonymously. It also provides games to break ice.",
@@ -149,7 +148,7 @@ export const projectsData = [
   },
   {
     title: "Golden Moonstone",
-      date: "2020",
+      date: "2023",
       status: "Failed",
     link: "https://gmsglobal.app",
     description: "A simple website to providing giveaways for viewers of a Youtube channel. Hosted by infinityfree. Website was built for a friend of mine running YT channel which has been abandoned later.",
