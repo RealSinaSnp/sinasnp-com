@@ -178,7 +178,12 @@ export const experienceData = [
     role: "Senior Web Developer",
     company: "Tech Solutions Inc.",
     date: "2021 - Present",
-    description: "Lead the frontend team to build scalable web applications using React and Next.js. Integrated REST APIs and improved core web vitals by 40%.",
+    bullets: [
+      "Led the frontend team to build scalable enterprise web applications using React and Next.js.",
+      "Integrated complex REST APIs and standardized data fetching protocols across the application.",
+      "Optimized core web vitals, improving load times by 40% and increasing user retention.",
+      "Mentored junior developers through pair programming and rigorous code reviews."
+    ],
     stack: ["React", "Next.js", "TypeScript", "Tailwind"],
   },
   {
@@ -186,7 +191,11 @@ export const experienceData = [
     role: "Web Developer / Network Admin",
     company: "Digital Agency",
     date: "2018 - 2021",
-    description: "Developed and maintained multiple client websites while managing the internal office network. Handled everything from UI development to full-stack integrations.",
+    bullets: [
+      "Developed and maintained multiple high-traffic client websites using PHP, JavaScript, and MySQL.",
+      "Designed responsive, pixel-perfect UIs from Figma mockups.",
+      "Managed the internal office network, ensuring 99.9% uptime for local development servers."
+    ],
     stack: ["JavaScript", "PHP", "MySQL", "Linux"],
   },
   {
@@ -194,8 +203,35 @@ export const experienceData = [
     role: "Junior Developer",
     company: "StartUp Co.",
     date: "2016 - 2018",
-    description: "Assisted in building responsive landing pages and email templates. Worked closely with the design team to ensure pixel-perfect implementations.",
+    bullets: [
+      "Assisted in building responsive landing pages and high-converting email templates.",
+      "Worked closely with the design team to ensure pixel-perfect implementations."
+    ],
     stack: ["HTML", "CSS", "jQuery", "Bootstrap"],
+  },
+  {
+    id: 4,
+    role: "Web Developer / Network Admin",
+    company: "Digital Agency",
+    date: "2018 - 2021",
+    bullets: [
+      "Developed and maintained multiple high-traffic client websites using PHP, JavaScript, and MySQL.",
+      "Designed responsive, pixel-perfect UIs from Figma mockups.",
+      "Managed the internal office network, ensuring 99.9% uptime for local development servers."
+    ],
+    stack: ["JavaScript", "PHP", "MySQL", "Linux"],
+  },
+  {
+    id: 5,
+    role: "Web Developer / Network Admin",
+    company: "Digital Agency",
+    date: "2018 - 2021",
+    bullets: [
+      "Developed and maintained multiple high-traffic client websites using PHP, JavaScript, and MySQL.",
+      "Designed responsive, pixel-perfect UIs from Figma mockups.",
+      "Managed the internal office network, ensuring 99.9% uptime for local development servers."
+    ],
+    stack: ["JavaScript", "PHP", "MySQL", "Linux"],
   }
 ];
 
