@@ -50,7 +50,7 @@ export default function Experience() {
         {/* Horizontal connector lines extending to the left edge of the screen */}
         
         {/* Top Line (Base + Animated) */}
-        <div className="absolute top-3 left-[calc(-50vw+50%)] right-[calc(100%-1rem)] md:right-[calc(100%-2rem)] h-[2px] [mask-image:linear-gradient(to_right,transparent,black_600px)]">
+        <div className="absolute top-3 left-[calc(-50vw+50%)] hidden md:inline right-[calc(100%-1rem)] md:right-[calc(100%-2rem)] h-[2px] [mask-image:linear-gradient(to_right,transparent,black_600px)]">
           <div className="absolute inset-0 bg-neutral-600/15" />
           <motion.div 
             className="absolute inset-0 bg-black dark:bg-white origin-left"
@@ -59,7 +59,7 @@ export default function Experience() {
         </div>
 
         {/* Bottom Line (Base + Animated) */}
-        <div className="absolute bottom-0 left-[calc(-50vw+50%)] right-[calc(100%-1rem)] md:right-[calc(100%-2rem)] h-[2px] [mask-image:linear-gradient(to_right,transparent,black_600px)]">
+        <div className="absolute bottom-0 left-[calc(-50vw+50%)] hidden md:inline right-[calc(100%-1rem)] md:right-[calc(100%-2rem)] h-[2px] [mask-image:linear-gradient(to_right,transparent,black_600px)]">
           <div className="absolute inset-0 bg-neutral-600/15" />
           <motion.div 
             className="absolute inset-0 bg-black dark:bg-white origin-right"
@@ -68,11 +68,11 @@ export default function Experience() {
         </div>
 
         {/* Background empty timeline track */}
-        <div className="absolute left-4 md:left-8 top-3 bottom-0 w-[2px] bg-neutral-600/15 "></div>
+        <div className="absolute left-4 md:left-8 top-1 md:top-3 bottom-0 w-[2px] bg-neutral-600/15 "></div>
         
         {/* Animated filling timeline track */}
         <motion.div 
-          className="absolute left-4 md:left-8 top-3 bottom-0 w-[2px] bg-black dark:bg-white origin-top"
+          className="absolute left-4 md:left-8 top-1 md:top-3 bottom-0 w-[2px] bg-black dark:bg-white origin-top"
           style={{ scaleY: verticalProgress }}
         />
 
@@ -106,7 +106,7 @@ function ExperienceItem({ exp }: { exp: ExperienceData }) {
 
   // Fade and slide the card in when it enters the viewport
   return (
-    <div ref={itemRef} className="relative pl-12 md:pl-24 w-full py-4">
+    <div ref={itemRef} className="relative pl-10 md:pl-24 w-full py-4">
       {/* Timeline Dot */}
       <motion.div 
         initial={{ scale: 0 }}

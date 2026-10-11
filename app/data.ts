@@ -175,63 +175,49 @@ export const projectsData = [
 export const experienceData = [
   {
     id: 1,
-    role: "Senior Web Developer",
-    company: "Tech Solutions Inc.",
-    date: "2021 - Present",
+    role: "Mid-level Full-stack Developer",
+    company: "Okian.ai",
+    date: "Mar 2025 - Dec 2025",
     bullets: [
-      "Led the frontend team to build scalable enterprise web applications using React and Next.js.",
-      "Integrated complex REST APIs and standardized data fetching protocols across the application.",
-      "Optimized core web vitals, improving load times by 40% and increasing user retention.",
-      "Mentored junior developers through pair programming and rigorous code reviews."
+      "Built and maintained a highly responsive, modern user interface using Next.js, React, Tailwind CSS, and shadcn/ui.",
+      "Architected scalable backend services using Node.js and PostgreSQL to securely manage persistent conversational data and user sessions.",
+      "Engineered LLM API integrations and configured Redis caching to optimize data streams, handle rate limiting, and ensure low-latency real-time chat."
     ],
-    stack: ["React", "Next.js", "TypeScript", "Tailwind"],
+    stack: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Node.js", "Redis", "PostgreSQL", "Git", "GitLab"],
   },
   {
     id: 2,
-    role: "Web Developer / Network Admin",
-    company: "Digital Agency",
-    date: "2018 - 2021",
+    role: "Senior Backend Developer",
+    company: "Hamrah Samaneh (Darsad)",
+    date: "Feb 2022 - Mar 2024",
     bullets: [
-      "Developed and maintained multiple high-traffic client websites using PHP, JavaScript, and MySQL.",
-      "Designed responsive, pixel-perfect UIs from Figma mockups.",
-      "Managed the internal office network, ensuring 99.9% uptime for local development servers."
+      "Implemented Redis caching layers for the primary price-comparison engine, significantly reducing database read operations and accelerating data delivery to the frontend.",
+      "Contributed to migrating legacy monolithic infrastructure to a microservices architecture, decoupling services and optimizing API data delivery to support the frontend team's transition to server-side rendering (SSR).",
+      "Coordinated with a team of 6 developers through active code reviews and pair programming sessions to share technical knowledge and accelerate sprint velocity."
     ],
-    stack: ["JavaScript", "PHP", "MySQL", "Linux"],
+    stack: ["ASP.NET Core", "SignalR", "MySQL", "Redis", "MongoDB", "Microservices", "Git", "GitLab"],
   },
   {
     id: 3,
-    role: "Junior Developer",
-    company: "StartUp Co.",
-    date: "2016 - 2018",
+    role: "Mid-Level Fullstack Developer",
+    company: "Hamrah Samaneh (Manamo)",
+    date: "Feb 2020 - Feb 2022",
     bullets: [
-      "Assisted in building responsive landing pages and high-converting email templates.",
-      "Worked closely with the design team to ensure pixel-perfect implementations."
+      "Built and maintained an internal administrative dashboard, enabling the content team to efficiently upload, tag, and manage educational video assets.",
+      "Implemented Role-Based Access Control (RBAC) to securely manage permissions between student accounts, instructors, and administrative roles.",
+      "Collaborated closely with UI/UX designers to optimize frontend asset loading times and improve cross-device accessibility across the learning platform."
     ],
-    stack: ["HTML", "CSS", "jQuery", "Bootstrap"],
+    stack: ["ASP.NET Core", "PHP", "HTML", "CSS", "MySQL", "Git", "GitLab"],
   },
   {
     id: 4,
-    role: "Web Developer / Network Admin",
-    company: "Digital Agency",
-    date: "2018 - 2021",
+    role: "Junior Backend Developer",
+    company: "Hamrah Samaneh (EnglishVocab)",
+    date: "Nov 2018 - Feb 2020",
     bullets: [
-      "Developed and maintained multiple high-traffic client websites using PHP, JavaScript, and MySQL.",
-      "Designed responsive, pixel-perfect UIs from Figma mockups.",
-      "Managed the internal office network, ensuring 99.9% uptime for local development servers."
+      "Assisted in developing core RESTful APIs and optimizing backend database queries in PHP/MySQL to support high-concurrency mobile app traffic.",
+      "Collaborated with senior engineers to maintain backend service stability, resolve bug reports, and deploy routine system maintenance updates."
     ],
-    stack: ["JavaScript", "PHP", "MySQL", "Linux"],
-  },
-  {
-    id: 5,
-    role: "Web Developer / Network Admin",
-    company: "Digital Agency",
-    date: "2018 - 2021",
-    bullets: [
-      "Developed and maintained multiple high-traffic client websites using PHP, JavaScript, and MySQL.",
-      "Designed responsive, pixel-perfect UIs from Figma mockups.",
-      "Managed the internal office network, ensuring 99.9% uptime for local development servers."
-    ],
-    stack: ["JavaScript", "PHP", "MySQL", "Linux"],
+    stack: ["PHP", "MySQL", "Git", "GitLab"],
   }
 ];
-
