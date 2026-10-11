@@ -1,16 +1,38 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { experienceData } from "@/app/data";
+
+interface ExperienceData {
+  id: number;
+  role: string;
+  company: string;
+  date: string;
+  description?: string;
+  bullets?: string[];
+  stack?: string[];
+}
 
 export default function Experience() {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Track scroll progress within the entire experience container
-  const { scrollYProgress } = useScroll({
+  // Track scroll progress for the top horizontal line (sweeps in before vertical starts)
+  const { scrollYProgress: topProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start center"],
+  });
+
+  // Track scroll progress within the entire experience container (vertical track)
+  const { scrollYProgress: verticalProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"],
+  });
+
+  // Track scroll progress for the bottom horizontal line (sweeps out after vertical finishes)
+  const { scrollYProgress: bottomProgress } = useScroll({
+    target: containerRef,
+    offset: ["end center", "end start"],
   });
 
   return (
@@ -25,20 +47,40 @@ export default function Experience() {
       </div>
 
       <div ref={containerRef} className="relative w-full max-w-4xl mx-auto">
+        {/* Horizontal connector lines extending to the left edge of the screen */}
+        
+        {/* Top Line (Base + Animated) */}
+        <div className="absolute top-3 left-[calc(-50vw+50%)] right-[calc(100%-1rem)] md:right-[calc(100%-2rem)] h-[2px] [mask-image:linear-gradient(to_right,transparent,black_600px)]">
+          <div className="absolute inset-0 bg-neutral-600/15" />
+          <motion.div 
+            className="absolute inset-0 bg-black dark:bg-white origin-left"
+            style={{ scaleX: topProgress }}
+          />
+        </div>
+
+        {/* Bottom Line (Base + Animated) */}
+        <div className="absolute bottom-0 left-[calc(-50vw+50%)] right-[calc(100%-1rem)] md:right-[calc(100%-2rem)] h-[2px] [mask-image:linear-gradient(to_right,transparent,black_600px)]">
+          <div className="absolute inset-0 bg-neutral-600/15" />
+          <motion.div 
+            className="absolute inset-0 bg-black dark:bg-white origin-right"
+            style={{ scaleX: bottomProgress }}
+          />
+        </div>
+
         {/* Background empty timeline track */}
         <div className="absolute left-4 md:left-8 top-3 bottom-0 w-[2px] bg-neutral-600/15 "></div>
         
         {/* Animated filling timeline track */}
         <motion.div 
           className="absolute left-4 md:left-8 top-3 bottom-0 w-[2px] bg-black dark:bg-white origin-top"
-          style={{ scaleY: scrollYProgress }}
+          style={{ scaleY: verticalProgress }}
         />
 
         {/* Experience Items */}
         <div className="flex flex-col gap-12 md:gap-20">
-          {experienceData.map((exp, index) => {
+          {experienceData.map((exp) => {
             return (
-              <ExperienceItem key={exp.id} exp={exp} index={index} />
+              <ExperienceItem key={exp.id} exp={exp} />
             );
           })}
         </div>
@@ -47,7 +89,7 @@ export default function Experience() {
   );
 }
 
-function ExperienceItem({ exp, index }: { exp: any, index: number }) {
+function ExperienceItem({ exp }: { exp: ExperienceData }) {
   const itemRef = useRef<HTMLDivElement>(null);
   
   // Track localized scroll progress for this specific item to control the glow
@@ -57,7 +99,10 @@ function ExperienceItem({ exp, index }: { exp: any, index: number }) {
   });
 
   // Calculate glow opacity: 0 at the edges, 1 when it's actively in the center of the viewport
-  const glowOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.1, 0.1, 1], [0, 1, 1, 0]);
+  
+  // Scale peaks slightly (1.03) when the card is around 2/3rds down the screen (progress ~0.3)
+  const cardScale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.95, 1.05, 1, 0.95]);
 
   // Fade and slide the card in when it enters the viewport
   return (
@@ -75,16 +120,16 @@ function ExperienceItem({ exp, index }: { exp: any, index: number }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="flex flex-col gap-2 group relative p-6 md:p-8 -mx-6 md:-mx-8 rounded-3xl"
+        style={{ scale: cardScale }}
+        className="flex flex-col gap-2 group relative p-6 md:p-8 -mx-6 md:-mx-8  origin-left"
       >
         {/* Dynamic Highlight Glow Overlay */}
         <motion.div
           style={{ opacity: glowOpacity }}
-          className="absolute inset-0 pointer-events-none rounded-3xl overflow-hidden"
+          className="absolute inset-0 pointer-events-none  overflow-hidden"
         >
           {/* Top and Bottom inner glows */}
-          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/5 to-transparent dark:from-white/10 dark:to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/5 to-transparent dark:from-white/10 dark:to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-full bg-linear-to-r from-black/5 to-transparent dark:from-white/6 dark:to-transparent" />
         </motion.div>
 
         {/* Content Wrapper */}
@@ -119,7 +164,7 @@ function ExperienceItem({ exp, index }: { exp: any, index: number }) {
               {exp.stack.map((tech: string, i: number) => (
                 <span
                   key={i}
-                  className="px-3 py-1 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-md text-xs font-semibold uppercase tracking-wider text-secondary transition-colors group-hover:border-black/30 dark:group-hover:border-white/30"
+                  className="px-3 py-1 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-sm text-xs font-semibold uppercase tracking-wider text-secondary transition-colors group-hover:border-black/30 dark:group-hover:border-white/30"
                 >
                   {tech}
                 </span>
